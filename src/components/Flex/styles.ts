@@ -31,10 +31,13 @@ export const Container = styled.div<ContainerProps>`
     `}
 
   ${({ alignItems }) =>
-    alignItems &&
-    css`
-      align-items: ${alignItems};
-    `}
+    alignItems
+      ? css`
+          align-items: ${alignItems};
+        `
+      : css`
+          align-items: flex-start;
+        `}
 
   ${({ gap }) =>
     gap &&

@@ -2,6 +2,8 @@ export const lightTheme = {
   title: 'light',
 
   colors: {
+    white: '#ffffff',
+
     amber: {
       1: 'hsl(39, 70.0%, 99.0%)',
       2: 'hsl(40, 100%, 96.5%)',

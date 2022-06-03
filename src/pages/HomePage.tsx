@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { Flex } from '../components/Flex';
 import { Text } from '../components/Text';
 import { Colors, useTheme } from '../hooks/theme';
 
@@ -14,16 +15,7 @@ export function HomePage(): JSX.Element {
   const { toggleTheme, colorScheme, changeColorScheme } = useTheme();
 
   return (
-    <div
-      style={{
-        display: 'flex',
-        height: '100vh',
-        flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
-        gap: 32,
-      }}
-    >
+    <Flex justifyContent="center" alignItems="center" gap={32}>
       <Text size="lg">home page</Text>
 
       <Box colorScheme={colorScheme} />
@@ -54,6 +46,6 @@ export function HomePage(): JSX.Element {
           </button>
         </section>
       </section>
-    </div>
+    </Flex>
   );
 }

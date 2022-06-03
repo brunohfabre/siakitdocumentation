@@ -2,6 +2,8 @@ export const darkTheme = {
   title: 'dark',
 
   colors: {
+    white: '#ffffff',
+
     amber: {
       1: 'hsl(36, 100%, 6.1%)',
       2: 'hsl(35, 100%, 7.6%)',

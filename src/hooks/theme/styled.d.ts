@@ -20,6 +20,8 @@ declare module 'styled-components' {
     title: string;
 
     colors: {
+      white: string;
+
       amber: Variant;
       blue: Variant;
       brown: Variant;
