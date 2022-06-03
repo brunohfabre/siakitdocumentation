@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export type ContainerProps = {
+  flex?: number;
   direction?: 'row' | 'column';
   justifyContent?:
     | 'flex-start'
@@ -18,8 +19,7 @@ export type ContainerProps = {
 };
 
 export const Container = styled.div<ContainerProps>`
-  flex: 1;
-  overflow: auto;
+  /* overflow: auto; */
 
   display: flex;
   flex-direction: ${({ direction }) => direction || 'column'};
@@ -27,17 +27,25 @@ export const Container = styled.div<ContainerProps>`
   ${({ justifyContent }) =>
     justifyContent &&
     css`
+      flex: 1;
       justify-content: ${justifyContent};
     `}
 
   ${({ alignItems }) =>
     alignItems
       ? css`
+          flex: 1;
           align-items: ${alignItems};
         `
       : css`
           align-items: flex-start;
         `}
+
+  ${({ flex }) =>
+    typeof flex === 'number' &&
+    css`
+      flex: ${flex};
+    `}
 
   ${({ gap }) =>
     gap &&
