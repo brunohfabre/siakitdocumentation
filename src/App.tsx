@@ -1,27 +1,20 @@
-import styled, { ThemeProvider } from 'styled-components';
+import styled from 'styled-components';
 
-import { useTheme } from './hooks/useTheme';
+import { Colors, useTheme } from './hooks/theme';
 import { GlobaStyle } from './styles/global';
-import { darkTheme } from './styles/themes/dark';
-import { lightTheme } from './styles/themes/light';
 
-const themes = {
-  light: lightTheme,
-  dark: darkTheme,
-};
-
-const Box = styled.div`
+const Box = styled.div<{ colorScheme: Colors }>`
   width: 128px;
   height: 64px;
   border-radius: 8px;
-  background-color: ${(props) => props.theme.colors.violet11};
+  background-color: ${(props) => props.theme.colors[props.colorScheme][11]};
 `;
 
 export function App(): JSX.Element {
-  const { theme, toggleTheme } = useTheme();
+  const { toggleTheme, colorScheme, changeColorScheme } = useTheme();
 
   return (
-    <ThemeProvider theme={themes[theme as 'light' | 'dark']}>
+    <>
       <GlobaStyle />
 
       <div
@@ -33,7 +26,7 @@ export function App(): JSX.Element {
           flexDirection: 'column',
         }}
       >
-        <Box />
+        <Box colorScheme={colorScheme} />
         <h3>
           Lorem ipsum dolor sit, amet consectetur tadipisicing elit. Quo amet
           temporibus, aspernatur aliquam esse, ipsa ad dolores officiis
@@ -44,7 +37,28 @@ export function App(): JSX.Element {
         <button type="button" onClick={toggleTheme}>
           toggle theme
         </button>
+
+        <section>
+          <button type="button" onClick={() => changeColorScheme('red')}>
+            red
+          </button>
+          <button type="button" onClick={() => changeColorScheme('violet')}>
+            violet
+          </button>
+          <button type="button" onClick={() => changeColorScheme('green')}>
+            green
+          </button>
+          <button type="button" onClick={() => changeColorScheme('blue')}>
+            blue
+          </button>
+          <button type="button" onClick={() => changeColorScheme('gray')}>
+            gray
+          </button>
+          <button type="button" onClick={() => changeColorScheme('orange')}>
+            orange
+          </button>
+        </section>
       </div>
-    </ThemeProvider>
+    </>
   );
 }

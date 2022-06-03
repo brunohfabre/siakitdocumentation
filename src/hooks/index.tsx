@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { ThemeProvider } from './useTheme';
+import { ThemeProvider } from './theme';
 
 type AppProviderProps = {
   children: ReactNode;

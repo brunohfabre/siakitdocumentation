@@ -1,14 +1,14 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
-import BarlowThin from '../assets/fonts/barlow/Barlow-Thin.ttf';
-import BarlowExtraLight from '../assets/fonts/barlow/Barlow-ExtraLight.ttf';
-import BarlowLight from '../assets/fonts/barlow/Barlow-Light.ttf';
-import BarlowRegular from '../assets/fonts/barlow/Barlow-Regular.ttf';
-import BarlowMedium from '../assets/fonts/barlow/Barlow-Medium.ttf';
-import BarlowSemiBold from '../assets/fonts/barlow/Barlow-SemiBold.ttf';
+import BarlowBlack from '../assets/fonts/barlow/Barlow-Black.ttf';
 import BarlowBold from '../assets/fonts/barlow/Barlow-Bold.ttf';
 import BarlowExtraBold from '../assets/fonts/barlow/Barlow-ExtraBold.ttf';
-import BarlowBlack from '../assets/fonts/barlow/Barlow-Black.ttf';
+import BarlowExtraLight from '../assets/fonts/barlow/Barlow-ExtraLight.ttf';
+import BarlowLight from '../assets/fonts/barlow/Barlow-Light.ttf';
+import BarlowMedium from '../assets/fonts/barlow/Barlow-Medium.ttf';
+import BarlowRegular from '../assets/fonts/barlow/Barlow-Regular.ttf';
+import BarlowSemiBold from '../assets/fonts/barlow/Barlow-SemiBold.ttf';
+import BarlowThin from '../assets/fonts/barlow/Barlow-Thin.ttf';
 
 export const GlobaStyle = createGlobalStyle`
   @font-face {
@@ -64,8 +64,8 @@ export const GlobaStyle = createGlobalStyle`
   }
 
   body {
-    background-color: ${props => props.theme.colors.gray1};
-    color: ${props => props.theme.colors.gray12};
+    background-color: ${(props) => props.theme.colors.gray[1]};
+    color: ${(props) => props.theme.colors.gray[12]};
     -webkit-font-smoothing: antialised;
   }
 
