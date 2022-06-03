@@ -66,11 +66,15 @@ export const GlobaStyle = createGlobalStyle`
   body {
     background-color: ${(props) => props.theme.colors.gray[1]};
     color: ${(props) => props.theme.colors.gray[12]};
-    -webkit-font-smoothing: antialised;
+    -webkit-font-smoothing: antialiased;
   }
 
   body, input, textarea, button {
     font-family: 'Barlow', sans-serif;
     font-weight: 400;
+  }
+
+  h6, h5, h4, h3, h2, h1, strong {
+    font-weight: 600;
   }
 `;
