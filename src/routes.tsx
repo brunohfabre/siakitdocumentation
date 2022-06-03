@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ButtonPage } from './pages/ButtonPage';
 import { HeadingPage } from './pages/HeadingPage';
 import { HomePage } from './pages/HomePage';
+import { IconButtonPage } from './pages/IconButtonPage';
 import { TextPage } from './pages/TextPage';
 
 export function AppRoutes(): JSX.Element {
@@ -12,6 +13,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/heading" element={<HeadingPage />} />
       <Route path="/text" element={<TextPage />} />
       <Route path="/button" element={<ButtonPage />} />
+      <Route path="/iconbutton" element={<IconButtonPage />} />
     </Routes>
   );
 }
