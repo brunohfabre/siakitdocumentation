@@ -4,6 +4,7 @@ import { ButtonPage } from './pages/ButtonPage';
 import { HeadingPage } from './pages/HeadingPage';
 import { HomePage } from './pages/HomePage';
 import { IconButtonPage } from './pages/IconButtonPage';
+import { LinkButtonPage } from './pages/LinkButtonPage';
 import { TextPage } from './pages/TextPage';
 
 export function AppRoutes(): JSX.Element {
@@ -14,6 +15,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/text" element={<TextPage />} />
       <Route path="/button" element={<ButtonPage />} />
       <Route path="/iconbutton" element={<IconButtonPage />} />
+      <Route path="/linkbutton" element={<LinkButtonPage />} />
     </Routes>
   );
 }
