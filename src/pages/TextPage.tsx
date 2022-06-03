@@ -1,14 +1,9 @@
+import { Flex } from '../components/Flex';
 import { Text } from '../components/Text';
 
 export function TextPage(): JSX.Element {
   return (
-    <div
-      style={{
-        display: 'flex',
-        alignItems: 'center',
-        flexDirection: 'column',
-      }}
-    >
+    <Flex justifyContent="center" alignItems="center" gap>
       <Text size="6xl">6xl Text</Text>
       <Text size="5xl">5xl Text</Text>
       <Text size="4xl">4xl Text</Text>
@@ -19,6 +14,6 @@ export function TextPage(): JSX.Element {
       <Text size="md">md Text</Text>
       <Text size="sm">sm Text</Text>
       <Text size="xs">xs Text</Text>
-    </div>
+    </Flex>
   );
 }
