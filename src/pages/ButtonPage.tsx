@@ -1,6 +1,7 @@
+import { Plus } from 'phosphor-react';
+
 import { Button } from '../components/Button';
 import { Flex } from '../components/Flex';
-import { Grid } from '../components/Grid';
 import { Text } from '../components/Text';
 
 export function ButtonPage(): JSX.Element {
@@ -53,6 +54,42 @@ export function ButtonPage(): JSX.Element {
           <Text size="md">ghost</Text>
 
           <Button type="button" onClick={() => undefined} variant="ghost">
+            Button
+          </Button>
+        </Flex>
+      </Flex>
+
+      <Flex direction="row" alignItems="flex-start" gap={32}>
+        <Flex alignItems="center" gap={32}>
+          <Text size="md">primary icon</Text>
+
+          <Button type="button" onClick={() => undefined} icon={Plus}>
+            Button
+          </Button>
+        </Flex>
+
+        <Flex alignItems="center" gap={32}>
+          <Text size="md">secondary icon</Text>
+
+          <Button
+            type="button"
+            onClick={() => undefined}
+            variant="secondary"
+            icon={Plus}
+          >
+            Button
+          </Button>
+        </Flex>
+
+        <Flex alignItems="center" gap={32}>
+          <Text size="md">ghost icon</Text>
+
+          <Button
+            type="button"
+            onClick={() => undefined}
+            variant="ghost"
+            icon={Plus}
+          >
             Button
           </Button>
         </Flex>

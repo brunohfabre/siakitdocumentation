@@ -14,12 +14,7 @@ type ButtonProps = {
   variant?: Variant;
   onClick: () => void;
   disabled?: boolean;
-  leftIcon?: ForwardRefExoticComponent<
-    IconProps & RefAttributes<SVGSVGElement>
-  >;
-  rightIcon?: ForwardRefExoticComponent<
-    IconProps & RefAttributes<SVGSVGElement>
-  >;
+  icon?: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
 };
 
 export function Button({
@@ -30,8 +25,7 @@ export function Button({
   variant = 'primary',
   onClick,
   disabled,
-  leftIcon: LeftIcon,
-  rightIcon: RightIcon,
+  icon: Icon,
 }: ButtonProps): JSX.Element {
   const { colorScheme: themeColorScheme } = useTheme();
 
@@ -56,11 +50,9 @@ export function Button({
       onClick={onClick}
       disabled={disabled}
     >
-      {LeftIcon && <LeftIcon size={iconSize()} weight="bold" />}
+      {Icon && <Icon size={iconSize()} weight="bold" />}
 
       <Heading size={size === 'sm' ? 'xs' : 'sm'}>{children}</Heading>
-
-      {RightIcon && <RightIcon size={iconSize()} weight="bold" />}
     </Container>
   );
 }
