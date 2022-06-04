@@ -6,6 +6,7 @@ import { HomePage } from './pages/HomePage';
 import { IconButtonPage } from './pages/IconButtonPage';
 import { LinkButtonPage } from './pages/LinkButtonPage';
 import { TextPage } from './pages/TextPage';
+import { TooltipPage } from './pages/TooltipPage';
 
 export function AppRoutes(): JSX.Element {
   return (
@@ -16,6 +17,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/button" element={<ButtonPage />} />
       <Route path="/iconbutton" element={<IconButtonPage />} />
       <Route path="/linkbutton" element={<LinkButtonPage />} />
+      <Route path="/tooltip" element={<TooltipPage />} />
     </Routes>
   );
 }
