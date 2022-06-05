@@ -3,6 +3,9 @@ export const lightTheme = {
 
   colors: {
     white: '#ffffff',
+    black: '#000000',
+
+    cardBackground: '#ffffff',
 
     amber: {
       1: 'hsl(39, 70.0%, 99.0%)',
@@ -316,5 +319,11 @@ export const lightTheme = {
       11: 'hsl(42, 100%, 29.0%)',
       12: 'hsl(40, 55.0%, 13.5%)',
     },
+  },
+
+  shadows: {
+    sm: '0 1px 2px rgb(0, 0, 0, 0.1), 0 1px 1px rgb(0, 0, 0, 0.06)',
+    md: '0 4px 3px rgb(0, 0, 0, 0.07), 0 2px 2px rgb(0, 0, 0, 0.06)',
+    lg: '0 4px 3px rgb(0, 0, 0, 0.07), 0 2px 2px rgb(0, 0, 0, 0.06)',
   },
 };

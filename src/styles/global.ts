@@ -63,14 +63,14 @@ export const GlobaStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
-  html, body, #root {
+  /* html, body, #root {
     height: 100%;
     overflow: auto;
   }
 
   #root {
     display: flex;
-  }
+  } */
 
   body {
     background-color: ${(props) => props.theme.colors.gray[1]};

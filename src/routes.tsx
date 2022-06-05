@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import { ButtonPage } from './pages/ButtonPage';
+import { CardPage } from './pages/CardPage';
 import { HeadingPage } from './pages/HeadingPage';
 import { HomePage } from './pages/HomePage';
 import { IconButtonPage } from './pages/IconButtonPage';
@@ -18,6 +19,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/iconbutton" element={<IconButtonPage />} />
       <Route path="/linkbutton" element={<LinkButtonPage />} />
       <Route path="/tooltip" element={<TooltipPage />} />
+      <Route path="/card" element={<CardPage />} />
     </Routes>
   );
 }

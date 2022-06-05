@@ -15,7 +15,7 @@ export function HomePage(): JSX.Element {
   const { toggleTheme, colorScheme, changeColorScheme } = useTheme();
 
   return (
-    <Flex justifyContent="center" alignItems="center" gap={32}>
+    <Flex flex justify="center" align="center" direction="column" gap>
       <Text size="lg">home page</Text>
 
       <Box colorScheme={colorScheme} />

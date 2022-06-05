@@ -21,6 +21,9 @@ declare module 'styled-components' {
 
     colors: {
       white: string;
+      black: string;
+
+      cardBackground: string;
 
       amber: Variant;
       blue: Variant;
@@ -43,6 +46,12 @@ declare module 'styled-components' {
       tomato: Variant;
       violet: Variant;
       yellow: Variant;
+    };
+
+    shadows: {
+      sm: string;
+      md: string;
+      lg: string;
     };
   }
 }

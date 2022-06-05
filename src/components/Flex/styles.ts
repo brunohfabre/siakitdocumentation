@@ -1,15 +1,15 @@
 import styled, { css } from 'styled-components';
 
 export type ContainerProps = {
-  flex?: number;
+  flex?: boolean | number;
   direction?: 'row' | 'column';
-  justifyContent?:
+  justify?:
     | 'flex-start'
     | 'flex-end'
     | 'center'
     | 'space-between'
     | 'space-around';
-  alignItems?: 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline';
+  align?: 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline';
 
   gap?: boolean | number;
   padding?: boolean | number;
@@ -22,29 +22,29 @@ export const Container = styled.div<ContainerProps>`
   /* overflow: auto; */
 
   display: flex;
-  flex-direction: ${({ direction }) => direction || 'column'};
 
-  ${({ justifyContent }) =>
-    justifyContent &&
+  ${({ justify }) =>
+    justify &&
     css`
-      flex: 1;
-      justify-content: ${justifyContent};
+      justify-content: ${justify};
     `}
 
-  ${({ alignItems }) =>
-    alignItems
-      ? css`
-          flex: 1;
-          align-items: ${alignItems};
-        `
-      : css`
-          align-items: flex-start;
-        `}
+  ${({ align }) =>
+    align &&
+    css`
+      align-items: ${align};
+    `}
+
+    ${({ direction }) =>
+    direction &&
+    css`
+      flex-direction: ${direction};
+    `}
 
   ${({ flex }) =>
-    typeof flex === 'number' &&
+    flex &&
     css`
-      flex: ${flex};
+      flex: ${typeof flex === 'boolean' ? 1 : flex};
     `}
 
   ${({ gap }) =>
