@@ -8,7 +8,7 @@ import { Content } from './styles';
 type TooltipProps = {
   children: ReactNode;
   content: string;
-  side?: 'top' | 'right' | 'bottom' | 'left' | undefined;
+  side?: 'top' | 'right' | 'bottom' | 'left';
 };
 
 export function Tooltip({
