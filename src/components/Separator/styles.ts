@@ -14,6 +14,7 @@ export const Container = styled.div<ContainerProps>`
     css`
       height: 1px;
       width: 100%;
+      margin: 4px 0;
     `}
 
   ${({ direction }) =>
@@ -21,5 +22,6 @@ export const Container = styled.div<ContainerProps>`
     css`
       width: 1px;
       height: 100%;
+      margin: 0 4px;
     `}
 `;
