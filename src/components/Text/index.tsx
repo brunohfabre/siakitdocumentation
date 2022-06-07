@@ -3,10 +3,10 @@ import { ReactNode } from 'react';
 import { Container, Size } from './styles';
 
 type TextProps = {
-  size: Size;
+  size?: Size;
   children: ReactNode;
 };
 
-export function Text({ children, size }: TextProps): JSX.Element {
+export function Text({ children, size = 'md' }: TextProps): JSX.Element {
   return <Container size={size}>{children}</Container>;
 }

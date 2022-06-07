@@ -6,6 +6,6 @@ type CardProps = {
   children: ReactNode;
 };
 
-export function Card({ children }: CardProps): JSX.Element {
-  return <Container>{children}</Container>;
+export function Card({ children, ...rest }: CardProps): JSX.Element {
+  return <Container {...rest}>{children}</Container>;
 }

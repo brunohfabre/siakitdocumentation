@@ -8,6 +8,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/react-dropdown-menu": "^0.1.6",
     "@radix-ui/react-tooltip": "^0.1.7",
     "@types/styled-components": "^5.1.25",
     "phosphor-react": "^1.4.1",

@@ -12,11 +12,11 @@ import {
 } from './styles';
 
 type HeadingProps = {
-  size: Size;
+  size?: Size;
   children: ReactNode;
 };
 
-export function Heading({ children, size }: HeadingProps): JSX.Element {
+export function Heading({ children, size = 'lg' }: HeadingProps): JSX.Element {
   if (size === '5xl') {
     return <Container1>{children}</Container1>;
   }

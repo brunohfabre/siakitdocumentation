@@ -62,12 +62,14 @@ export const Container = styled.div<ContainerProps>`
   ${({ width }) =>
     width &&
     css`
+      max-width: ${typeof width === 'string' ? width : `${width}px`};
       width: ${typeof width === 'string' ? width : `${width}px`};
     `}
 
   ${({ height }) =>
     height &&
     css`
+      max-height: ${typeof height === 'string' ? height : `${height}px`};
       height: ${typeof height === 'string' ? height : `${height}px`};
     `}
 `;

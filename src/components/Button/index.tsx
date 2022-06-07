@@ -12,7 +12,7 @@ type ButtonProps = {
   colorScheme?: Colors;
   size?: Size;
   variant?: Variant;
-  onClick: () => void;
+  onClick?: () => void;
   disabled?: boolean;
   icon?: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
 };
