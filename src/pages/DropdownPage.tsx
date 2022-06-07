@@ -8,15 +8,29 @@ export function DropdownPage(): JSX.Element {
       <Dropdown
         options={[
           { text: 'item 1', onClick: () => alert('item 1') },
-          { type: 'separator' },
+          // { type: 'separator' },
+          { type: 'label', text: 'label' },
           {
             text: 'item 2',
             onClick: () => alert('item 2'),
+
             style: 'info',
           },
-          { text: 'item 3', onClick: () => alert('item 3'), style: 'success' },
-          { text: 'item 4', onClick: () => alert('item 4'), style: 'warning' },
-          { text: 'item 5', onClick: () => alert('item 5'), style: 'danger' },
+          {
+            text: 'item 3',
+            onClick: () => alert('item 3'),
+            style: 'success',
+          },
+          {
+            text: 'item 4',
+            onClick: () => alert('item 4'),
+            style: 'warning',
+          },
+          {
+            text: 'item 5',
+            onClick: () => alert('item 5'),
+            style: 'danger',
+          },
         ]}
       >
         <Button type="button">dropdown button</Button>

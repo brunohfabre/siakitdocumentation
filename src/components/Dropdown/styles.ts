@@ -17,7 +17,8 @@ const types = {
       background-color: ${({ theme }) => theme.colors.blue[3]};
     }
 
-    p {
+    p,
+    svg {
       color: ${({ theme }) => theme.colors.blue[11]};
     }
   `,
@@ -26,7 +27,8 @@ const types = {
       background-color: ${({ theme }) => theme.colors.green[3]};
     }
 
-    p {
+    p,
+    svg {
       color: ${({ theme }) => theme.colors.green[11]};
     }
   `,
@@ -35,7 +37,8 @@ const types = {
       background-color: ${({ theme }) => theme.colors.amber[3]};
     }
 
-    p {
+    p,
+    svg {
       color: ${({ theme }) => theme.colors.amber[11]};
     }
   `,
@@ -44,7 +47,8 @@ const types = {
       background-color: ${({ theme }) => theme.colors.red[3]};
     }
 
-    p {
+    p,
+    svg {
       color: ${({ theme }) => theme.colors.red[11]};
     }
   `,
@@ -63,6 +67,7 @@ export const Item = styled.div<ItemProps>`
 
   display: flex;
   align-items: center;
+  gap: 6px;
 
   cursor: pointer;
   transition: background-color 0.1s;
@@ -72,4 +77,10 @@ export const Item = styled.div<ItemProps>`
   }
 
   ${({ type }) => types[type || 'default']}
+`;
+
+export const Label = styled.p`
+  font-size: 12px;
+  color: ${({ theme }) => theme.colors.gray[11]};
+  margin: 12px 12px 4px;
 `;
