@@ -7,7 +7,6 @@ export type ContainerProps = {
 };
 
 export const Container = styled.div<ContainerProps>`
-  flex: 1;
   overflow: auto;
 
   display: grid;

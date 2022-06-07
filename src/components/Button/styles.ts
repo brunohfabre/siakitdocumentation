@@ -20,6 +20,7 @@ export const Container = styled.button<ContainerProps>`
 
   display: flex;
   align-items: center;
+  justify-content: center;
 
   gap: 8px;
 

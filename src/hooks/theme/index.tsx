@@ -8,32 +8,35 @@ import { lightTheme } from './themes/light';
 
 export type Theme = 'light' | 'dark';
 
-export type Colors =
-  | 'amber'
-  | 'blue'
-  | 'brown'
-  | 'crimson'
-  | 'cyan'
-  | 'grass'
-  | 'green'
-  | 'indigo'
-  | 'lime'
-  | 'gray'
-  | 'mint'
-  | 'orange'
-  | 'pink'
-  | 'plum'
-  | 'purple'
-  | 'red'
-  | 'sky'
-  | 'teal'
-  | 'tomato'
-  | 'violet'
-  | 'yellow';
+export const colors = {
+  amber: '',
+  blue: '',
+  brown: '',
+  crimson: '',
+  cyan: '',
+  grass: '',
+  green: '',
+  indigo: '',
+  lime: '',
+  gray: '',
+  mint: '',
+  orange: '',
+  pink: '',
+  plum: '',
+  purple: '',
+  red: '',
+  sky: '',
+  teal: '',
+  tomato: '',
+  violet: '',
+  yellow: '',
+};
+
+export type Colors = keyof typeof colors;
 
 type ThemeContextData = {
   theme: Theme;
-  toggleTheme: () => void;
+  toggleTheme: (type: Theme | undefined) => void;
   colorScheme: Colors;
   changeColorScheme: (color: Colors) => void;
 };
@@ -56,8 +59,12 @@ export function ThemeProvider({ children }: ThemeProviderProps): JSX.Element {
     'violet',
   );
 
-  function toggleTheme(): void {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+  function toggleTheme(type: Theme | undefined): void {
+    if (type) {
+      setTheme(type);
+    } else {
+      setTheme(theme === 'light' ? 'dark' : 'light');
+    }
   }
 
   function changeColorScheme(color: Colors): void {
