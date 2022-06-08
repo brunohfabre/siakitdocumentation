@@ -7,7 +7,7 @@ import { Content } from './styles';
 
 type TooltipProps = {
   children: ReactNode;
-  content: string;
+  content: string | undefined;
   side?: 'top' | 'right' | 'bottom' | 'left';
 };
 
@@ -22,11 +22,13 @@ export function Tooltip({
     <RadixTooltip.Provider>
       <RadixTooltip.Root delayDuration={400}>
         <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
-        <Content side={side} sideOffset={4}>
-          <RadixTooltip.Arrow fill={theme.colors.gray[12]} />
+        {!!content && (
+          <Content side={side} sideOffset={4}>
+            <RadixTooltip.Arrow fill={theme.colors.gray[12]} />
 
-          <p>{content}</p>
-        </Content>
+            <p>{content}</p>
+          </Content>
+        )}
       </RadixTooltip.Root>
     </RadixTooltip.Provider>
   );
