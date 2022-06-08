@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import { AvatarGroupPage } from './pages/AvatarGroupPage';
 import { AvatarPage } from './pages/AvatarPage';
+import { BadgePage } from './pages/BadgePage';
 import { ButtonPage } from './pages/ButtonPage';
 import { CardPage } from './pages/CardPage';
 import { DropdownPage } from './pages/DropdownPage';
@@ -28,6 +29,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/separator" element={<SeparatorPage />} />
       <Route path="/avatar" element={<AvatarPage />} />
       <Route path="/avatargroup" element={<AvatarGroupPage />} />
+      <Route path="/badge" element={<BadgePage />} />
     </Routes>
   );
 }
