@@ -10,7 +10,7 @@ const sizes = {
     &::after {
       height: 8px;
       width: 8px;
-      border: 1px solid ${({ theme }) => theme.colors.white};
+      border-width: 1px;
     }
   `,
   sm: css`
@@ -20,7 +20,7 @@ const sizes = {
     &::after {
       height: 12px;
       width: 12px;
-      border: 1.5px solid ${({ theme }) => theme.colors.white};
+      border-width: 1.5px;
     }
   `,
   md: css`
@@ -30,7 +30,7 @@ const sizes = {
     &::after {
       height: 16px;
       width: 16px;
-      border: 2px solid ${({ theme }) => theme.colors.white};
+      border-width: 2px;
     }
   `,
   lg: css`
@@ -40,7 +40,7 @@ const sizes = {
     &::after {
       height: 22px;
       width: 22px;
-      border: 2.5px solid ${({ theme }) => theme.colors.white};
+      border-width: 2.5px;
     }
   `,
   xl: css`
@@ -50,7 +50,7 @@ const sizes = {
     &::after {
       height: 32px;
       width: 32px;
-      border: 3px solid ${({ theme }) => theme.colors.white};
+      border-width: 3px;
     }
   `,
   '2xl': css`
@@ -60,7 +60,7 @@ const sizes = {
     &::after {
       height: 42px;
       width: 42px;
-      border: 3.5px solid ${({ theme }) => theme.colors.white};
+      border-width: 3.5px;
     }
   `,
 };
@@ -113,6 +113,8 @@ export const Container = styled.span<ContainerProps>`
         border-radius: 50%;
         bottom: 0;
         right: 0;
+        border-style: solid;
+        border-color: ${theme.colors.gray[1]};
       }
     `}
 
