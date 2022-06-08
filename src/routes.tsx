@@ -18,6 +18,7 @@ import { ProgressBarPage } from './pages/ProgressBarPage';
 import { SeparatorPage } from './pages/SeparatorPage';
 import { SpinnerPage } from './pages/SpinnerPage';
 import { TextPage } from './pages/TextPage';
+import { ToastPage } from './pages/ToastPage';
 import { TooltipPage } from './pages/TooltipPage';
 
 export function AppRoutes(): JSX.Element {
@@ -42,6 +43,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/pagination" element={<PaginationPage />} />
       <Route path="/progressbar" element={<ProgressBarPage />} />
       <Route path="/spinner" element={<SpinnerPage />} />
+      <Route path="/toast" element={<ToastPage />} />
     </Routes>
   );
 }

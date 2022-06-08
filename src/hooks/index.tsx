@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
 
+import { StyledToastContainer } from '../components/Toast';
 import { ThemeProvider } from './theme';
 
 type AppProviderProps = {
@@ -7,5 +9,11 @@ type AppProviderProps = {
 };
 
 export function AppProvider({ children }: AppProviderProps): JSX.Element {
-  return <ThemeProvider>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider>
+      <StyledToastContainer />
+
+      {children}
+    </ThemeProvider>
+  );
 }
