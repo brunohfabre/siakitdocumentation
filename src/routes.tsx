@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
+import { AvatarGroupPage } from './pages/AvatarGroupPage';
 import { AvatarPage } from './pages/AvatarPage';
 import { ButtonPage } from './pages/ButtonPage';
 import { CardPage } from './pages/CardPage';
@@ -26,6 +27,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/dropdown" element={<DropdownPage />} />
       <Route path="/separator" element={<SeparatorPage />} />
       <Route path="/avatar" element={<AvatarPage />} />
+      <Route path="/avatargroup" element={<AvatarGroupPage />} />
     </Routes>
   );
 }
