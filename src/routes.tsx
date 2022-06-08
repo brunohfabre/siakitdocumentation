@@ -17,6 +17,7 @@ import { LinkButtonPage } from './pages/LinkButtonPage';
 import { ListPage } from './pages/ListPage';
 import { ModalPage } from './pages/ModalPage';
 import { PaginationPage } from './pages/PaginationPage';
+import { PopoverPage } from './pages/PopoverPage';
 import { ProgressBarPage } from './pages/ProgressBarPage';
 import { SeparatorPage } from './pages/SeparatorPage';
 import { ShimmerPage } from './pages/ShimmerPage';
@@ -54,6 +55,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/dialog" element={<DialogPage />} />
       <Route path="/empty" element={<EmptyPage />} />
       <Route path="/tabs" element={<TabsPage />} />
+      <Route path="/popover" element={<PopoverPage />} />
     </Routes>
   );
 }
