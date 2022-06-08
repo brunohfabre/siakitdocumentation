@@ -6,6 +6,7 @@ import { AvatarPage } from './pages/AvatarPage';
 import { BadgePage } from './pages/BadgePage';
 import { ButtonPage } from './pages/ButtonPage';
 import { CardPage } from './pages/CardPage';
+import { DialogPage } from './pages/DialogPage';
 import { DropdownPage } from './pages/DropdownPage';
 import { FooterPage } from './pages/FooterPage';
 import { HeadingPage } from './pages/HeadingPage';
@@ -48,6 +49,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/toast" element={<ToastPage />} />
       <Route path="/shimmer" element={<ShimmerPage />} />
       <Route path="/modal" element={<ModalPage />} />
+      <Route path="/dialog" element={<DialogPage />} />
     </Routes>
   );
 }
