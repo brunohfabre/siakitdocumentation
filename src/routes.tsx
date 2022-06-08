@@ -7,6 +7,7 @@ import { BadgePage } from './pages/BadgePage';
 import { ButtonPage } from './pages/ButtonPage';
 import { CardPage } from './pages/CardPage';
 import { DropdownPage } from './pages/DropdownPage';
+import { FooterPage } from './pages/FooterPage';
 import { HeadingPage } from './pages/HeadingPage';
 import { HomePage } from './pages/HomePage';
 import { IconButtonPage } from './pages/IconButtonPage';
@@ -32,6 +33,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/avatargroup" element={<AvatarGroupPage />} />
       <Route path="/badge" element={<BadgePage />} />
       <Route path="/alert" element={<AlertPage />} />
+      <Route path="/footer" element={<FooterPage />} />
     </Routes>
   );
 }
