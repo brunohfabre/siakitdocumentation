@@ -21,6 +21,7 @@ import { ProgressBarPage } from './pages/ProgressBarPage';
 import { SeparatorPage } from './pages/SeparatorPage';
 import { ShimmerPage } from './pages/ShimmerPage';
 import { SpinnerPage } from './pages/SpinnerPage';
+import { TabsPage } from './pages/TabsPage';
 import { TextPage } from './pages/TextPage';
 import { ToastPage } from './pages/ToastPage';
 import { TooltipPage } from './pages/TooltipPage';
@@ -52,6 +53,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/modal" element={<ModalPage />} />
       <Route path="/dialog" element={<DialogPage />} />
       <Route path="/empty" element={<EmptyPage />} />
+      <Route path="/tabs" element={<TabsPage />} />
     </Routes>
   );
 }
