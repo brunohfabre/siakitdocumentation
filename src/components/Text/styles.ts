@@ -14,10 +14,12 @@ export type Size =
 
 type ContainerProps = {
   size: Size;
+  lowContrast: boolean;
 };
 
 export const Container = styled.p<ContainerProps>`
-  color: ${(props) => props.theme.colors.gray[12]};
+  color: ${({ theme, lowContrast }) =>
+    theme.colors.gray[lowContrast ? 11 : 12]};
   line-height: 1.5;
 
   ${({ size }) =>

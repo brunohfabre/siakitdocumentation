@@ -8,6 +8,7 @@ import { ButtonPage } from './pages/ButtonPage';
 import { CardPage } from './pages/CardPage';
 import { DialogPage } from './pages/DialogPage';
 import { DropdownPage } from './pages/DropdownPage';
+import { EmptyPage } from './pages/EmptyPage';
 import { FooterPage } from './pages/FooterPage';
 import { HeadingPage } from './pages/HeadingPage';
 import { HomePage } from './pages/HomePage';
@@ -50,6 +51,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/shimmer" element={<ShimmerPage />} />
       <Route path="/modal" element={<ModalPage />} />
       <Route path="/dialog" element={<DialogPage />} />
+      <Route path="/empty" element={<EmptyPage />} />
     </Routes>
   );
 }
