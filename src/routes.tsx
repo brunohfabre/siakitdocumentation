@@ -13,6 +13,7 @@ import { HomePage } from './pages/HomePage';
 import { IconButtonPage } from './pages/IconButtonPage';
 import { LinkButtonPage } from './pages/LinkButtonPage';
 import { ListPage } from './pages/ListPage';
+import { ModalPage } from './pages/ModalPage';
 import { PaginationPage } from './pages/PaginationPage';
 import { ProgressBarPage } from './pages/ProgressBarPage';
 import { SeparatorPage } from './pages/SeparatorPage';
@@ -46,6 +47,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/spinner" element={<SpinnerPage />} />
       <Route path="/toast" element={<ToastPage />} />
       <Route path="/shimmer" element={<ShimmerPage />} />
+      <Route path="/modal" element={<ModalPage />} />
     </Routes>
   );
 }

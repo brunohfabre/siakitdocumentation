@@ -12,15 +12,13 @@ export type ContainerProps = {
   align?: 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline';
 
   gap?: boolean | number;
-  padding?: boolean | number;
+  padding?: boolean | number | string;
 
   width?: number | string;
   height?: number | string;
 };
 
 export const Container = styled.div<ContainerProps>`
-  /* overflow: auto; */
-
   display: flex;
 
   ${({ justify }) =>
@@ -55,8 +53,23 @@ export const Container = styled.div<ContainerProps>`
 
   ${({ padding }) =>
     padding &&
+    typeof padding === 'boolean' &&
     css`
-      padding: ${typeof padding === 'boolean' ? '16px' : `${padding}px`};
+      padding: 16px;
+    `}
+
+  ${({ padding }) =>
+    padding &&
+    typeof padding === 'number' &&
+    css`
+      padding: ${padding}px;
+    `}
+
+  ${({ padding }) =>
+    padding &&
+    typeof padding === 'string' &&
+    css`
+      padding: ${padding};
     `}
 
   ${({ width }) =>
