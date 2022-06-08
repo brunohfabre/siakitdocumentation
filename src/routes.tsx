@@ -16,6 +16,7 @@ import { ListPage } from './pages/ListPage';
 import { PaginationPage } from './pages/PaginationPage';
 import { ProgressBarPage } from './pages/ProgressBarPage';
 import { SeparatorPage } from './pages/SeparatorPage';
+import { SpinnerPage } from './pages/SpinnerPage';
 import { TextPage } from './pages/TextPage';
 import { TooltipPage } from './pages/TooltipPage';
 
@@ -40,6 +41,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/list" element={<ListPage />} />
       <Route path="/pagination" element={<PaginationPage />} />
       <Route path="/progressbar" element={<ProgressBarPage />} />
+      <Route path="/spinner" element={<SpinnerPage />} />
     </Routes>
   );
 }
