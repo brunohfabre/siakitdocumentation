@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
+import { AlertPage } from './pages/AlertPage';
 import { AvatarGroupPage } from './pages/AvatarGroupPage';
 import { AvatarPage } from './pages/AvatarPage';
 import { BadgePage } from './pages/BadgePage';
@@ -30,6 +31,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/avatar" element={<AvatarPage />} />
       <Route path="/avatargroup" element={<AvatarGroupPage />} />
       <Route path="/badge" element={<BadgePage />} />
+      <Route path="/alert" element={<AlertPage />} />
     </Routes>
   );
 }
