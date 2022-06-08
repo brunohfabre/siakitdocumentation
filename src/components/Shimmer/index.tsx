@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled, { css, keyframes } from 'styled-components';
 
 const placeholderShimmer = keyframes`
   0% {
@@ -10,7 +10,12 @@ const placeholderShimmer = keyframes`
   }
 `;
 
-const BaseShimmer = styled.div`
+type BaseShimmerProps = {
+  width?: number | string;
+  height?: number | string;
+};
+
+const BaseShimmer = styled.div<BaseShimmerProps>`
   flex: 1;
   background: ${({ theme }) => theme.colors.gray[4]};
   background-image: linear-gradient(
@@ -30,6 +35,20 @@ const BaseShimmer = styled.div`
   -webkit-animation-iteration-count: infinite;
   -webkit-animation-name: ${placeholderShimmer};
   -webkit-animation-timing-function: linear;
+
+  ${({ width }) =>
+    width &&
+    css`
+      max-width: ${typeof width === 'string' ? width : `${width}px`};
+      width: ${typeof width === 'string' ? width : `${width}px`};
+    `}
+
+  ${({ height }) =>
+    height &&
+    css`
+      max-height: ${typeof height === 'string' ? height : `${height}px`};
+      height: ${typeof height === 'string' ? height : `${height}px`};
+    `}
 `;
 
 export const Rectangle = styled(BaseShimmer)`
