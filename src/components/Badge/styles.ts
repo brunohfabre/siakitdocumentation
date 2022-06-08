@@ -22,4 +22,6 @@ export const Container = styled.div<ContainerProps>`
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 500;
+
+  border-radius: 4px;
 `;
