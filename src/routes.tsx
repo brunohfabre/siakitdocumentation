@@ -13,6 +13,7 @@ import { HomePage } from './pages/HomePage';
 import { IconButtonPage } from './pages/IconButtonPage';
 import { LinkButtonPage } from './pages/LinkButtonPage';
 import { ListPage } from './pages/ListPage';
+import { PaginationPage } from './pages/PaginationPage';
 import { SeparatorPage } from './pages/SeparatorPage';
 import { TextPage } from './pages/TextPage';
 import { TooltipPage } from './pages/TooltipPage';
@@ -36,6 +37,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/alert" element={<AlertPage />} />
       <Route path="/footer" element={<FooterPage />} />
       <Route path="/list" element={<ListPage />} />
+      <Route path="/pagination" element={<PaginationPage />} />
     </Routes>
   );
 }
