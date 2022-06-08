@@ -6,6 +6,7 @@ import { ProgressBar } from '../components/ProgressBar';
 
 export function ProgressBarPage(): JSX.Element {
   const [progress, setProgress] = useState(0);
+
   return (
     <Flex flex justify="center" align="center" direction="column" gap={64}>
       <Flex gap={8}>
