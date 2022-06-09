@@ -17,7 +17,7 @@ export function AvatarGroup({ children }: AvatarGroupProps): JSX.Element {
           <Popover
             content={
               <Flex width={220} direction="column">
-                {children.slice(5).map((item) => (
+                {children.slice(5).map((item: any) => (
                   <Flex key={item?.props.name} padding="8px 12px">
                     {item?.props.name}
                   </Flex>
@@ -33,10 +33,12 @@ export function AvatarGroup({ children }: AvatarGroupProps): JSX.Element {
       )}
 
       {children?.length < 6
-        ? children.map((item) => <Hover key={item?.props.name}>{item}</Hover>)
+        ? children.map((item: any) => (
+            <Hover key={item?.props.name}>{item}</Hover>
+          ))
         : children
             .slice(0, 5)
-            .map((item) => <Hover key={item?.props.name}>{item}</Hover>)}
+            .map((item: any) => <Hover key={item?.props.name}>{item}</Hover>)}
     </Container>
   );
 }
