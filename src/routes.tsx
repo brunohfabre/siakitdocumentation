@@ -11,6 +11,7 @@ import { DialogPage } from './pages/DialogPage';
 import { DropdownPage } from './pages/DropdownPage';
 import { EmptyPage } from './pages/EmptyPage';
 import { FooterPage } from './pages/FooterPage';
+import { FormPage } from './pages/FormPage';
 import { HeadingPage } from './pages/HeadingPage';
 import { HomePage } from './pages/HomePage';
 import { IconButtonPage } from './pages/IconButtonPage';
@@ -60,6 +61,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/popover" element={<PopoverPage />} />
       <Route path="/accordion" element={<AccordionPage />} />
       <Route path="/timeline" element={<TimelinePage />} />
+      <Route path="/form" element={<FormPage />} />
     </Routes>
   );
 }
