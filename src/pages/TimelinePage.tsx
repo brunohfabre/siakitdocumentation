@@ -1,17 +1,16 @@
 import { Flex } from '../components/Flex';
 import { Heading } from '../components/Heading';
 import { Text } from '../components/Text';
-import { TimelineItem } from '../components/Timeline';
-import { Timeline } from '../components/Timeline/styles';
+import { TimelineItem, Timeline } from '../components/Timeline';
 
 export function TimelinePage(): JSX.Element {
   return (
     <Flex flex justify="center" align="center">
       <Flex width={640}>
         <Timeline>
-          <TimelineItem name="bruno fabre">
+          <TimelineItem name="Bruno Fabre">
             <Flex direction="column" padding gap={8}>
-              <Heading size="md">title</Heading>
+              <Heading size="md">Item 1</Heading>
 
               <Text size="sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
@@ -21,9 +20,9 @@ export function TimelinePage(): JSX.Element {
               </Text>
             </Flex>
           </TimelineItem>
-          <TimelineItem name="bruno fabre">
+          <TimelineItem name="Vinicius Henrique">
             <Flex direction="column" padding gap={8}>
-              <Heading size="md">title</Heading>
+              <Heading size="md">Item 2</Heading>
 
               <Text size="sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
@@ -33,9 +32,9 @@ export function TimelinePage(): JSX.Element {
               </Text>
             </Flex>
           </TimelineItem>
-          <TimelineItem name="bruno fabre">
+          <TimelineItem name="Joubert Vasconcelos">
             <Flex direction="column" padding gap={8}>
-              <Heading size="md">title</Heading>
+              <Heading size="md">Item 3</Heading>
 
               <Text size="sm">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam

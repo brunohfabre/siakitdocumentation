@@ -15,6 +15,8 @@
     "@radix-ui/react-tabs": "^0.1.5",
     "@radix-ui/react-tooltip": "^0.1.7",
     "@types/styled-components": "^5.1.25",
+    "@unform/core": "^2.1.6",
+    "@unform/web": "^2.1.6",
     "phosphor-react": "^1.4.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",

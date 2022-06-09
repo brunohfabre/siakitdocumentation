@@ -1,4 +1,4 @@
-import { Colors, colors } from '../../hooks/theme';
+import { Colors } from '../../hooks/theme';
 import { Heading } from '../Heading';
 import { Tooltip } from '../Tooltip';
 import { Container, Size } from './styles';
@@ -26,7 +26,18 @@ export function Avatar({
   size = 'md',
   badge = false,
 }: AvatarProps): JSX.Element {
-  const colorIndex = Math.floor(Math.random() * 11);
+  const avatarColors = [
+    'gray',
+    'red',
+    'pink',
+    'violet',
+    'blue',
+    'green',
+    'orange',
+    'brown',
+  ];
+
+  const colorIndex = Math.floor(Math.random() * 8);
 
   function renderShortName(): string {
     if (name) {
@@ -51,7 +62,7 @@ export function Avatar({
       <Container
         size={size}
         src={src}
-        colorScheme={Object.keys(colors)[colorIndex] as Colors}
+        colorScheme={avatarColors[colorIndex] as Colors}
         badge={badge}
       >
         {!src && !!name && <Heading size={size}>{renderShortName()}</Heading>}
