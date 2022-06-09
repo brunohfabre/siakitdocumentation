@@ -25,6 +25,7 @@ import { ShimmerPage } from './pages/ShimmerPage';
 import { SpinnerPage } from './pages/SpinnerPage';
 import { TabsPage } from './pages/TabsPage';
 import { TextPage } from './pages/TextPage';
+import { TimelinePage } from './pages/TimelinePage';
 import { ToastPage } from './pages/ToastPage';
 import { TooltipPage } from './pages/TooltipPage';
 
@@ -58,6 +59,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/tabs" element={<TabsPage />} />
       <Route path="/popover" element={<PopoverPage />} />
       <Route path="/accordion" element={<AccordionPage />} />
+      <Route path="/timeline" element={<TimelinePage />} />
     </Routes>
   );
 }
