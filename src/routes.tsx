@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 
+import { AccordionPage } from './pages/AccordionPage';
 import { AlertPage } from './pages/AlertPage';
 import { AvatarGroupPage } from './pages/AvatarGroupPage';
 import { AvatarPage } from './pages/AvatarPage';
@@ -56,6 +57,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/empty" element={<EmptyPage />} />
       <Route path="/tabs" element={<TabsPage />} />
       <Route path="/popover" element={<PopoverPage />} />
+      <Route path="/accordion" element={<AccordionPage />} />
     </Routes>
   );
 }

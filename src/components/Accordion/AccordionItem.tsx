@@ -1,0 +1,35 @@
+import { ReactNode } from 'react';
+
+import { CaretDown } from 'phosphor-react';
+
+import { Flex } from '../Flex';
+import { Text } from '../Text';
+import { Item, Header, Title, Content } from './styles';
+
+type AccordionItemProps = {
+  title: string;
+  value: string;
+  children: ReactNode;
+};
+
+export function AccordionItem({
+  title,
+  value,
+  children,
+}: AccordionItemProps): JSX.Element {
+  return (
+    <Item value={value}>
+      <Header>
+        <Title>
+          <Flex direction="column">
+            <Text size="sm">{title}</Text>
+          </Flex>
+
+          <CaretDown size={14} weight="bold" />
+        </Title>
+      </Header>
+
+      <Content>{children}</Content>
+    </Item>
+  );
+}
