@@ -3,7 +3,7 @@ import { Heading } from '../components/Heading';
 
 export function HeadingPage(): JSX.Element {
   return (
-    <Flex justifyContent="center" alignItems="center" gap>
+    <Flex justify="center" align="center" gap>
       <Heading size="5xl">5xl Heading</Heading>
       <Heading size="4xl">4xl Heading</Heading>
       <Heading size="3xl">3xl Heading</Heading>

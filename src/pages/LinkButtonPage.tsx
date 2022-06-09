@@ -5,8 +5,8 @@ import { LinkButton } from '../components/LinkButton';
 
 export function LinkButtonPage(): JSX.Element {
   return (
-    <Flex justifyContent="center" alignItems="center" gap={32} direction="row">
-      <Flex gap alignItems="flex-end">
+    <Flex justify="center" align="center" gap={32} direction="row">
+      <Flex gap align="flex-end">
         <LinkButton type="button" onClick={() => undefined} size="sm">
           Link button
         </LinkButton>
@@ -18,7 +18,7 @@ export function LinkButtonPage(): JSX.Element {
         </LinkButton>
       </Flex>
 
-      <Flex gap alignItems="flex-start">
+      <Flex gap align="flex-start">
         <LinkButton
           type="button"
           onClick={() => undefined}

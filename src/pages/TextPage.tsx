@@ -3,7 +3,7 @@ import { Text } from '../components/Text';
 
 export function TextPage(): JSX.Element {
   return (
-    <Flex justifyContent="center" alignItems="center" gap>
+    <Flex justify="center" align="center" gap>
       <Text size="6xl">6xl Text</Text>
       <Text size="5xl">5xl Text</Text>
       <Text size="4xl">4xl Text</Text>

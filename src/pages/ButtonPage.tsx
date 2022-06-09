@@ -6,9 +6,9 @@ import { Text } from '../components/Text';
 
 export function ButtonPage(): JSX.Element {
   return (
-    <Flex justifyContent="center" alignItems="center" gap={128}>
-      <Flex direction="row" alignItems="flex-end" gap={32}>
-        <Flex alignItems="center" gap={32}>
+    <Flex justify="center" align="center" gap={128}>
+      <Flex direction="row" align="flex-end" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">sm</Text>
 
           <Button type="button" onClick={() => undefined} size="sm">
@@ -16,7 +16,7 @@ export function ButtonPage(): JSX.Element {
           </Button>
         </Flex>
 
-        <Flex alignItems="center" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">md</Text>
 
           <Button type="button" onClick={() => undefined}>
@@ -24,7 +24,7 @@ export function ButtonPage(): JSX.Element {
           </Button>
         </Flex>
 
-        <Flex alignItems="center" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">lg</Text>
 
           <Button type="button" onClick={() => undefined} size="lg">
@@ -33,8 +33,8 @@ export function ButtonPage(): JSX.Element {
         </Flex>
       </Flex>
 
-      <Flex direction="row" alignItems="flex-start" gap={32}>
-        <Flex alignItems="center" gap={32}>
+      <Flex direction="row" align="flex-start" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">primary</Text>
 
           <Button type="button" onClick={() => undefined}>
@@ -42,7 +42,7 @@ export function ButtonPage(): JSX.Element {
           </Button>
         </Flex>
 
-        <Flex alignItems="center" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">secondary</Text>
 
           <Button type="button" onClick={() => undefined} variant="secondary">
@@ -50,7 +50,7 @@ export function ButtonPage(): JSX.Element {
           </Button>
         </Flex>
 
-        <Flex alignItems="center" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">ghost</Text>
 
           <Button type="button" onClick={() => undefined} variant="ghost">
@@ -59,8 +59,8 @@ export function ButtonPage(): JSX.Element {
         </Flex>
       </Flex>
 
-      <Flex direction="row" alignItems="flex-start" gap={32}>
-        <Flex alignItems="center" gap={32}>
+      <Flex direction="row" align="flex-start" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">primary icon</Text>
 
           <Button type="button" onClick={() => undefined} icon={Plus}>
@@ -68,7 +68,7 @@ export function ButtonPage(): JSX.Element {
           </Button>
         </Flex>
 
-        <Flex alignItems="center" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">secondary icon</Text>
 
           <Button
@@ -81,7 +81,7 @@ export function ButtonPage(): JSX.Element {
           </Button>
         </Flex>
 
-        <Flex alignItems="center" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">ghost icon</Text>
 
           <Button

@@ -6,9 +6,9 @@ import { Text } from '../components/Text';
 
 export function IconButtonPage(): JSX.Element {
   return (
-    <Flex justifyContent="center" alignItems="center" gap={128}>
-      <Flex direction="row" alignItems="flex-end" gap={32}>
-        <Flex alignItems="center" gap={32}>
+    <Flex justify="center" align="center" gap={128}>
+      <Flex direction="row" align="flex-end" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">sm</Text>
 
           <IconButton
@@ -19,13 +19,13 @@ export function IconButtonPage(): JSX.Element {
           />
         </Flex>
 
-        <Flex alignItems="center" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">md</Text>
 
           <IconButton type="button" onClick={() => undefined} icon={Plus} />
         </Flex>
 
-        <Flex alignItems="center" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">lg</Text>
 
           <IconButton
@@ -37,14 +37,14 @@ export function IconButtonPage(): JSX.Element {
         </Flex>
       </Flex>
 
-      <Flex direction="row" alignItems="flex-start" gap={32}>
-        <Flex alignItems="center" gap={32}>
+      <Flex direction="row" align="flex-start" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">primary</Text>
 
           <IconButton type="button" onClick={() => undefined} icon={Plus} />
         </Flex>
 
-        <Flex alignItems="center" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">secondary</Text>
 
           <IconButton
@@ -55,7 +55,7 @@ export function IconButtonPage(): JSX.Element {
           />
         </Flex>
 
-        <Flex alignItems="center" gap={32}>
+        <Flex align="center" gap={32}>
           <Text size="md">ghost</Text>
 
           <IconButton
