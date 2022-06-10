@@ -18,6 +18,7 @@ import { Number } from '../components/Form/Number';
 import { Password } from '../components/Form/Password';
 import { Phone } from '../components/Form/Phone';
 import { Radio } from '../components/Form/Radio';
+import { Slider } from '../components/Form/Slider';
 import { Switch } from '../components/Form/Switch';
 import { TextArea } from '../components/Form/TextArea';
 import { TimePicker } from '../components/Form/TimePicker';
@@ -99,6 +100,8 @@ export function FormPage(): JSX.Element {
           {/* <TimePicker name="time" label="Time" placeholder="Time" /> */}
 
           <Language name="language" label="Language" placeholder="Language" />
+
+          <Slider name="silder" label="Slider" />
 
           <Footer>
             <Button type="submit">submit</Button>
