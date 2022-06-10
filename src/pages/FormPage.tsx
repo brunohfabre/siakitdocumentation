@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 
 import { Button } from '../components/Button';
 import { Flex } from '../components/Flex';
-import { Footer } from '../components/Footer';
+import { Footer, FooterLeft } from '../components/Footer';
 import { Checkbox } from '../components/Form/Checkbox';
 import { Color } from '../components/Form/Color';
 import { DatePicker } from '../components/Form/DatePicker';
@@ -121,6 +121,19 @@ export function FormPage(): JSX.Element {
           />
 
           <Footer>
+            <FooterLeft>
+              <Button
+                type="button"
+                onClick={() =>
+                  formRef.current?.setData({
+                    select: '4',
+                  })
+                }
+              >
+                set data
+              </Button>
+            </FooterLeft>
+
             <Button type="submit">submit</Button>
           </Footer>
         </Form>
