@@ -11,6 +11,9 @@ import BarlowSemiBold from '../assets/fonts/barlow/Barlow-SemiBold.ttf';
 import BarlowThin from '../assets/fonts/barlow/Barlow-Thin.ttf';
 
 export const GlobaStyle = createGlobalStyle`
+:root {
+  --rdp-cell-size: 40px;
+}
   @font-face {
     font-family: 'Barlow';
     src: local('Barlow'), url(${BarlowThin}) format("truetype");

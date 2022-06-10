@@ -1,6 +1,6 @@
-import { ForwardRefExoticComponent, RefAttributes } from 'react';
+import { ForwardRefExoticComponent, MouseEvent, RefAttributes } from 'react';
 
-import { IconProps } from 'phosphor-react';
+import { IconProps, IconWeight } from 'phosphor-react';
 
 import { Colors, useTheme } from '../../hooks/theme';
 import { Size, Variant, Container } from './styles';
@@ -10,9 +10,11 @@ type IconButtonProps = {
   colorScheme?: Colors;
   size?: Size;
   variant?: Variant;
-  onClick?: () => void;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   disabled?: boolean;
   icon: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
+  tabIndex?: number;
+  weight?: IconWeight;
 };
 
 export function IconButton({
@@ -23,6 +25,9 @@ export function IconButton({
   onClick,
   disabled,
   icon: Icon,
+  tabIndex,
+  weight = 'bold',
+  ...rest
 }: IconButtonProps): JSX.Element {
   const { colorScheme: themeColorScheme } = useTheme();
 
@@ -46,8 +51,10 @@ export function IconButton({
       variant={variant}
       onClick={onClick}
       disabled={disabled}
+      tabIndex={tabIndex}
+      {...rest}
     >
-      <Icon size={iconSize()} weight="bold" />
+      <Icon size={iconSize()} weight={weight} />
     </Container>
   );
 }

@@ -2,9 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useField } from '@unform/core';
 import { X } from 'phosphor-react';
+import { toMoney } from 'vanilla-masker';
 
 import { useTheme } from '../../hooks/theme';
 import { IconButton } from '../IconButton';
+import { Text } from '../Text';
 import { InputContainer, Label, InputBody, Error } from './styles';
 
 interface Props {
@@ -13,14 +15,14 @@ interface Props {
   placeholder?: string;
   explanation?: string;
 }
-type InputProps = JSX.IntrinsicElements['input'] & Props;
+type MoneyProps = JSX.IntrinsicElements['input'] & Props;
 
-export function Input({
+export function Money({
   name,
   label,
   disabled,
   ...rest
-}: InputProps): JSX.Element {
+}: MoneyProps): JSX.Element {
   const { colorScheme } = useTheme();
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -31,11 +33,13 @@ export function Input({
   const [isFilled, setIsFilled] = useState(defaultValue);
 
   function handleChange(value: string): void {
+    const masked = toMoney(value);
+
     if (inputRef.current) {
-      inputRef.current.value = value;
+      inputRef.current.value = masked;
     }
 
-    setIsFilled(value);
+    setIsFilled(masked);
   }
 
   useEffect(() => {
@@ -79,6 +83,9 @@ export function Input({
         colorScheme={colorScheme}
         disabled={!!disabled}
       >
+        <Text size="sm" lowContrast>
+          R$
+        </Text>
         <input
           id={fieldName}
           ref={inputRef}

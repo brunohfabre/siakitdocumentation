@@ -1,12 +1,27 @@
 import styled, { css } from 'styled-components';
 
-import { Colors } from '../../hooks/theme';
+import ResizerIcon from '../../assets/icons/resizer.svg';
+import { colors, Colors } from '../../hooks/theme';
 
 type ContainerProps = {
   disabled: boolean;
 };
 
-export const Container = styled.div<ContainerProps>`
+export const InputContainer = styled.div<ContainerProps>`
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      cursor: not-allowed;
+      opacity: 0.5;
+    `}
+`;
+
+export const TextAreaContainer = styled.div<ContainerProps>`
   display: flex;
   flex-direction: column;
 
@@ -51,9 +66,14 @@ export const InputBody = styled.div<InputBodyProps>`
   border: 2px solid ${({ theme }) => theme.colors.gray[4]};
   height: 32px;
   border-radius: 8px;
-  padding: 0 12px;
+  padding: 0 4px 0 12px;
 
   transition: all 0.15s;
+
+  > p {
+    align-self: center;
+    margin-right: 6px;
+  }
 
   input {
     all: unset;
@@ -63,9 +83,90 @@ export const InputBody = styled.div<InputBodyProps>`
     font-size: 14px;
     color: ${({ theme }) => theme.colors.gray[12]};
 
+    margin-right: 8px;
+
     &::placeholder {
       color: ${({ theme }) => theme.colors.gray[9]};
     }
+  }
+
+  > button {
+    align-self: center;
+  }
+
+  ${({ isFocused, theme, colorScheme }) =>
+    isFocused &&
+    css`
+      background-color: ${theme.colors.gray[1]};
+      border-color: ${theme.colors[colorScheme][9]};
+    `}
+
+  ${({ isFilled, theme }) =>
+    isFilled &&
+    css`
+      background-color: ${theme.colors.gray[1]};
+    `}
+
+  ${({ isErrored, theme }) =>
+    isErrored &&
+    css`
+      background-color: ${theme.colors.red[3]};
+      border-color: ${theme.colors.red[9]};
+    `}
+
+  ${({ theme, disabled }) =>
+    disabled &&
+    css`
+      background-color: ${theme.colors.gray[4]};
+    `}
+`;
+
+export const TextAreaBody = styled.div<InputBodyProps>`
+  position: relative;
+
+  display: flex;
+
+  background-color: ${({ theme }) => theme.colors.gray[1]};
+  border: 2px solid ${({ theme }) => theme.colors.gray[4]};
+  border-radius: 8px;
+  /* padding: 0 4px 0 12px; */
+
+  transition: all 0.15s;
+
+  > p {
+    align-self: center;
+    margin-right: 6px;
+  }
+
+  textarea {
+    all: unset;
+
+    flex: 1;
+
+    resize: vertical;
+
+    font-size: 14px;
+    color: ${({ theme }) => theme.colors.gray[12]};
+
+    padding: 8px 12px;
+
+    &::-webkit-resizer {
+      width: 8px;
+      height: 8px;
+      background: url(${ResizerIcon}) no-repeat center;
+    }
+
+    &::placeholder {
+      color: ${({ theme }) => theme.colors.gray[9]};
+    }
+  }
+
+  > button {
+    align-self: center;
+
+    position: absolute;
+    top: 4px;
+    right: 4px;
   }
 
   ${({ isFocused, theme, colorScheme }) =>
@@ -98,4 +199,143 @@ export const InputBody = styled.div<InputBodyProps>`
 export const Error = styled.span`
   font-size: 14px;
   color: ${({ theme }) => theme.colors.red[11]};
+`;
+
+export const ColorContainer = styled.div<ContainerProps>`
+  display: flex;
+  flex-direction: column;
+
+  gap: 4px;
+
+  cursor: pointer;
+
+  ${({ disabled }) =>
+    disabled &&
+    css`
+      cursor: not-allowed;
+      opacity: 0.5;
+    `}
+`;
+
+type ColorViewProps = {
+  color: Colors;
+};
+
+export const ColorView = styled.div<ColorViewProps>`
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+
+  align-self: center;
+
+  background-color: ${({ theme, color }) => theme.colors[color][9]};
+`;
+
+type ColorButtonProps = {
+  color: Colors;
+};
+
+export const ColorButton = styled.button<ColorButtonProps>`
+  all: unset;
+
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+
+  align-self: center;
+
+  background-color: ${({ theme, color }) => theme.colors[color][9]};
+
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+type ChevronButtonProps = {
+  active: boolean;
+};
+
+export const ChevronButton = styled.div<ChevronButtonProps>`
+  width: 24px;
+  height: 28px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: ${({ theme }) => theme.colors.gray[9]};
+
+  svg {
+    transform: ${({ active }) => active && 'rotate(180deg)'};
+  }
+`;
+
+type CheckboxBodyProps = {
+  isErrored: boolean;
+  direction: 'row' | 'column';
+};
+
+export const CheckboxBody = styled.div<CheckboxBodyProps>`
+  display: flex;
+
+  flex-direction: ${({ direction }) => direction};
+
+  gap: 12px;
+`;
+
+export const SwitchBody = styled.div`
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+`;
+
+type LanguageItemProps = {
+  selected: boolean;
+  colorScheme: Colors;
+};
+
+export const LanguageItem = styled.div<LanguageItemProps>`
+  display: flex;
+  align-items: center;
+
+  height: 28px;
+
+  padding: 0 12px;
+  gap: 8px;
+
+  cursor: pointer;
+
+  img {
+    width: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  > div {
+    flex: 1;
+
+    display: flex;
+    justify-content: flex-end;
+
+    svg {
+      color: ${({ theme }) => theme.colors.gray[9]};
+    }
+  }
+
+  ${({ selected, theme, colorScheme }) =>
+    selected &&
+    css`
+      background-color: ${theme.colors[colorScheme][3]};
+    `}
+
+  &:hover {
+    background-color: ${({ theme, colorScheme }) =>
+      theme.colors[colorScheme][4]};
+  }
 `;

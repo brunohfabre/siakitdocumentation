@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useField } from '@unform/core';
-import { X } from 'phosphor-react';
+import { X, Eye, EyeSlash } from 'phosphor-react';
 
 import { useTheme } from '../../hooks/theme';
 import { IconButton } from '../IconButton';
@@ -13,20 +13,21 @@ interface Props {
   placeholder?: string;
   explanation?: string;
 }
-type InputProps = JSX.IntrinsicElements['input'] & Props;
+type PasswordProps = JSX.IntrinsicElements['input'] & Props;
 
-export function Input({
+export function Password({
   name,
   label,
   disabled,
   ...rest
-}: InputProps): JSX.Element {
+}: PasswordProps): JSX.Element {
   const { colorScheme } = useTheme();
 
   const inputRef = useRef<HTMLInputElement>(null);
 
   const { fieldName, defaultValue, registerField, error } = useField(name);
 
+  const [isHidden, setIsHidden] = useState(true);
   const [isFocused, setIsFocused] = useState(false);
   const [isFilled, setIsFilled] = useState(defaultValue);
 
@@ -83,6 +84,7 @@ export function Input({
           id={fieldName}
           ref={inputRef}
           defaultValue={defaultValue}
+          type={isHidden ? 'password' : 'text'}
           disabled={disabled}
           onFocus={() => setIsFocused(true)}
           onBlur={() => {
@@ -102,6 +104,16 @@ export function Input({
             tabIndex={-1}
           />
         )}
+        <IconButton
+          type="button"
+          icon={isHidden ? Eye : EyeSlash}
+          size="sm"
+          variant="ghost"
+          colorScheme="gray"
+          onClick={() => setIsHidden((prevState) => !prevState)}
+          tabIndex={-1}
+          weight="fill"
+        />
       </InputBody>
 
       {error && <Error>{error}</Error>}

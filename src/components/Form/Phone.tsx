@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useField } from '@unform/core';
 import { X } from 'phosphor-react';
+import { toPattern } from 'vanilla-masker';
 
 import { useTheme } from '../../hooks/theme';
 import { IconButton } from '../IconButton';
@@ -13,14 +14,14 @@ interface Props {
   placeholder?: string;
   explanation?: string;
 }
-type InputProps = JSX.IntrinsicElements['input'] & Props;
+type PhoneProps = JSX.IntrinsicElements['input'] & Props;
 
-export function Input({
+export function Phone({
   name,
   label,
   disabled,
   ...rest
-}: InputProps): JSX.Element {
+}: PhoneProps): JSX.Element {
   const { colorScheme } = useTheme();
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -31,11 +32,19 @@ export function Input({
   const [isFilled, setIsFilled] = useState(defaultValue);
 
   function handleChange(value: string): void {
-    if (inputRef.current) {
-      inputRef.current.value = value;
+    let masked = '';
+
+    if (value.length > 14) {
+      masked = toPattern(value, '(99) 99999-9999');
+    } else {
+      masked = toPattern(value, '(99) 9999-9999');
     }
 
-    setIsFilled(value);
+    if (inputRef.current) {
+      inputRef.current.value = masked;
+    }
+
+    setIsFilled(masked);
   }
 
   useEffect(() => {

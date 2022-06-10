@@ -2,7 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 
 import { useField } from '@unform/core';
 import { X } from 'phosphor-react';
+import { toPattern } from 'vanilla-masker';
 
+import { masks, MaskType } from '../../helpers/masks';
 import { useTheme } from '../../hooks/theme';
 import { IconButton } from '../IconButton';
 import { InputContainer, Label, InputBody, Error } from './styles';
@@ -12,15 +14,17 @@ interface Props {
   label?: string;
   placeholder?: string;
   explanation?: string;
+  mask: MaskType;
 }
-type InputProps = JSX.IntrinsicElements['input'] & Props;
+type MaskProps = JSX.IntrinsicElements['input'] & Props;
 
-export function Input({
+export function Mask({
   name,
   label,
   disabled,
+  mask,
   ...rest
-}: InputProps): JSX.Element {
+}: MaskProps): JSX.Element {
   const { colorScheme } = useTheme();
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -31,11 +35,13 @@ export function Input({
   const [isFilled, setIsFilled] = useState(defaultValue);
 
   function handleChange(value: string): void {
+    const masked = toPattern(value, masks[mask]);
+
     if (inputRef.current) {
-      inputRef.current.value = value;
+      inputRef.current.value = masked;
     }
 
-    setIsFilled(value);
+    setIsFilled(masked);
   }
 
   useEffect(() => {

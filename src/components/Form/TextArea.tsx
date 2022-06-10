@@ -5,25 +5,27 @@ import { X } from 'phosphor-react';
 
 import { useTheme } from '../../hooks/theme';
 import { IconButton } from '../IconButton';
-import { InputContainer, Label, InputBody, Error } from './styles';
+import { TextAreaContainer, Label, TextAreaBody, Error } from './styles';
 
 interface Props {
   name: string;
   label?: string;
   placeholder?: string;
   explanation?: string;
+  rows?: number;
 }
-type InputProps = JSX.IntrinsicElements['input'] & Props;
+type TextAreaProps = JSX.IntrinsicElements['textarea'] & Props;
 
-export function Input({
+export function TextArea({
   name,
   label,
   disabled,
+  rows = 5,
   ...rest
-}: InputProps): JSX.Element {
+}: TextAreaProps): JSX.Element {
   const { colorScheme } = useTheme();
 
-  const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLTextAreaElement>(null);
 
   const { fieldName, defaultValue, registerField, error } = useField(name);
 
@@ -65,21 +67,21 @@ export function Input({
   }
 
   return (
-    <InputContainer disabled={!!disabled}>
+    <TextAreaContainer disabled={!!disabled}>
       {label && (
         <Label htmlFor={fieldName} isErrored={!!error}>
           {label}
         </Label>
       )}
 
-      <InputBody
+      <TextAreaBody
         isFocused={isFocused}
         isFilled={isFilled}
         isErrored={!!error}
         colorScheme={colorScheme}
         disabled={!!disabled}
       >
-        <input
+        <textarea
           id={fieldName}
           ref={inputRef}
           defaultValue={defaultValue}
@@ -89,8 +91,10 @@ export function Input({
             setIsFocused(false);
           }}
           onChange={(event) => handleChange(event.target.value)}
+          rows={rows}
           {...rest}
         />
+
         {isFilled && !disabled && (
           <IconButton
             type="button"
@@ -102,9 +106,9 @@ export function Input({
             tabIndex={-1}
           />
         )}
-      </InputBody>
+      </TextAreaBody>
 
       {error && <Error>{error}</Error>}
-    </InputContainer>
+    </TextAreaContainer>
   );
 }

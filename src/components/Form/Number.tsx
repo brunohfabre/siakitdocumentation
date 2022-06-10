@@ -13,14 +13,14 @@ interface Props {
   placeholder?: string;
   explanation?: string;
 }
-type InputProps = JSX.IntrinsicElements['input'] & Props;
+type NumberProps = JSX.IntrinsicElements['input'] & Props;
 
-export function Input({
+export function Number({
   name,
   label,
   disabled,
   ...rest
-}: InputProps): JSX.Element {
+}: NumberProps): JSX.Element {
   const { colorScheme } = useTheme();
 
   const inputRef = useRef<HTMLInputElement>(null);
@@ -31,11 +31,13 @@ export function Input({
   const [isFilled, setIsFilled] = useState(defaultValue);
 
   function handleChange(value: string): void {
+    const valueWithoutDigit = value.replaceAll(/\D/g, '');
+
     if (inputRef.current) {
-      inputRef.current.value = value;
+      inputRef.current.value = valueWithoutDigit;
     }
 
-    setIsFilled(value);
+    setIsFilled(valueWithoutDigit);
   }
 
   useEffect(() => {
