@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components';
 
 import ResizerIcon from '../../assets/icons/resizer.svg';
-import { colors, Colors } from '../../hooks/theme';
+import { Colors } from '../../hooks/theme';
 
 type ContainerProps = {
   disabled: boolean;

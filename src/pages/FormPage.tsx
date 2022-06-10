@@ -18,6 +18,7 @@ import { Number } from '../components/Form/Number';
 import { Password } from '../components/Form/Password';
 import { Phone } from '../components/Form/Phone';
 import { Radio } from '../components/Form/Radio';
+import { Select } from '../components/Form/Select';
 import { Slider } from '../components/Form/Slider';
 import { Switch } from '../components/Form/Switch';
 import { TextArea } from '../components/Form/TextArea';
@@ -34,6 +35,7 @@ export function FormPage(): JSX.Element {
 
       const schema = Yup.object().shape({
         name: Yup.string().required('Campo obrigatório'),
+        select: Yup.string().required('Campo obrigatório'),
       });
 
       await schema.validate(data, {
@@ -99,9 +101,24 @@ export function FormPage(): JSX.Element {
 
           {/* <TimePicker name="time" label="Time" placeholder="Time" /> */}
 
-          <Language name="language" label="Language" placeholder="Language" />
+          {/* <Language name="language" label="Language" placeholder="Language" />
 
-          <Slider name="silder" label="Slider" />
+          <Slider name="silder" label="Slider" /> */}
+
+          <Input name="name" label="Name" placeholder="Name" />
+
+          <Select
+            name="select"
+            label="Select"
+            placeholder="Select placeholder"
+            options={[
+              { value: '1', label: 'Option 1' },
+              { value: '2', label: 'Option 2' },
+              { value: '3', label: 'Option 3' },
+              { value: '4', label: 'Option 4' },
+              { value: '5', label: 'Option 5' },
+            ]}
+          />
 
           <Footer>
             <Button type="submit">submit</Button>

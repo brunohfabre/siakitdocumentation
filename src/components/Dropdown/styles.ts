@@ -73,7 +73,7 @@ export const Item = styled.div<ItemProps>`
   transition: background-color 0.1s;
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.gray[3]};
+    background-color: ${({ theme }) => theme.colors.gray[4]};
   }
 
   ${({ type }) => types[type || 'default']}
