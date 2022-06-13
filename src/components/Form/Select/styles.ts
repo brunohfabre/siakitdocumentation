@@ -12,7 +12,6 @@ export const Container = styled(Select)<ContainerProps>`
   .react-select__control {
     border: 2px solid ${({ theme }) => theme.colors.gray[4]};
     min-height: 32px;
-    height: 32px;
     border-radius: 8px;
 
     background-color: ${({ theme }) => theme.colors.gray[1]};
@@ -31,7 +30,6 @@ export const Container = styled(Select)<ContainerProps>`
   }
 
   .react-select__value-container {
-    height: 28px;
     padding: 0 10px;
   }
 
@@ -122,4 +120,22 @@ export const Container = styled(Select)<ContainerProps>`
         border-color: ${theme.colors.red[9]};
       }
     `}
+
+  .react-select__multi-value {
+    background-color: ${({ theme }) => theme.colors.gray[4]};
+
+    .react-select__multi-value__label {
+      color: ${({ theme }) => theme.colors.gray[12]};
+      font-size: 12px;
+    }
+
+    .react-select__multi-value__remove {
+      color: ${({ theme }) => theme.colors.gray[11]};
+
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.red[3]};
+        color: ${({ theme }) => theme.colors.red[9]};
+      }
+    }
+  }
 `;

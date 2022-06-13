@@ -11,9 +11,27 @@ import BarlowSemiBold from '../assets/fonts/barlow/Barlow-SemiBold.ttf';
 import BarlowThin from '../assets/fonts/barlow/Barlow-Thin.ttf';
 
 export const GlobaStyle = createGlobalStyle`
-:root {
-  --rdp-cell-size: 40px;
-}
+  :root {
+    --rdp-cell-size: 40px;
+  }
+
+  ::-webkit-scrollbar {
+    margin-bottom: 10px;
+    width: 14px;
+    height: 14px;
+    border-radius: 24px;
+  }
+
+  ::-webkit-scrollbar-track {
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 24px;
+    box-shadow: inset 0 0 10px 10px rgba(0, 0, 0, 0.16);
+    border: solid 4px transparent;
+  }
+
   @font-face {
     font-family: 'Barlow';
     src: local('Barlow'), url(${BarlowThin}) format("truetype");

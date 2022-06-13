@@ -17,6 +17,7 @@ interface Props {
   placeholder?: string;
   options: Option[];
   returnType?: 'key' | 'option';
+  isMulti?: boolean;
 }
 type SelectProps = JSX.IntrinsicElements['input'] & Props;
 
@@ -27,6 +28,7 @@ export function Select({
   options,
   placeholder,
   returnType = 'key',
+  isMulti = false,
 }: SelectProps): JSX.Element {
   const { colorScheme } = useTheme();
 
@@ -85,6 +87,7 @@ export function Select({
         value={selected}
         onChange={(option) => setSelected(option as Option)}
         isClearable
+        isMulti={isMulti}
       />
 
       {error && <Error>{error}</Error>}
