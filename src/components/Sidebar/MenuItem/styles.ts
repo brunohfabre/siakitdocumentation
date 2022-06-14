@@ -46,7 +46,7 @@ export const Container = styled.a<ContainerProps>`
         : `linear-gradient(
         to right,
         ${transparentize(0.75, theme.colors[colorScheme][9])},
-        ${transparentize(1, theme.colors[colorScheme][9])}
+        ${transparentize(0.95, theme.colors[colorScheme][9])}
       )`};
   }
 
@@ -63,7 +63,7 @@ export const Container = styled.a<ContainerProps>`
         : `linear-gradient(
         to right,
         ${transparentize(0.65, theme.colors[colorScheme][9])},
-        ${transparentize(1, theme.colors[colorScheme][9])}
+        ${transparentize(0.95, theme.colors[colorScheme][9])}
       )`};
 
       svg {
