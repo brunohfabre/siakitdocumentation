@@ -31,14 +31,14 @@ export function SidebarPage(): JSX.Element {
           <MenuItem
             value="1"
             onClick={() => console.log('navigate to route 1')}
-            icon="House"
+            icon="HiArchive"
           >
             item 1
           </MenuItem>
           <MenuItem
             value="2"
             onClick={() => console.log('navigate to route 2')}
-            icon="ChartPieSlice"
+            icon="HiArchive"
           >
             item 2
           </MenuItem>
@@ -48,14 +48,14 @@ export function SidebarPage(): JSX.Element {
           <MenuItem
             value="3"
             onClick={() => console.log('navigate to route 3')}
-            icon="FileText"
+            icon="HiArchive"
           >
             item 3
           </MenuItem>
           <MenuItem
             value="4"
             onClick={() => console.log('navigate to route 4')}
-            icon="Gear"
+            icon="HiArchive"
           >
             item 4
           </MenuItem>
