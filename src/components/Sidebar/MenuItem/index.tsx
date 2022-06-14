@@ -3,6 +3,7 @@ import { useContext, useMemo } from 'react';
 import * as Hi from 'react-icons/hi';
 
 import { useTheme } from '../../../hooks/theme';
+import { Tooltip } from '../../Tooltip';
 import { SidebarContext } from '../SidebarContext';
 import { Container } from './styles';
 
@@ -12,6 +13,8 @@ type MenuItemProps = {
 
   onClick?: () => void;
   icon?: keyof typeof Hi;
+
+  tooltip?: string;
 };
 
 export function MenuItem({
@@ -19,6 +22,7 @@ export function MenuItem({
   value,
   onClick,
   icon,
+  tooltip,
 }: MenuItemProps): JSX.Element {
   const { colorScheme, theme } = useTheme();
 
@@ -35,26 +39,28 @@ export function MenuItem({
   const Icon = icon ? (Hi[icon] as any) : undefined;
 
   return (
-    <Container
-      onClick={() => {
-        if (selectMenuItem) {
-          selectMenuItem(value);
-        }
+    <Tooltip content={!isExpanded ? tooltip : undefined} side="right">
+      <Container
+        onClick={() => {
+          if (selectMenuItem) {
+            selectMenuItem(value);
+          }
 
-        if (onClick) {
-          onClick();
-        }
-      }}
-      isSelected={isSelected}
-      colorScheme={colorScheme}
-      isExpanded={!!isExpanded}
-      appTheme={theme}
-    >
-      {Icon && <Icon size="16" />}
+          if (onClick) {
+            onClick();
+          }
+        }}
+        isSelected={isSelected}
+        colorScheme={colorScheme}
+        isExpanded={!!isExpanded}
+        appTheme={theme}
+      >
+        {Icon && <Icon size="16" />}
 
-      {!isExpanded && !icon && shortName}
+        {!isExpanded && !icon && shortName}
 
-      {isExpanded && children}
-    </Container>
+        {isExpanded && children}
+      </Container>
+    </Tooltip>
   );
 }

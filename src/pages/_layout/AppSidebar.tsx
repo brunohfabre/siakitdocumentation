@@ -23,34 +23,38 @@ export function AppSidebar(): JSX.Element {
 
           <img src={siakitLogoShortImage} alt="SIAKIT" />
         </MenuHeader>
-        <MenuItem value="typography" icon="HiHome">
+        <MenuItem value="typography" icon="HiHome" tooltip="Typography">
           Typography
         </MenuItem>
-        <MenuItem value="action" icon="HiCursorClick">
+        <MenuItem value="action" icon="HiCursorClick" tooltip="Action">
           Action
         </MenuItem>
-        <MenuItem value="form" icon="HiPencil">
+        <MenuItem value="form" icon="HiPencil" tooltip="Form">
           Form
         </MenuItem>
-        <MenuItem value="feedback" icon="HiAnnotation">
+        <MenuItem value="feedback" icon="HiAnnotation" tooltip="Feedback">
           Feedback
         </MenuItem>
-        <MenuItem value="datadisplay" icon="HiCollection">
+        <MenuItem
+          value="datadisplay"
+          icon="HiCollection"
+          tooltip="Data display"
+        >
           Data display
         </MenuItem>
-        <MenuItem value="overlay" icon="HiDesktopComputer">
+        <MenuItem value="overlay" icon="HiDesktopComputer" tooltip="Overlay">
           Overlay
         </MenuItem>
-        <MenuItem value="disclosure" icon="HiSpeakerphone">
+        <MenuItem value="disclosure" icon="HiSpeakerphone" tooltip="Disclosure">
           Disclosure
         </MenuItem>
-        <MenuItem value="media" icon="HiPhotograph">
+        <MenuItem value="media" icon="HiPhotograph" tooltip="Media">
           Media
         </MenuItem>
-        <MenuItem value="layout" icon="HiTemplate">
+        <MenuItem value="layout" icon="HiTemplate" tooltip="Layout">
           Layout
         </MenuItem>
-        <MenuItem value="utils" icon="HiAdjustments">
+        <MenuItem value="utils" icon="HiAdjustments" tooltip="Utils">
           Utils
         </MenuItem>
       </Menu>

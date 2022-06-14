@@ -22,6 +22,7 @@ export function Tooltip({
     <RadixTooltip.Provider>
       <RadixTooltip.Root delayDuration={400}>
         <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
+
         {!!content && (
           <Content side={side} sideOffset={4}>
             <RadixTooltip.Arrow fill={theme.colors.gray[12]} />
