@@ -1,11 +1,13 @@
+import { transparentize } from 'polished';
 import styled, { css } from 'styled-components';
 
-import { Colors } from '../../../hooks/theme';
+import { Colors, Theme } from '../../../hooks/theme';
 
 type ContainerProps = {
   isSelected: boolean;
   colorScheme: Colors;
   isExpanded?: boolean;
+  appTheme: Theme;
 };
 
 export const Container = styled.a<ContainerProps>`
@@ -24,30 +26,49 @@ export const Container = styled.a<ContainerProps>`
   font-size: 14px;
   font-weight: 400;
 
-  color: ${({ theme, colorScheme }) => theme.colors[colorScheme][6]};
+  ${({ appTheme, theme, colorScheme }) =>
+    appTheme === 'light'
+      ? css`
+          color: ${theme.colors[colorScheme][6]};
+        `
+      : css`
+          color: ${theme.colors.gray[11]};
+        `}
 
   &:hover {
-    background: linear-gradient(
-      to right,
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0)
-    );
+    background: ${({ theme, appTheme, colorScheme }) =>
+      appTheme === 'light'
+        ? `linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.12),
+        rgba(255, 255, 255, 0)
+      )`
+        : `linear-gradient(
+        to right,
+        ${transparentize(0.75, theme.colors[colorScheme][9])},
+        ${transparentize(1, theme.colors[colorScheme][9])}
+      )`};
   }
 
-  ${({ isSelected, theme }) =>
+  ${({ isSelected, theme, appTheme, colorScheme }) =>
     isSelected &&
     css`
       color: ${theme.colors.white};
+      background: ${appTheme === 'light'
+        ? `linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0.2),
+        rgba(255, 255, 255, 0)
+      )`
+        : `linear-gradient(
+        to right,
+        ${transparentize(0.65, theme.colors[colorScheme][9])},
+        ${transparentize(1, theme.colors[colorScheme][9])}
+      )`};
 
       svg {
         color: ${theme.colors.white};
       }
-
-      background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0.2),
-        rgba(255, 255, 255, 0)
-      );
 
       &:before {
         position: absolute;
@@ -57,7 +78,9 @@ export const Container = styled.a<ContainerProps>`
         left: 0;
         width: 2px;
         border-radius: 0 2px 2px 0;
-        background-color: white;
+        background-color: ${appTheme === 'light'
+          ? theme.colors.white
+          : theme.colors[colorScheme][9]};
       }
     `}
 

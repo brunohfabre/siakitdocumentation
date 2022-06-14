@@ -14,17 +14,18 @@ export const Container = styled.a<ContainerProps>`
   display: flex;
   align-items: center;
 
+  font-size: 14px;
+
   color: ${({ theme }) => theme.colors.gray[9]};
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.gray[3]};
-    color: ${({ theme }) => theme.colors.gray[11]};
+    background-color: ${({ theme }) => theme.colors.gray[4]};
   }
 
   ${({ isSelected }) =>
     isSelected &&
     css`
-      background-color: ${({ theme }) => theme.colors.gray[4]};
+      background-color: ${({ theme }) => theme.colors.gray[5]};
       color: ${({ theme }) => theme.colors.gray[12]};
 
       &::before {

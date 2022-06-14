@@ -20,7 +20,7 @@ export function MenuItem({
   onClick,
   icon,
 }: MenuItemProps): JSX.Element {
-  const { colorScheme } = useTheme();
+  const { colorScheme, theme } = useTheme();
 
   const { menuItemSelected, selectMenuItem, isExpanded } =
     useContext(SidebarContext);
@@ -48,6 +48,7 @@ export function MenuItem({
       isSelected={isSelected}
       colorScheme={colorScheme}
       isExpanded={!!isExpanded}
+      appTheme={theme}
     >
       {Icon && <Icon size="16" />}
 
