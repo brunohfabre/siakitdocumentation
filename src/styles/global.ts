@@ -38,9 +38,9 @@ export const GlobaStyle = createGlobalStyle`
   } */
 
   body {
+    -webkit-font-smoothing: antialiased;
     background-color: ${(props) => props.theme.colors.gray[1]};
     color: ${(props) => props.theme.colors.gray[12]};
-    -webkit-font-smoothing: antialiased;
   }
 
   body, input, textarea, button {

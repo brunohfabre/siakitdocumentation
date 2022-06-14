@@ -1,3 +1,4 @@
+import { HiHome } from 'react-icons/hi';
 import { useNavigate } from 'react-router-dom';
 
 import siakitLogoFullImage from '../../assets/icons/siakit-logo-full.png';
@@ -22,34 +23,34 @@ export function AppSidebar(): JSX.Element {
 
           <img src={siakitLogoShortImage} alt="SIAKIT" />
         </MenuHeader>
-        <MenuItem value="typography" icon="TextT">
+        <MenuItem value="typography" icon="HiHome">
           Typography
         </MenuItem>
-        <MenuItem value="action" icon="MouseSimple">
+        <MenuItem value="action" icon="HiCursorClick">
           Action
         </MenuItem>
-        <MenuItem value="form" icon="Textbox">
+        <MenuItem value="form" icon="HiPencil">
           Form
         </MenuItem>
-        <MenuItem value="feedback" icon="ChatText">
+        <MenuItem value="feedback" icon="HiAnnotation">
           Feedback
         </MenuItem>
-        <MenuItem value="datadisplay" icon="ListDashes">
+        <MenuItem value="datadisplay" icon="HiCollection">
           Data display
         </MenuItem>
-        <MenuItem value="overlay" icon="AppWindow">
+        <MenuItem value="overlay" icon="HiDesktopComputer">
           Overlay
         </MenuItem>
-        <MenuItem value="disclosure" icon="MegaphoneSimple">
+        <MenuItem value="disclosure" icon="HiSpeakerphone">
           Disclosure
         </MenuItem>
-        <MenuItem value="media" icon="Image">
+        <MenuItem value="media" icon="HiPhotograph">
           Media
         </MenuItem>
-        <MenuItem value="layout" icon="Layout">
+        <MenuItem value="layout" icon="HiTemplate">
           Layout
         </MenuItem>
-        <MenuItem value="utils" icon="Wrench">
+        <MenuItem value="utils" icon="HiAdjustments">
           Utils
         </MenuItem>
       </Menu>

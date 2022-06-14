@@ -1,6 +1,6 @@
 import { useContext, useMemo } from 'react';
 
-import * as phosphorIcons from 'phosphor-react';
+import * as Hi from 'react-icons/hi';
 
 import { useTheme } from '../../../hooks/theme';
 import { SidebarContext } from '../SidebarContext';
@@ -11,14 +11,14 @@ type MenuItemProps = {
   value: string;
 
   onClick?: () => void;
-  icon?: keyof typeof phosphorIcons;
+  icon?: keyof typeof Hi;
 };
 
 export function MenuItem({
   children,
   value,
   onClick,
-  icon: iconName,
+  icon,
 }: MenuItemProps): JSX.Element {
   const { colorScheme } = useTheme();
 
@@ -32,7 +32,7 @@ export function MenuItem({
 
   const shortName = children[0].toUpperCase();
 
-  const icon = iconName ? (phosphorIcons[iconName] as any) : undefined;
+  const Icon = icon ? (Hi[icon] as any) : undefined;
 
   return (
     <Container
@@ -49,8 +49,7 @@ export function MenuItem({
       colorScheme={colorScheme}
       isExpanded={!!isExpanded}
     >
-      {icon &&
-        icon.render({ size: 16, weight: isSelected ? 'fill' : 'regular' })}
+      {Icon && <Icon size="16" />}
 
       {!isExpanded && !icon && shortName}
 
