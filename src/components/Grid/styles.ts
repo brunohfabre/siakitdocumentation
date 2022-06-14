@@ -4,6 +4,8 @@ export type ContainerProps = {
   columns: number | string;
   gap?: boolean | number;
   padding?: boolean | number;
+  width?: number | string;
+  height?: number | string;
 };
 
 export const Container = styled.div<ContainerProps>`
@@ -30,5 +32,19 @@ export const Container = styled.div<ContainerProps>`
     padding &&
     css`
       padding: ${typeof padding === 'boolean' ? '16px' : `${padding}px`};
+    `}
+
+  ${({ width }) =>
+    width &&
+    css`
+      max-width: ${typeof width === 'string' ? width : `${width}px`};
+      width: ${typeof width === 'string' ? width : `${width}px`};
+    `}
+
+  ${({ height }) =>
+    height &&
+    css`
+      max-height: ${typeof height === 'string' ? height : `${height}px`};
+      height: ${typeof height === 'string' ? height : `${height}px`};
     `}
 `;

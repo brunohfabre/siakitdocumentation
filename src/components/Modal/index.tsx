@@ -36,7 +36,7 @@ const ModalCloseButton = forwardRef<HTMLSpanElement>((props, ref) => {
       type="button"
       variant="ghost"
       colorScheme="gray"
-      icon={X}
+      icon="X"
       {...props}
     />
   );

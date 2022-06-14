@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import * as Popover from '@radix-ui/react-popover';
 import { useField } from '@unform/core';
-import { X, Check, CaretDown } from 'phosphor-react';
+import { Check, CaretDown } from 'phosphor-react';
 import styled from 'styled-components';
 
 import { Colors, colors, useTheme } from '../../hooks/theme';
@@ -123,7 +123,7 @@ export function Color({
             {isFilled && !disabled && (
               <IconButton
                 type="button"
-                icon={X}
+                icon="X"
                 size="sm"
                 variant="ghost"
                 colorScheme="gray"

@@ -96,7 +96,7 @@ export function Password({
         {isFilled && !disabled && (
           <IconButton
             type="button"
-            icon={X}
+            icon="X"
             size="sm"
             variant="ghost"
             colorScheme="gray"
@@ -106,7 +106,7 @@ export function Password({
         )}
         <IconButton
           type="button"
-          icon={isHidden ? Eye : EyeSlash}
+          icon={isHidden ? 'Eye' : 'EyeSlash'}
           size="sm"
           variant="ghost"
           colorScheme="gray"

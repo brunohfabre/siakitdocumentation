@@ -1,9 +1,9 @@
-import { Flex } from '../components/Flex';
-import { Heading } from '../components/Heading';
+import { Flex } from '../../components/Flex';
+import { Heading } from '../../components/Heading';
 
 export function HeadingPage(): JSX.Element {
   return (
-    <Flex justify="center" align="center" gap>
+    <Flex direction="column" justify="center" align="center" gap>
       <Heading size="5xl">5xl Heading</Heading>
       <Heading size="4xl">4xl Heading</Heading>
       <Heading size="3xl">3xl Heading</Heading>

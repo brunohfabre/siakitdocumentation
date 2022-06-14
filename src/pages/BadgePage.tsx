@@ -1,5 +1,3 @@
-import { Plus } from 'phosphor-react';
-
 import { Badge } from '../components/Badge';
 import { Flex } from '../components/Flex';
 import { Grid } from '../components/Grid';
@@ -16,7 +14,7 @@ export function BadgePage(): JSX.Element {
 
       <Grid columns={7} gap={8}>
         {Object.keys(colors).map((color) => (
-          <Badge color={color as Colors} icon={Plus}>
+          <Badge color={color as Colors} icon="Plus">
             badge
           </Badge>
         ))}

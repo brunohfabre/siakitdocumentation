@@ -100,7 +100,7 @@ export function Mask({
         {isFilled && !disabled && (
           <IconButton
             type="button"
-            icon={X}
+            icon="X"
             size="sm"
             variant="ghost"
             colorScheme="gray"

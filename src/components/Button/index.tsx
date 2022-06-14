@@ -1,6 +1,4 @@
-import { ForwardRefExoticComponent, RefAttributes } from 'react';
-
-import { IconProps } from 'phosphor-react';
+import * as phosphorIcons from 'phosphor-react';
 
 import { Colors, useTheme } from '../../hooks/theme';
 import { Heading } from '../Heading';
@@ -14,7 +12,7 @@ type ButtonProps = {
   variant?: Variant;
   onClick?: () => void;
   disabled?: boolean;
-  icon?: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
+  icon?: keyof typeof phosphorIcons;
 };
 
 export function Button({
@@ -25,7 +23,7 @@ export function Button({
   variant = 'primary',
   onClick,
   disabled,
-  icon: Icon,
+  icon: iconName,
 }: ButtonProps): JSX.Element {
   const { colorScheme: themeColorScheme } = useTheme();
 
@@ -41,6 +39,8 @@ export function Button({
     return 16;
   }
 
+  const icon = iconName ? (phosphorIcons[iconName] as any) : undefined;
+
   return (
     <Container
       type={type === 'button' ? 'button' : 'submit'}
@@ -50,7 +50,7 @@ export function Button({
       onClick={onClick}
       disabled={disabled}
     >
-      {Icon && <Icon size={iconSize()} weight="bold" />}
+      {icon && icon.render({ size: iconSize(), weight: 'bold' })}
 
       <Heading size={size === 'sm' ? 'xs' : 'sm'}>{children}</Heading>
     </Container>

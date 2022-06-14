@@ -16,10 +16,18 @@ export type ContainerProps = {
 
   width?: number | string;
   height?: number | string;
+
+  overflow?: boolean | 'auto' | 'hidden';
 };
 
 export const Container = styled.div<ContainerProps>`
   display: flex;
+
+  ${({ overflow }) =>
+    overflow &&
+    css`
+      overflow: ${typeof overflow === 'boolean' ? 'auto' : overflow};
+    `}
 
   ${({ justify }) =>
     justify &&

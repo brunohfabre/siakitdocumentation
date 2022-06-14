@@ -1,9 +1,9 @@
-import { Flex } from '../components/Flex';
-import { Text } from '../components/Text';
+import { Flex } from '../../components/Flex';
+import { Text } from '../../components/Text';
 
 export function TextPage(): JSX.Element {
   return (
-    <Flex justify="center" align="center" gap>
+    <Flex justify="center" align="center" direction="column" gap>
       <Text size="6xl">6xl Text</Text>
       <Text size="5xl">5xl Text</Text>
       <Text size="4xl">4xl Text</Text>

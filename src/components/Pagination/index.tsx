@@ -72,7 +72,7 @@ export function Pagination({
             {currentPage > 2 + siblingsCount && (
               <IconButton
                 type="button"
-                icon={DotsThreeOutline}
+                icon="DotsThreeOutline"
                 variant="ghost"
                 disabled
                 colorScheme="gray"
@@ -110,7 +110,7 @@ export function Pagination({
             {currentPage + 1 + siblingsCount < lastPage && (
               <IconButton
                 type="button"
-                icon={DotsThreeOutline}
+                icon="DotsThreeOutline"
                 variant="ghost"
                 disabled
                 colorScheme="gray"

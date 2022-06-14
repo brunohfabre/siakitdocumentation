@@ -1,6 +1,4 @@
-import { ForwardRefExoticComponent, RefAttributes } from 'react';
-
-import { IconProps } from 'phosphor-react';
+import * as phosphorIcons from 'phosphor-react';
 
 import { Colors, useTheme } from '../../hooks/theme';
 import { Heading } from '../Heading';
@@ -13,7 +11,7 @@ type LinkButtonProps = {
   size?: Size;
   onClick: () => void;
   disabled?: boolean;
-  icon?: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
+  icon?: keyof typeof phosphorIcons;
 };
 
 export function LinkButton({
@@ -23,9 +21,11 @@ export function LinkButton({
   size = 'md',
   onClick,
   disabled,
-  icon: Icon,
+  icon: iconName,
 }: LinkButtonProps): JSX.Element {
   const { colorScheme: themeColorScheme } = useTheme();
+
+  const icon = iconName ? (phosphorIcons[iconName] as any) : undefined;
 
   return (
     <Container
@@ -35,7 +35,7 @@ export function LinkButton({
       onClick={onClick}
       disabled={disabled}
     >
-      {Icon && <Icon size={size === 'sm' ? 12 : 16} weight="bold" />}
+      {icon && icon.render({ size: size === 'sm' ? 12 : 16, weight: 'bold' })}
 
       <Heading size={size === 'sm' ? 'xs' : 'sm'}>{children}</Heading>
     </Container>

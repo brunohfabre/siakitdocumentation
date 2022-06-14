@@ -1,6 +1,4 @@
-import { ForwardRefExoticComponent, RefAttributes } from 'react';
-
-import { IconProps } from 'phosphor-react';
+import * as phosphorIcons from 'phosphor-react';
 
 import { Colors } from '../../hooks/theme';
 import { Container } from './styles';
@@ -8,17 +6,19 @@ import { Container } from './styles';
 type BadgeProps = {
   color: Colors;
   children: string;
-  icon?: ForwardRefExoticComponent<IconProps & RefAttributes<SVGSVGElement>>;
+  icon?: keyof typeof phosphorIcons;
 };
 
 export function Badge({
   color,
   children,
-  icon: Icon,
+  icon: iconName,
 }: BadgeProps): JSX.Element {
+  const icon = iconName ? (phosphorIcons[iconName] as any) : undefined;
+
   return (
     <Container color={color}>
-      {Icon && <Icon size={10} weight="bold" />}
+      {icon && icon.render({ size: 10, weight: 'bold' })}
 
       {children}
     </Container>
