@@ -13,6 +13,7 @@ export type ContainerProps = {
 
   gap?: boolean | number;
   padding?: boolean | number | string;
+  margin?: boolean | number | string;
 
   width?: number | string;
   height?: number | string;
@@ -78,6 +79,27 @@ export const Container = styled.div<ContainerProps>`
     typeof padding === 'string' &&
     css`
       padding: ${padding};
+    `}
+
+  ${({ margin }) =>
+    margin &&
+    typeof margin === 'boolean' &&
+    css`
+      margin: 16px;
+    `}
+
+  ${({ margin }) =>
+    margin &&
+    typeof margin === 'number' &&
+    css`
+      margin: ${margin}px;
+    `}
+
+  ${({ margin }) =>
+    margin &&
+    typeof margin === 'string' &&
+    css`
+      margin: ${margin};
     `}
 
   ${({ width }) =>

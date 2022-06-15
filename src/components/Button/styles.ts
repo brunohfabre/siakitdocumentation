@@ -24,6 +24,10 @@ export const Container = styled.button<ContainerProps>`
 
   gap: 8px;
 
+  strong {
+    line-height: 100%;
+  }
+
   &:disabled {
     opacity: 0.5;
     cursor: not-allowed;

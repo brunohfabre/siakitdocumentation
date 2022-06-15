@@ -5,7 +5,7 @@ import { Heading } from '../Heading';
 import { Container, Size } from './styles';
 
 type LinkButtonProps = {
-  type: 'submit' | 'button';
+  type?: 'submit' | 'button';
   children: string;
   colorScheme?: Colors;
   size?: Size;
@@ -16,7 +16,7 @@ type LinkButtonProps = {
 
 export function LinkButton({
   children,
-  type,
+  type = 'button',
   colorScheme,
   size = 'md',
   onClick,
