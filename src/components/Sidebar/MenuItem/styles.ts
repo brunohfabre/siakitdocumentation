@@ -41,7 +41,7 @@ export const Container = styled.a<ContainerProps>`
         ? `linear-gradient(
         to right,
         rgba(255, 255, 255, 0.12),
-        rgba(255, 255, 255, 0)
+        rgba(255, 255, 255, 0.04)
       )`
         : `linear-gradient(
         to right,
@@ -58,7 +58,7 @@ export const Container = styled.a<ContainerProps>`
         ? `linear-gradient(
         to right,
         rgba(255, 255, 255, 0.2),
-        rgba(255, 255, 255, 0)
+        rgba(255, 255, 255, 0.04)
       )`
         : `linear-gradient(
         to right,
