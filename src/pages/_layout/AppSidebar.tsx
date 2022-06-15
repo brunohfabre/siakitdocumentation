@@ -79,8 +79,97 @@ export function AppSidebar(): JSX.Element {
         </SubMenuItem>
       </SubMenu>
 
+      <SubMenu value="form">
+        <SubMenuItem onClick={() => navigate('/form/form')}>Form</SubMenuItem>
+      </SubMenu>
+
+      <SubMenu value="feedback">
+        <SubMenuItem onClick={() => navigate('/feedback/progressbar')}>
+          Progress bar
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/feedback/spinner')}>
+          Spinner
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/feedback/toast')}>
+          Toast
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/feedback/shimmer')}>
+          Shimmer
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/feedback/alert')}>
+          Alert
+        </SubMenuItem>
+      </SubMenu>
+
+      <SubMenu value="datadisplay">
+        <SubMenuItem onClick={() => navigate('/datadisplay/badge')}>
+          Badge
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/datadisplay/separator')}>
+          Separator
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/datadisplay/list')}>
+          List
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/datadisplay/pagination')}>
+          Pagination
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/datadisplay/timeline')}>
+          Timeline
+        </SubMenuItem>
+      </SubMenu>
+
+      <SubMenu value="overlay">
+        <SubMenuItem onClick={() => navigate('/overlay/modal')}>
+          Modal
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/overlay/dialog')}>
+          Dialog
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/overlay/tooltip')}>
+          Tooltip
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/overlay/Dropdown')}>
+          Dropdown
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/overlay/popover')}>
+          Popover
+        </SubMenuItem>
+      </SubMenu>
+
+      <SubMenu value="disclosure">
+        <SubMenuItem onClick={() => navigate('/disclosure/accordion')}>
+          Accordion
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/disclosure/tabs')}>
+          Tabs
+        </SubMenuItem>
+      </SubMenu>
+
       <SubMenu value="media">
+        <SubMenuItem onClick={() => navigate('/media/avatar')}>
+          Avatar
+        </SubMenuItem>
         <SubMenuItem onClick={() => navigate('/media/icon')}>Icon</SubMenuItem>
+      </SubMenu>
+
+      <SubMenu value="layout">
+        <SubMenuItem onClick={() => navigate('/layout/card')}>Card</SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/layout/sidebar')}>
+          Sidebar
+        </SubMenuItem>
+      </SubMenu>
+
+      <SubMenu value="utils">
+        <SubMenuItem onClick={() => navigate('/utils/empty')}>
+          Empty
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/utils/footer')}>
+          Footer
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/utils/avatargroup')}>
+          Avatar group
+        </SubMenuItem>
       </SubMenu>
     </Sidebar>
   );

@@ -1,6 +1,13 @@
+import { transparentize } from 'polished';
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobaStyle = createGlobalStyle`
+import { Colors } from '../hooks/theme';
+
+type GlobalStyleProps = {
+  colorScheme: Colors;
+};
+
+export const GlobaStyle = createGlobalStyle<GlobalStyleProps>`
   :root {
     --rdp-cell-size: 40px;
   }
@@ -22,20 +29,16 @@ export const GlobaStyle = createGlobalStyle`
     border: solid 4px transparent;
   }
 
+  ::selection {
+    background-color: ${({ theme, colorScheme }) =>
+      transparentize(0.5, theme.colors[colorScheme][9])};
+  }
+
   * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
-  /* html, body, #root {
-    height: 100%;
-    overflow: auto;
-  }
-
-  #root {
-    display: flex;
-  } */
 
   body {
     -webkit-font-smoothing: antialiased;

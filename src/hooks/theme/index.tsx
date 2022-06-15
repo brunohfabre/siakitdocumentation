@@ -56,7 +56,7 @@ export function ThemeProvider({ children }: ThemeProviderProps): JSX.Element {
   const [theme, setTheme] = usePersistedState<Theme>('theme', 'light');
   const [colorScheme, setColorScheme] = usePersistedState<Colors>(
     'color-scheme',
-    'violet',
+    'indigo',
   );
 
   function toggleTheme(type: Theme | undefined): void {
