@@ -1,5 +1,5 @@
-import { Flex } from '../components/Flex';
-import { Separator } from '../components/Separator';
+import { Flex } from '../../components/Flex';
+import { Separator } from '../../components/Separator';
 
 export function SeparatorPage(): JSX.Element {
   return (

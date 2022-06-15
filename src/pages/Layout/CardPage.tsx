@@ -1,5 +1,5 @@
-import { Card } from '../components/Card';
-import { Flex } from '../components/Flex';
+import { Card } from '../../components/Card';
+import { Flex } from '../../components/Flex';
 
 export function CardPage(): JSX.Element {
   return (

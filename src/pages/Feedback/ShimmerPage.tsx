@@ -1,5 +1,5 @@
-import { Flex } from '../components/Flex';
-import { Rectangle, Ellipse } from '../components/Shimmer';
+import { Flex } from '../../components/Flex';
+import { Rectangle, Ellipse } from '../../components/Shimmer';
 
 export function ShimmerPage(): JSX.Element {
   return (

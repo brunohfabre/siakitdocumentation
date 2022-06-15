@@ -1,8 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 
-import SiaLogoLg from '../assets/icons/logo-lg.png';
-import SiaLogoSm from '../assets/icons/logo-sm.png';
-import { Flex } from '../components/Flex';
+import SiaLogoLg from '../../assets/icons/logo-lg.png';
+import SiaLogoSm from '../../assets/icons/logo-sm.png';
+import { Flex } from '../../components/Flex';
 import {
   Sidebar,
   Menu,
@@ -13,7 +13,7 @@ import {
   SubMenuItem,
   SubMenuSeparator,
   SubMenuTitle,
-} from '../components/Sidebar';
+} from '../../components/Sidebar';
 
 export function SidebarPage(): JSX.Element {
   const navigate = useNavigate();

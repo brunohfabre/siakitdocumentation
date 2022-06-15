@@ -1,10 +1,10 @@
 import { useState } from 'react';
 
-import { Button } from '../components/Button';
-import { Flex } from '../components/Flex';
-import { Footer } from '../components/Footer';
-import { Modal } from '../components/Modal';
-import { Text } from '../components/Text';
+import { Button } from '../../components/Button';
+import { Flex } from '../../components/Flex';
+import { Footer } from '../../components/Footer';
+import { Modal } from '../../components/Modal';
+import { Text } from '../../components/Text';
 
 export function ModalPage(): JSX.Element {
   const [modalVisible, setModalVisible] = useState(false);

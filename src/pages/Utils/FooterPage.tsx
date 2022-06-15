@@ -1,6 +1,6 @@
-import { Button } from '../components/Button';
-import { Flex } from '../components/Flex';
-import { Footer, FooterLeft } from '../components/Footer';
+import { Button } from '../../components/Button';
+import { Flex } from '../../components/Flex';
+import { Footer, FooterLeft } from '../../components/Footer';
 
 export function FooterPage(): JSX.Element {
   return (

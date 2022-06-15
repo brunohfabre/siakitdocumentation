@@ -1,6 +1,6 @@
-import { Avatar } from '../components/Avatar';
-import { AvatarGroup } from '../components/AvatarGroup';
-import { Flex } from '../components/Flex';
+import { Avatar } from '../../components/Avatar';
+import { AvatarGroup } from '../../components/AvatarGroup';
+import { Flex } from '../../components/Flex';
 
 export function AvatarGroupPage(): JSX.Element {
   return (

@@ -1,5 +1,5 @@
-import { Flex } from '../components/Flex';
-import { List, ListItem } from '../components/List';
+import { Flex } from '../../components/Flex';
+import { List, ListItem } from '../../components/List';
 
 export function ListPage(): JSX.Element {
   return (

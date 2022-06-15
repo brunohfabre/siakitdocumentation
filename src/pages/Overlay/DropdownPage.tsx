@@ -1,6 +1,6 @@
-import { Button } from '../components/Button';
-import { Dropdown } from '../components/Dropdown';
-import { Flex } from '../components/Flex';
+import { Button } from '../../components/Button';
+import { Dropdown } from '../../components/Dropdown';
+import { Flex } from '../../components/Flex';
 
 export function DropdownPage(): JSX.Element {
   return (

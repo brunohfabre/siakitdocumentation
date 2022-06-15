@@ -1,7 +1,7 @@
-import { Flex } from '../components/Flex';
-import { Heading } from '../components/Heading';
-import { Text } from '../components/Text';
-import { TimelineItem, Timeline } from '../components/Timeline';
+import { Flex } from '../../components/Flex';
+import { Heading } from '../../components/Heading';
+import { Text } from '../../components/Text';
+import { TimelineItem, Timeline } from '../../components/Timeline';
 
 export function TimelinePage(): JSX.Element {
   return (

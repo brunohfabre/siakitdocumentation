@@ -1,6 +1,6 @@
-import { Button } from '../components/Button';
-import { Flex } from '../components/Flex';
-import { Popover } from '../components/Popover';
+import { Button } from '../../components/Button';
+import { Flex } from '../../components/Flex';
+import { Popover } from '../../components/Popover';
 
 export function PopoverPage(): JSX.Element {
   return (

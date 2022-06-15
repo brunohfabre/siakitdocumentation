@@ -1,5 +1,5 @@
-import { Empty } from '../components/Empty';
-import { Flex } from '../components/Flex';
+import { Empty } from '../../components/Empty';
+import { Flex } from '../../components/Flex';
 
 export function EmptyPage(): JSX.Element {
   return (

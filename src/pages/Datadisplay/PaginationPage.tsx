@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-import { Flex } from '../components/Flex';
-import { Pagination } from '../components/Pagination';
+import { Flex } from '../../components/Flex';
+import { Pagination } from '../../components/Pagination';
 
 export function PaginationPage(): JSX.Element {
   const [currentPage, setCurrentPage] = useState(9);

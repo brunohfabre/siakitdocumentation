@@ -1,5 +1,5 @@
-import { Alert } from '../components/Alert';
-import { Flex } from '../components/Flex';
+import { Alert } from '../../components/Alert';
+import { Flex } from '../../components/Flex';
 
 export function AlertPage(): JSX.Element {
   return (

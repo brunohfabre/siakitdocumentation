@@ -1,5 +1,5 @@
-import { Flex } from '../components/Flex';
-import { Tooltip } from '../components/Tooltip';
+import { Flex } from '../../components/Flex';
+import { Tooltip } from '../../components/Tooltip';
 
 export function TooltipPage(): JSX.Element {
   return (

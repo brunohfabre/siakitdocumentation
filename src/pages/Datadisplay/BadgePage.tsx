@@ -1,7 +1,7 @@
-import { Badge } from '../components/Badge';
-import { Flex } from '../components/Flex';
-import { Grid } from '../components/Grid';
-import { Colors, colors } from '../hooks/theme';
+import { Badge } from '../../components/Badge';
+import { Flex } from '../../components/Flex';
+import { Grid } from '../../components/Grid';
+import { Colors, colors } from '../../hooks/theme';
 
 export function BadgePage(): JSX.Element {
   return (

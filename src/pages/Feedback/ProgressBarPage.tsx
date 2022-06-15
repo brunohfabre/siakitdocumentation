@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { Button } from '../components/Button';
-import { Flex } from '../components/Flex';
-import { ProgressBar } from '../components/ProgressBar';
+import { Button } from '../../components/Button';
+import { Flex } from '../../components/Flex';
+import { ProgressBar } from '../../components/ProgressBar';
 
 export function ProgressBarPage(): JSX.Element {
   const [progress, setProgress] = useState(0);

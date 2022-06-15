@@ -1,5 +1,5 @@
-import { Flex } from '../components/Flex';
-import { Spinner } from '../components/Spinner';
+import { Flex } from '../../components/Flex';
+import { Spinner } from '../../components/Spinner';
 
 export function SpinnerPage(): JSX.Element {
   return (

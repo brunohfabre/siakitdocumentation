@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-import { Button } from '../components/Button';
-import { Dialog } from '../components/Dialog';
-import { Flex } from '../components/Flex';
+import { Button } from '../../components/Button';
+import { Dialog } from '../../components/Dialog';
+import { Flex } from '../../components/Flex';
 
 export function DialogPage(): JSX.Element {
   const [infoDialog, setInfoDialog] = useState(false);

@@ -1,5 +1,5 @@
-import { Avatar } from '../components/Avatar';
-import { Flex } from '../components/Flex';
+import { Avatar } from '../../components/Avatar';
+import { Flex } from '../../components/Flex';
 
 export function AvatarPage(): JSX.Element {
   return (
