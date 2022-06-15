@@ -31,7 +31,8 @@ export const GlobaStyle = createGlobalStyle<GlobalStyleProps>`
 
   ::selection {
     background-color: ${({ theme, colorScheme }) =>
-      transparentize(0.5, theme.colors[colorScheme][9])};
+      theme.colors[colorScheme][5]};
+    color: ${({ theme, colorScheme }) => theme.colors[colorScheme][12]};
   }
 
   * {
