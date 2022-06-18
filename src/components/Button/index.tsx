@@ -1,3 +1,5 @@
+import { forwardRef } from 'react';
+
 import * as phosphorIcons from 'phosphor-react';
 
 import { Colors, useTheme } from '../../hooks/theme';
@@ -15,44 +17,52 @@ type ButtonProps = {
   icon?: keyof typeof phosphorIcons;
 };
 
-export function Button({
-  children,
-  type,
-  colorScheme,
-  size = 'md',
-  variant = 'primary',
-  onClick,
-  disabled,
-  icon: iconName,
-}: ButtonProps): JSX.Element {
-  const { colorScheme: themeColorScheme } = useTheme();
+export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  (
+    {
+      children,
+      type,
+      colorScheme,
+      size = 'md',
+      variant = 'primary',
+      onClick,
+      disabled,
+      icon: iconName,
+      ...rest
+    },
+    ref,
+  ) => {
+    const { colorScheme: themeColorScheme } = useTheme();
 
-  function iconSize(): number {
-    if (size === 'sm') {
-      return 12;
+    function iconSize(): number {
+      if (size === 'sm') {
+        return 12;
+      }
+
+      if (size === 'lg') {
+        return 20;
+      }
+
+      return 16;
     }
 
-    if (size === 'lg') {
-      return 20;
-    }
+    const icon = iconName ? (phosphorIcons[iconName] as any) : undefined;
 
-    return 16;
-  }
+    return (
+      <Container
+        ref={ref}
+        type={type === 'button' ? 'button' : 'submit'}
+        colorScheme={colorScheme || themeColorScheme}
+        size={size}
+        variant={variant}
+        onClick={onClick}
+        disabled={disabled}
+        {...rest}
+      >
+        {icon && icon.render({ size: iconSize(), weight: 'bold' })}
 
-  const icon = iconName ? (phosphorIcons[iconName] as any) : undefined;
-
-  return (
-    <Container
-      type={type === 'button' ? 'button' : 'submit'}
-      colorScheme={colorScheme || themeColorScheme}
-      size={size}
-      variant={variant}
-      onClick={onClick}
-      disabled={disabled}
-    >
-      {icon && icon.render({ size: iconSize(), weight: 'bold' })}
-
-      <Heading size={size === 'sm' ? 'xs' : 'sm'}>{children}</Heading>
-    </Container>
-  );
-}
+        <Heading size={size === 'sm' ? 'xs' : 'sm'}>{children}</Heading>
+      </Container>
+    );
+  },
+);

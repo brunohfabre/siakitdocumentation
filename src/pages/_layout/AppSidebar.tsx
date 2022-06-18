@@ -135,6 +135,9 @@ export function AppSidebar(): JSX.Element {
         <SubMenuItem onClick={() => navigate('/overlay/popover')}>
           Popover
         </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/overlay/hovercard')}>
+          Hover card
+        </SubMenuItem>
       </SubMenu>
 
       <SubMenu value="disclosure">

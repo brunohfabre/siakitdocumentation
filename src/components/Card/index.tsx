@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { forwardRef, ReactNode } from 'react';
 
 import { Container } from './styles';
 
@@ -6,6 +6,12 @@ type CardProps = {
   children: ReactNode;
 };
 
-export function Card({ children, ...rest }: CardProps): JSX.Element {
-  return <Container {...rest}>{children}</Container>;
-}
+export const Card = forwardRef<HTMLDivElement, CardProps>(
+  ({ children, ...rest }, ref) => {
+    return (
+      <Container ref={ref} {...rest}>
+        {children}
+      </Container>
+    );
+  },
+);

@@ -23,6 +23,7 @@ import { AvatarPage } from './pages/Media/AvatarPage';
 import { IconPage } from './pages/Media/IconPage';
 import { DialogPage } from './pages/Overlay/DialogPage';
 import { DropdownPage } from './pages/Overlay/DropdownPage';
+import { HoverCardPage } from './pages/Overlay/HoverCardPage';
 import { ModalPage } from './pages/Overlay/ModalPage';
 import { PopoverPage } from './pages/Overlay/PopoverPage';
 import { TooltipPage } from './pages/Overlay/TooltipPage';
@@ -74,6 +75,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="tooltip" element={<TooltipPage />} />
         <Route path="dropdown" element={<DropdownPage />} />
         <Route path="popover" element={<PopoverPage />} />
+        <Route path="hovercard" element={<HoverCardPage />} />
       </Route>
 
       <Route path="/disclosure">
