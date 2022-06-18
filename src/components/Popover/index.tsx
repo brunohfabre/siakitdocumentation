@@ -1,27 +1,27 @@
-import { ReactElement, ReactNode } from 'react';
+import { ReactNode } from 'react';
 
-import * as HoverCard from '@radix-ui/react-hover-card';
+import * as RadixPopover from '@radix-ui/react-popover';
 
-import { Container } from './styles';
+import { Card } from '../Card';
 
 type PopoverProps = {
-  children: ReactNode;
+  children: ReactNode[];
   side?: 'top' | 'right' | 'bottom' | 'left';
-  content: ReactElement;
+  align?: 'start' | 'center' | 'end';
 };
 
 export function Popover({
   children,
   side = 'top',
-  content,
+  align = 'center',
 }: PopoverProps): JSX.Element {
   return (
-    <HoverCard.Root>
-      <HoverCard.Trigger>{children}</HoverCard.Trigger>
+    <RadixPopover.Root>
+      <RadixPopover.Trigger asChild>{children[0]}</RadixPopover.Trigger>
 
-      <Container side={side} sideOffset={4}>
-        {content}
-      </Container>
-    </HoverCard.Root>
+      <RadixPopover.Content asChild side={side} align={align} sideOffset={4}>
+        <Card>{children[1]}</Card>
+      </RadixPopover.Content>
+    </RadixPopover.Root>
   );
 }
