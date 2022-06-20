@@ -12,15 +12,19 @@ export type Size =
   | '5xl'
   | '6xl';
 
+export type Align = 'left' | 'center' | 'right';
+
 type ContainerProps = {
   size: Size;
   lowContrast: boolean;
+  align: Align;
 };
 
 export const Container = styled.p<ContainerProps>`
   color: ${({ theme, lowContrast }) =>
     theme.colors.gray[lowContrast ? 11 : 12]};
   line-height: 1.5;
+  text-align: ${({ align }) => align};
 
   ${({ size }) =>
     size === '6xl' &&

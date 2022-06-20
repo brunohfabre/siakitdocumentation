@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components';
 
 export type ContainerProps = {
+  overflow?: boolean | 'auto' | 'hidden';
   columns: number | string;
   gap?: boolean | number;
   padding?: boolean | number;
@@ -9,7 +10,11 @@ export type ContainerProps = {
 };
 
 export const Container = styled.div<ContainerProps>`
-  overflow: auto;
+  ${({ overflow }) =>
+    overflow &&
+    css`
+      overflow: ${typeof overflow === 'boolean' ? 'auto' : overflow};
+    `}
 
   display: grid;
 

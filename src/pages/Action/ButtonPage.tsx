@@ -2,22 +2,22 @@ import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
-import { Grid } from '../../components/Grid';
 import { Heading } from '../../components/Heading';
-import { HoverCard } from '../../components/HoverCard';
 import { IconButton } from '../../components/IconButton';
+import { LinkButton } from '../../components/LinkButton';
+import { Popover } from '../../components/Popover';
+import { SimpleTable } from '../../components/SimpleTable';
 import { Spacer } from '../../components/Spacer';
 import { Text } from '../../components/Text';
+import { colors } from '../../hooks/theme';
 
-const buttonCode = `import { Button } from "../../components/Button";
+const buttonCode = `import { Button } from "@siakit/button";
 
-<Button type="button">
-  Text here
-</Button>`;
+<Button />`;
 
 export function ButtonPage(): JSX.Element {
   return (
-    <Flex justify="center" flex margin="0 240px 0 0">
+    <Flex flex direction="column" align="center" overflow>
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Button</Heading>
         <Card>
@@ -34,64 +34,160 @@ export function ButtonPage(): JSX.Element {
 
         <Spacer height />
         <Heading>API reference</Heading>
-        <Grid columns={3}>
-          <Text lowContrast size="sm">
-            Prop
-          </Text>
-          <Text lowContrast size="sm">
-            Type
-          </Text>
-          <Text lowContrast size="sm">
-            Default
-          </Text>
+        <Heading size="md">Button</Heading>
 
-          <Text>children *</Text>
-          <Text>string</Text>
-          <Text>--</Text>
+        <SimpleTable
+          header={[
+            { title: 'Prop', dataIndex: 'prop' },
+            { title: 'Type', dataIndex: 'type' },
+            { title: 'Default', dataIndex: 'default' },
+          ]}
+          data={[
+            {
+              prop: 'children*',
+              type: 'string',
+              default: '--',
+            },
+            {
+              prop: 'type*',
+              type: (
+                <Flex gap={4} align="center">
+                  <Text size="sm">enum</Text>
 
-          <Text>type *</Text>
-          <Flex gap={8} align="center">
-            <Text>enum</Text>
-            <HoverCard>
-              <IconButton
-                type="button"
-                icon="HiOutlineInformationCircle"
-                colorScheme="gray"
-                variant="ghost"
-              />
+                  <Popover>
+                    <IconButton
+                      type="button"
+                      icon="HiInformationCircle"
+                      colorScheme="gray"
+                      variant="ghost"
+                    />
 
-              <Flex padding={8}>
-                <Text size="sm">{`"button" | "submit"`}</Text>
-              </Flex>
-            </HoverCard>
-          </Flex>
+                    <Flex padding={12}>
+                      <Text size="sm">{`"button" | "submit"`}</Text>
+                    </Flex>
+                  </Popover>
+                </Flex>
+              ),
+              default: '--',
+            },
+            {
+              prop: 'colorScheme',
+              type: (
+                <Flex gap={4} align="center">
+                  <Text size="sm">enum</Text>
 
-          <Text>--</Text>
+                  <Popover>
+                    <IconButton
+                      type="button"
+                      icon="HiInformationCircle"
+                      colorScheme="gray"
+                      variant="ghost"
+                    />
 
-          <Text>colorScheme</Text>
-          <Text>enum</Text>
-          <Text>app color scheme</Text>
+                    <Flex padding={12} width={440}>
+                      <Text size="sm" align="center">
+                        {Object.keys(colors).map((color, index) =>
+                          index === 0 ? `"${color}" ` : `| "${color}" `,
+                        )}
+                      </Text>
+                    </Flex>
+                  </Popover>
+                </Flex>
+              ),
+              default: 'app color scheme',
+            },
+            {
+              prop: 'size',
+              type: (
+                <Flex gap={4} align="center">
+                  <Text size="sm">enum</Text>
 
-          <Text>size</Text>
-          <Text>enum</Text>
-          <Text>md</Text>
+                  <Popover>
+                    <IconButton
+                      type="button"
+                      icon="HiInformationCircle"
+                      colorScheme="gray"
+                      variant="ghost"
+                    />
 
-          <Text>variant</Text>
-          <Text>enum</Text>
-          <Text>primary</Text>
+                    <Flex padding={12}>
+                      <Text size="sm" align="center">
+                        {`"sm" | "md" | "lg"`}
+                      </Text>
+                    </Flex>
+                  </Popover>
+                </Flex>
+              ),
+              default: 'md',
+            },
+            {
+              prop: 'variant',
+              type: (
+                <Flex gap={4} align="center">
+                  <Text size="sm">enum</Text>
 
-          <Text>onClick</Text>
-          <Text>function</Text>
-          <Text>--</Text>
+                  <Popover>
+                    <IconButton
+                      type="button"
+                      icon="HiInformationCircle"
+                      colorScheme="gray"
+                      variant="ghost"
+                    />
 
-          <Text>disabled</Text>
-          <Text>boolean</Text>
-          <Text>false</Text>
+                    <Flex padding={12}>
+                      <Text size="sm" align="center">
+                        {`"primary" | "secondary" | "ghost"`}
+                      </Text>
+                    </Flex>
+                  </Popover>
+                </Flex>
+              ),
+              default: 'primary',
+            },
+            {
+              prop: 'onClick*',
+              type: 'function',
+              default: '--',
+            },
+            {
+              prop: 'disabled',
+              type: 'boolean',
+              default: 'false',
+            },
+            {
+              prop: 'icon',
+              type: (
+                <Flex gap={4} align="center">
+                  <Text size="sm">enum</Text>
 
-          <Text>icon</Text>
-          <Text>enum</Text>
-          <Text>--</Text>
-        </Grid>
+                  <Popover>
+                    <IconButton
+                      type="button"
+                      icon="HiInformationCircle"
+                      colorScheme="gray"
+                      variant="ghost"
+                    />
+
+                    <Flex padding={12}>
+                      <Text size="sm" align="center">
+                        <LinkButton
+                          onClick={() =>
+                            window.open(
+                              'https://react-icons.github.io/react-icons/',
+                            )
+                          }
+                        >
+                          React icons page
+                        </LinkButton>
+                      </Text>
+                    </Flex>
+                  </Popover>
+                </Flex>
+              ),
+              default: '--',
+            },
+          ]}
+        />
       </Flex>
     </Flex>
   );
