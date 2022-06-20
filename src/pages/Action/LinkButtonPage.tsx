@@ -1,5 +1,3 @@
-import { Plus } from 'phosphor-react';
-
 import { Flex } from '../../components/Flex';
 import { LinkButton } from '../../components/LinkButton';
 
@@ -23,17 +21,21 @@ export function LinkButtonPage(): JSX.Element {
           type="button"
           onClick={() => undefined}
           size="sm"
-          icon="Plus"
+          icon="HiOutlinePlus"
         >
-          Link button
-        </LinkButton>
-        <LinkButton type="button" onClick={() => undefined} icon="Plus">
           Link button
         </LinkButton>
         <LinkButton
           type="button"
           onClick={() => undefined}
-          icon="Plus"
+          icon="HiOutlinePlus"
+        >
+          Link button
+        </LinkButton>
+        <LinkButton
+          type="button"
+          onClick={() => undefined}
+          icon="HiOutlinePlus"
           disabled
         >
           Link button

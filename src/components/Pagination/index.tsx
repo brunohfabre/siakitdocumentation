@@ -1,5 +1,3 @@
-import { DotsThreeOutline } from 'phosphor-react';
-
 import { Flex } from '../Flex';
 import { Heading } from '../Heading';
 import { IconButton } from '../IconButton';
@@ -72,7 +70,7 @@ export function Pagination({
             {currentPage > 2 + siblingsCount && (
               <IconButton
                 type="button"
-                icon="DotsThreeOutline"
+                icon="HiOutlineDotsHorizontal"
                 variant="ghost"
                 disabled
                 colorScheme="gray"
@@ -110,7 +108,7 @@ export function Pagination({
             {currentPage + 1 + siblingsCount < lastPage && (
               <IconButton
                 type="button"
-                icon="DotsThreeOutline"
+                icon="HiOutlineDotsHorizontal"
                 variant="ghost"
                 disabled
                 colorScheme="gray"

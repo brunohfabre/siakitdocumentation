@@ -1,4 +1,9 @@
-import { Info, CheckCircle, Warning, WarningOctagon } from 'phosphor-react';
+import {
+  HiOutlineInformationCircle,
+  HiOutlineCheckCircle,
+  HiOutlineExclamation,
+  HiOutlineShieldExclamation,
+} from 'react-icons/hi';
 
 import { Flex } from '../Flex';
 import { Heading } from '../Heading';
@@ -14,10 +19,10 @@ type AlertProps = {
 export function Alert({ type, title, text }: AlertProps): JSX.Element {
   return (
     <Container type={type}>
-      {type === 'info' && <Info size={16} weight="fill" />}
-      {type === 'success' && <CheckCircle size={16} weight="fill" />}
-      {type === 'warning' && <Warning size={16} weight="fill" />}
-      {type === 'danger' && <WarningOctagon size={16} weight="fill" />}
+      {type === 'info' && <HiOutlineInformationCircle size={16} />}
+      {type === 'success' && <HiOutlineCheckCircle size={16} />}
+      {type === 'warning' && <HiOutlineExclamation size={16} />}
+      {type === 'danger' && <HiOutlineShieldExclamation size={16} />}
 
       <Flex direction="column">
         <Heading size="sm">{title}</Heading>

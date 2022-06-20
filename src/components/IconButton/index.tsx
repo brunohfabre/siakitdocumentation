@@ -1,4 +1,6 @@
-import * as phosphorIcons from 'phosphor-react';
+import { forwardRef } from 'react';
+
+import * as ReactIcons from 'react-icons/all';
 
 import { Colors, useTheme } from '../../hooks/theme';
 import { Size, Variant, Container } from './styles';
@@ -10,51 +12,55 @@ type IconButtonProps = {
   variant?: Variant;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   disabled?: boolean;
-  icon: keyof typeof phosphorIcons;
+  icon: keyof typeof ReactIcons;
   tabIndex?: number;
-  weight?: phosphorIcons.IconWeight;
 };
 
-export function IconButton({
-  type,
-  colorScheme,
-  size = 'md',
-  variant = 'primary',
-  onClick,
-  disabled,
-  icon: iconName,
-  tabIndex,
-  weight = 'bold',
-  ...rest
-}: IconButtonProps): JSX.Element {
-  const { colorScheme: themeColorScheme } = useTheme();
+export const IconButton = forwardRef<HTMLButtonElement, IconButtonProps>(
+  (
+    {
+      type,
+      colorScheme,
+      size = 'md',
+      variant = 'primary',
+      onClick,
+      disabled,
+      icon,
+      tabIndex,
+      ...rest
+    },
+    ref,
+  ) => {
+    const { colorScheme: themeColorScheme } = useTheme();
 
-  function iconSize(): number {
-    if (size === 'sm') {
-      return 12;
+    function iconSize(): number {
+      if (size === 'sm') {
+        return 12;
+      }
+
+      if (size === 'lg') {
+        return 20;
+      }
+
+      return 16;
     }
 
-    if (size === 'lg') {
-      return 20;
-    }
+    const Icon = icon ? ReactIcons[icon] : undefined;
 
-    return 16;
-  }
-
-  const icon = iconName ? (phosphorIcons[iconName] as any) : undefined;
-
-  return (
-    <Container
-      type={type === 'button' ? 'button' : 'submit'}
-      colorScheme={colorScheme || themeColorScheme}
-      size={size}
-      variant={variant}
-      onClick={onClick}
-      disabled={disabled}
-      tabIndex={tabIndex}
-      {...rest}
-    >
-      {icon && icon.render({ size: iconSize(), weight })}
-    </Container>
-  );
-}
+    return (
+      <Container
+        ref={ref}
+        type={type === 'button' ? 'button' : 'submit'}
+        colorScheme={colorScheme || themeColorScheme}
+        size={size}
+        variant={variant}
+        onClick={onClick}
+        disabled={disabled}
+        tabIndex={tabIndex}
+        {...rest}
+      >
+        {Icon && <Icon size={iconSize()} />}
+      </Container>
+    );
+  },
+);

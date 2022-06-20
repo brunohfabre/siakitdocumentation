@@ -1,4 +1,9 @@
-import { Info, CheckCircle, Warning, WarningOctagon } from 'phosphor-react';
+import {
+  HiOutlineInformationCircle,
+  HiOutlineCheckCircle,
+  HiOutlineExclamation,
+  HiOutlineShieldExclamation,
+} from 'react-icons/hi';
 import {
   ToastContainer,
   toast as reactToast,
@@ -114,22 +119,20 @@ function RenderIconTitleAndText({
         ) : (
           <>
             {type === 'info' && (
-              <Info size={20} weight="fill" color={theme.colors.blue[11]} />
-            )}
-            {type === 'success' && (
-              <CheckCircle
+              <HiOutlineInformationCircle
                 size={20}
-                weight="fill"
-                color={theme.colors.green[11]}
+                color={theme.colors.blue[11]}
               />
             )}
+            {type === 'success' && (
+              <HiOutlineCheckCircle size={20} color={theme.colors.green[11]} />
+            )}
             {type === 'warning' && (
-              <Warning size={20} weight="fill" color={theme.colors.amber[11]} />
+              <HiOutlineExclamation size={20} color={theme.colors.amber[11]} />
             )}
             {type === 'danger' && (
-              <WarningOctagon
+              <HiOutlineShieldExclamation
                 size={20}
-                weight="fill"
                 color={theme.colors.red[11]}
               />
             )}

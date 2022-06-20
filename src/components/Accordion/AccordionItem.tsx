@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 
-import { CaretDown } from 'phosphor-react';
+import { HiOutlineChevronDown } from 'react-icons/hi';
 
 import { Flex } from '../Flex';
 import { Text } from '../Text';
@@ -25,7 +25,7 @@ export function AccordionItem({
             <Text size="sm">{title}</Text>
           </Flex>
 
-          <CaretDown size={14} weight="bold" />
+          <HiOutlineChevronDown size="14" />
         </Title>
       </Header>
 

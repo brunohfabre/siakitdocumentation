@@ -1,7 +1,6 @@
 import { forwardRef, ReactNode } from 'react';
 
 import * as Dialog from '@radix-ui/react-dialog';
-import { X } from 'phosphor-react';
 
 import { Heading } from '../Heading';
 import { IconButton } from '../IconButton';
@@ -36,7 +35,7 @@ const ModalCloseButton = forwardRef<HTMLSpanElement>((props, ref) => {
       type="button"
       variant="ghost"
       colorScheme="gray"
-      icon="X"
+      icon="HiOutlineX"
       {...props}
     />
   );

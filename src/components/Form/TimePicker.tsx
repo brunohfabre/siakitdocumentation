@@ -2,12 +2,11 @@ import { useEffect, useRef, useState } from 'react';
 
 import * as Popover from '@radix-ui/react-popover';
 import { useField } from '@unform/core';
-import { format, isValid } from 'date-fns';
-import { X, Clock } from 'phosphor-react';
+import { HiClock } from 'react-icons/hi';
 import styled, { css } from 'styled-components';
 import { toPattern } from 'vanilla-masker';
 
-import { useTheme, Colors, colors } from '../../hooks/theme';
+import { useTheme, Colors } from '../../hooks/theme';
 import { IconButton } from '../IconButton';
 import { InputContainer, Label, InputBody, Error } from './styles';
 
@@ -133,10 +132,10 @@ export function TimePicker({
       getValue: (ref) => {
         return ref.current.value;
       },
-      setValue: (ref, value: string) => {
+      setValue: (_, value: string) => {
         handleChange(value);
       },
-      clearValue: (ref) => handleClear(),
+      clearValue: () => handleClear(),
     });
   }, [fieldName, registerField]);
 
@@ -170,7 +169,7 @@ export function TimePicker({
         {isFilled && !disabled && (
           <IconButton
             type="button"
-            icon="X"
+            icon="HiOutlineX"
             size="sm"
             variant="ghost"
             colorScheme="gray"
@@ -180,7 +179,7 @@ export function TimePicker({
         )}
         <Popover.Root>
           <TriggerButton>
-            <Clock size="16" weight="fill" />
+            <HiClock size="16" />
           </TriggerButton>
 
           <Popover.Content asChild>

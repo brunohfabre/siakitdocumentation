@@ -1,4 +1,4 @@
-import * as phosphorIcons from 'phosphor-react';
+import * as ReactIcons from 'react-icons/all';
 
 import { Colors, useTheme } from '../../hooks/theme';
 import { Heading } from '../Heading';
@@ -11,7 +11,7 @@ type LinkButtonProps = {
   size?: Size;
   onClick: () => void;
   disabled?: boolean;
-  icon?: keyof typeof phosphorIcons;
+  icon?: keyof typeof ReactIcons;
 };
 
 export function LinkButton({
@@ -21,11 +21,11 @@ export function LinkButton({
   size = 'md',
   onClick,
   disabled,
-  icon: iconName,
+  icon,
 }: LinkButtonProps): JSX.Element {
   const { colorScheme: themeColorScheme } = useTheme();
 
-  const icon = iconName ? (phosphorIcons[iconName] as any) : undefined;
+  const Icon = icon ? ReactIcons[icon] : undefined;
 
   return (
     <Container
@@ -35,7 +35,7 @@ export function LinkButton({
       onClick={onClick}
       disabled={disabled}
     >
-      {icon && icon.render({ size: size === 'sm' ? 12 : 16, weight: 'bold' })}
+      {Icon && <Icon size={size === 'sm' ? 12 : 16} />}
 
       <Heading size={size === 'sm' ? 'xs' : 'sm'}>{children}</Heading>
     </Container>

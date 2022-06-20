@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useField } from '@unform/core';
-import { X, Eye, EyeSlash } from 'phosphor-react';
 
 import { useTheme } from '../../hooks/theme';
 import { IconButton } from '../IconButton';
@@ -96,7 +95,7 @@ export function Password({
         {isFilled && !disabled && (
           <IconButton
             type="button"
-            icon="X"
+            icon="HiOutlineX"
             size="sm"
             variant="ghost"
             colorScheme="gray"
@@ -106,13 +105,12 @@ export function Password({
         )}
         <IconButton
           type="button"
-          icon={isHidden ? 'Eye' : 'EyeSlash'}
+          icon={isHidden ? 'HiEye' : 'HiEyeOff'}
           size="sm"
           variant="ghost"
           colorScheme="gray"
           onClick={() => setIsHidden((prevState) => !prevState)}
           tabIndex={-1}
-          weight="fill"
         />
       </InputBody>
 

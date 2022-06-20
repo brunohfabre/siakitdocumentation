@@ -3,8 +3,8 @@ import { useEffect, useRef, useState } from 'react';
 import * as Popover from '@radix-ui/react-popover';
 import { useField } from '@unform/core';
 import { format, isValid } from 'date-fns';
-import { X, CalendarBlank } from 'phosphor-react';
 import { DayPicker } from 'react-day-picker';
+import { HiCalendar } from 'react-icons/hi';
 import styled from 'styled-components';
 import { toPattern } from 'vanilla-masker';
 
@@ -175,7 +175,7 @@ export function DatePicker({
         {isFilled && !disabled && (
           <IconButton
             type="button"
-            icon="X"
+            icon="HiOutlineX"
             size="sm"
             variant="ghost"
             colorScheme="gray"
@@ -185,7 +185,7 @@ export function DatePicker({
         )}
         <Popover.Root>
           <TriggerButton>
-            <CalendarBlank size="16" weight="fill" />
+            <HiCalendar size="16" />
           </TriggerButton>
 
           <Popover.Content asChild>

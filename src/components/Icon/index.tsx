@@ -1,13 +1,12 @@
-import * as phosphorIcons from 'phosphor-react';
+import * as ReactIcons from 'react-icons/all';
 
 type IconProps = {
-  name: keyof typeof phosphorIcons;
+  name: keyof typeof ReactIcons;
   size?: string | number | undefined;
-  weight?: phosphorIcons.IconWeight | undefined;
 };
 
-export function Icon({ name, size, weight }: IconProps): JSX.Element {
-  const icon = phosphorIcons[name] as any;
+export function Icon({ name, size }: IconProps): JSX.Element {
+  const IconRender = ReactIcons[name] as any;
 
-  return <>{icon.render({ size, weight })}</>;
+  return <IconRender size={size} />;
 }

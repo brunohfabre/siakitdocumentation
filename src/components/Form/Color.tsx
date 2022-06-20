@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import * as Popover from '@radix-ui/react-popover';
 import { useField } from '@unform/core';
-import { Check, CaretDown } from 'phosphor-react';
+import { HiOutlineCheck, HiOutlineChevronDown } from 'react-icons/hi';
 import styled from 'styled-components';
 
 import { Colors, colors, useTheme } from '../../hooks/theme';
@@ -123,7 +123,7 @@ export function Color({
             {isFilled && !disabled && (
               <IconButton
                 type="button"
-                icon="X"
+                icon="HiOutlineX"
                 size="sm"
                 variant="ghost"
                 colorScheme="gray"
@@ -133,7 +133,7 @@ export function Color({
             )}
 
             <ChevronButton active={isFocused}>
-              <CaretDown size={16} />
+              <HiOutlineChevronDown size={16} />
             </ChevronButton>
           </InputBody>
 
@@ -152,7 +152,7 @@ export function Color({
                   setIsFocused(false);
                 }}
               >
-                {isFilled === item && <Check size="12" color="#fff" />}
+                {isFilled === item && <HiOutlineCheck size="12" color="#fff" />}
               </ColorButton>
             </Tooltip>
           ))}

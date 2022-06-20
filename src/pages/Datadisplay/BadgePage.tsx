@@ -14,7 +14,7 @@ export function BadgePage(): JSX.Element {
 
       <Grid columns={7} gap={8}>
         {Object.keys(colors).map((color) => (
-          <Badge color={color as Colors} icon="Plus">
+          <Badge color={color as Colors} icon="HiOutlinePlus">
             badge
           </Badge>
         ))}

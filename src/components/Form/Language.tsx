@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import * as Popover from '@radix-ui/react-popover';
 import { useField } from '@unform/core';
-import { X, Check, CaretDown } from 'phosphor-react';
+import { HiOutlineCheck, HiOutlineChevronDown } from 'react-icons/hi';
 import styled from 'styled-components';
 
 import brasilFlag from '../../assets/flags/brasil.png';
@@ -49,11 +49,11 @@ const languages = [
   { title: 'Español', locale: 'es_ES', flag: espanhaFlag },
 ];
 
-type LanguageType = {
-  title: string;
-  locale: string;
-  flag: string;
-};
+// type LanguageType = {
+//   title: string;
+//   locale: string;
+//   flag: string;
+// };
 
 export function Language({
   name,
@@ -148,7 +148,7 @@ export function Language({
             {isFilled && !disabled && (
               <IconButton
                 type="button"
-                icon="X"
+                icon="HiOutlineX"
                 size="sm"
                 variant="ghost"
                 colorScheme="gray"
@@ -158,7 +158,7 @@ export function Language({
             )}
 
             <ChevronButton active={isFocused}>
-              <CaretDown size={16} />
+              <HiOutlineChevronDown size={16} />
             </ChevronButton>
           </InputBody>
 
@@ -182,7 +182,7 @@ export function Language({
 
               {isFilled === language.locale && (
                 <div>
-                  <Check size="12" weight="bold" />
+                  <HiOutlineCheck size="12" />
                 </div>
               )}
             </LanguageItem>

@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useField } from '@unform/core';
-import { Check } from 'phosphor-react';
+import { HiOutlineCheck } from 'react-icons/hi';
 import styled from 'styled-components';
 
 import { Colors, useTheme } from '../../hooks/theme';
@@ -126,7 +126,7 @@ export function Checkbox({
             }}
           >
             <div>
-              <Check size={12} color="#fff" weight="bold" />
+              <HiOutlineCheck size={12} color="#fff" />
             </div>
 
             <p>{option.label}</p>

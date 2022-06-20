@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 
 import { useField } from '@unform/core';
-import { X } from 'phosphor-react';
 import { toPattern } from 'vanilla-masker';
 
 import { masks, MaskType } from '../../helpers/masks';
@@ -100,7 +99,7 @@ export function Mask({
         {isFilled && !disabled && (
           <IconButton
             type="button"
-            icon="X"
+            icon="HiOutlineX"
             size="sm"
             variant="ghost"
             colorScheme="gray"

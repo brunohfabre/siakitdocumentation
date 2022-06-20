@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import * as phosphorIcons from 'phosphor-react';
+import * as ReactIcons from 'react-icons/all';
 
 import { Colors, useTheme } from '../../hooks/theme';
 import { Heading } from '../Heading';
@@ -14,7 +14,7 @@ type ButtonProps = {
   variant?: Variant;
   onClick?: () => void;
   disabled?: boolean;
-  icon?: keyof typeof phosphorIcons;
+  icon?: keyof typeof ReactIcons;
 };
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
@@ -27,7 +27,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       variant = 'primary',
       onClick,
       disabled,
-      icon: iconName,
+      icon,
       ...rest
     },
     ref,
@@ -46,7 +46,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       return 16;
     }
 
-    const icon = iconName ? (phosphorIcons[iconName] as any) : undefined;
+    const Icon = icon ? ReactIcons[icon] : undefined;
 
     return (
       <Container
@@ -59,7 +59,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled}
         {...rest}
       >
-        {icon && icon.render({ size: iconSize(), weight: 'bold' })}
+        {Icon && <Icon size={iconSize()} />}
 
         <Heading size={size === 'sm' ? 'xs' : 'sm'}>{children}</Heading>
       </Container>

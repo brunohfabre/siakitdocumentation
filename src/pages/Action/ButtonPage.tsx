@@ -1,14 +1,11 @@
-import Highlight, { defaultProps } from 'prism-react-renderer';
-import dracula from 'prism-react-renderer/themes/dracula';
-
+import { Button } from '../../components/Button';
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
 import { Grid } from '../../components/Grid';
 import { Heading } from '../../components/Heading';
+import { HoverCard } from '../../components/HoverCard';
 import { IconButton } from '../../components/IconButton';
-import { LinkButton } from '../../components/LinkButton';
-import { Popover } from '../../components/Popover';
 import { Spacer } from '../../components/Spacer';
 import { Text } from '../../components/Text';
 
@@ -23,12 +20,13 @@ export function ButtonPage(): JSX.Element {
     <Flex justify="center" flex margin="0 240px 0 0">
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Button</Heading>
-        <Text>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem cumque
-          quod nam amet error libero iure maxime quis eius totam, aperiam
-          laudantium, quibusdam minima assumenda labore modi, deserunt officiis
-          nihil!
-        </Text>
+        <Card>
+          <Flex height={192} padding justify="center" align="center">
+            <Button type="button" onClick={() => undefined}>
+              Text here
+            </Button>
+          </Flex>
+        </Card>
 
         <Spacer height />
         <Heading>Anatomy</Heading>
@@ -54,20 +52,18 @@ export function ButtonPage(): JSX.Element {
           <Text>type *</Text>
           <Flex gap={8} align="center">
             <Text>enum</Text>
-            <Popover
-              content={
-                <Flex padding={8}>
-                  <Text size="sm">{`"button" | "submit"`}</Text>
-                </Flex>
-              }
-            >
+            <HoverCard>
               <IconButton
                 type="button"
-                icon="Info"
+                icon="HiOutlineInformationCircle"
                 colorScheme="gray"
                 variant="ghost"
               />
-            </Popover>
+
+              <Flex padding={8}>
+                <Text size="sm">{`"button" | "submit"`}</Text>
+              </Flex>
+            </HoverCard>
           </Flex>
 
           <Text>--</Text>
