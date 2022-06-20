@@ -22,38 +22,84 @@ export function AppSidebar(): JSX.Element {
 
           <img src={siakitLogoShortImage} alt="SIAKIT" />
         </MenuHeader>
-        <MenuItem value="typography" icon="HiHome" tooltip="Typography">
+        <MenuItem
+          value="typography"
+          icon="HiOutlineHome"
+          activeIcon="HiHome"
+          tooltip="Typography"
+        >
           Typography
         </MenuItem>
-        <MenuItem value="action" icon="HiCursorClick" tooltip="Action">
+        <MenuItem
+          value="action"
+          icon="HiOutlineCursorClick"
+          activeIcon="HiCursorClick"
+          tooltip="Action"
+        >
           Action
         </MenuItem>
-        <MenuItem value="form" icon="HiPencil" tooltip="Form">
+        <MenuItem
+          value="form"
+          icon="HiOutlinePencil"
+          activeIcon="HiPencil"
+          tooltip="Form"
+        >
           Form
         </MenuItem>
-        <MenuItem value="feedback" icon="HiAnnotation" tooltip="Feedback">
+        <MenuItem
+          value="feedback"
+          icon="HiOutlineAnnotation"
+          activeIcon="HiAnnotation"
+          tooltip="Feedback"
+        >
           Feedback
         </MenuItem>
         <MenuItem
           value="datadisplay"
-          icon="HiCollection"
+          icon="HiOutlineCollection"
+          activeIcon="HiCollection"
           tooltip="Data display"
         >
           Data display
         </MenuItem>
-        <MenuItem value="overlay" icon="HiDesktopComputer" tooltip="Overlay">
+        <MenuItem
+          value="overlay"
+          icon="HiOutlineDesktopComputer"
+          activeIcon="HiDesktopComputer"
+          tooltip="Overlay"
+        >
           Overlay
         </MenuItem>
-        <MenuItem value="disclosure" icon="HiSpeakerphone" tooltip="Disclosure">
+        <MenuItem
+          value="disclosure"
+          icon="HiOutlineSpeakerphone"
+          activeIcon="HiSpeakerphone"
+          tooltip="Disclosure"
+        >
           Disclosure
         </MenuItem>
-        <MenuItem value="media" icon="HiPhotograph" tooltip="Media">
+        <MenuItem
+          value="media"
+          icon="HiOutlinePhotograph"
+          activeIcon="HiPhotograph"
+          tooltip="Media"
+        >
           Media
         </MenuItem>
-        <MenuItem value="layout" icon="HiTemplate" tooltip="Layout">
+        <MenuItem
+          value="layout"
+          icon="HiOutlineTemplate"
+          activeIcon="HiTemplate"
+          tooltip="Layout"
+        >
           Layout
         </MenuItem>
-        <MenuItem value="utils" icon="HiAdjustments" tooltip="Utils">
+        <MenuItem
+          value="utils"
+          icon="HiOutlineAdjustments"
+          activeIcon="HiAdjustments"
+          tooltip="Utils"
+        >
           Utils
         </MenuItem>
       </Menu>

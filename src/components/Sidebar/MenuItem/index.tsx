@@ -13,6 +13,7 @@ type MenuItemProps = {
 
   onClick?: () => void;
   icon?: keyof typeof ReactIcons;
+  activeIcon?: keyof typeof ReactIcons;
 
   tooltip?: string;
 };
@@ -22,6 +23,7 @@ export function MenuItem({
   value,
   onClick,
   icon,
+  activeIcon,
   tooltip,
 }: MenuItemProps): JSX.Element {
   const { colorScheme, theme } = useTheme();
@@ -37,6 +39,7 @@ export function MenuItem({
   const shortName = children[0].toUpperCase();
 
   const Icon = icon ? ReactIcons[icon] : undefined;
+  const ActiveIcon = activeIcon ? ReactIcons[activeIcon] : undefined;
 
   return (
     <Tooltip content={!isExpanded ? tooltip : undefined} side="right">
@@ -55,7 +58,12 @@ export function MenuItem({
         isExpanded={!!isExpanded}
         appTheme={theme}
       >
-        {Icon && <Icon size="16" />}
+        {!isSelected && Icon && <Icon size="16" />}
+        {isSelected && ActiveIcon ? (
+          <ActiveIcon size="16" />
+        ) : (
+          isSelected && !ActiveIcon && Icon && <Icon size="16" />
+        )}
 
         {!isExpanded && !icon && shortName}
 
