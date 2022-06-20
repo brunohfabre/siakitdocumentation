@@ -13,14 +13,18 @@ export function IconButtonPage(): JSX.Element {
             type="button"
             onClick={() => undefined}
             size="sm"
-            icon="Plus"
+            icon="HiOutlinePlus"
           />
         </Flex>
 
         <Flex align="center" gap={32} direction="column">
           <Text size="md">md</Text>
 
-          <IconButton type="button" onClick={() => undefined} icon="Plus" />
+          <IconButton
+            type="button"
+            onClick={() => undefined}
+            icon="HiOutlinePlus"
+          />
         </Flex>
 
         <Flex align="center" gap={32} direction="column">
@@ -30,7 +34,7 @@ export function IconButtonPage(): JSX.Element {
             type="button"
             onClick={() => undefined}
             size="lg"
-            icon="Plus"
+            icon="HiOutlinePlus"
           />
         </Flex>
       </Flex>
@@ -39,7 +43,11 @@ export function IconButtonPage(): JSX.Element {
         <Flex align="center" gap={32} direction="column">
           <Text size="md">primary</Text>
 
-          <IconButton type="button" onClick={() => undefined} icon="Plus" />
+          <IconButton
+            type="button"
+            onClick={() => undefined}
+            icon="HiOutlinePlus"
+          />
         </Flex>
 
         <Flex align="center" gap={32} direction="column">
@@ -49,7 +57,7 @@ export function IconButtonPage(): JSX.Element {
             type="button"
             onClick={() => undefined}
             variant="secondary"
-            icon="Plus"
+            icon="HiOutlinePlus"
           />
         </Flex>
 
@@ -60,7 +68,7 @@ export function IconButtonPage(): JSX.Element {
             type="button"
             onClick={() => undefined}
             variant="ghost"
-            icon="Plus"
+            icon="HiOutlinePlus"
           />
         </Flex>
       </Flex>
