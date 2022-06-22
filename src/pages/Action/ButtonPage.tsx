@@ -11,7 +11,7 @@ import { Spacer } from '../../components/Spacer';
 import { Text } from '../../components/Text';
 import { colors } from '../../hooks/theme';
 
-const buttonCode = `import { Button } from "@siakit/button";
+const exampleCode = `import { Button } from "@siakit/button";
 
 <Button />`;
 
@@ -30,7 +30,7 @@ export function ButtonPage(): JSX.Element {
 
         <Spacer height />
         <Heading>Anatomy</Heading>
-        <CodeHighlight>{buttonCode}</CodeHighlight>
+        <CodeHighlight>{exampleCode}</CodeHighlight>
 
         <Spacer height />
         <Heading>API reference</Heading>
