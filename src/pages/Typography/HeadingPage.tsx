@@ -6,7 +6,12 @@ import { Flex } from '../../components/Flex';
 import { Heading } from '../../components/Heading';
 import { IconButton } from '../../components/IconButton';
 import { Popover } from '../../components/Popover';
-import { SimpleTable } from '../../components/SimpleTable';
+import {
+  SimpleTable,
+  SimpleTableHeader,
+  SimpleTableItem,
+} from '../../components/SimpleTable';
+import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { Text } from '../../components/Text';
 
@@ -33,42 +38,21 @@ export function HeadingPage(): JSX.Element {
         <Heading>API reference</Heading>
         <Heading size="md">Heading</Heading>
 
-        <SimpleTable
-          header={[
-            { title: 'Prop', dataIndex: 'prop' },
-            { title: 'Type', dataIndex: 'type' },
-            { title: 'Default', dataIndex: 'default' },
-          ]}
-          data={[
-            {
-              prop: 'children*',
-              type: 'string',
-              default: '--',
-            },
-            {
-              prop: 'size',
-              type: (
-                <Flex gap={4} align="center">
-                  <Text size="sm">enum</Text>
+        <SimpleTable>
+          <SimpleTableHeader>
+            <SimpleTableItem isHeader>Prop</SimpleTableItem>
+            <SimpleTableItem isHeader>Type</SimpleTableItem>
+            <SimpleTableItem isHeader>Default</SimpleTableItem>
+          </SimpleTableHeader>
 
-                  <Popover>
-                    <IconButton
-                      type="button"
-                      icon="HiInformationCircle"
-                      colorScheme="gray"
-                      variant="ghost"
-                    />
-
-                    <Flex padding={12}>
-                      <Text size="sm">{`"xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl"`}</Text>
-                    </Flex>
-                  </Popover>
-                </Flex>
-              ),
-              default: 'lg',
-            },
-          ]}
-        />
+          <SimpleTableBody>
+            <SimpleTableItem>size</SimpleTableItem>
+            <SimpleTableItem
+              isEnum
+            >{`"xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl"`}</SimpleTableItem>
+            <SimpleTableItem>lg</SimpleTableItem>
+          </SimpleTableBody>
+        </SimpleTable>
       </Flex>
     </Flex>
   );

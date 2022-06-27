@@ -4,13 +4,16 @@ import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
 import { Heading } from '../../components/Heading';
-import { IconButton } from '../../components/IconButton';
-import { Popover } from '../../components/Popover';
-import { SimpleTable } from '../../components/SimpleTable';
+import {
+  SimpleTable,
+  SimpleTableHeader,
+  SimpleTableItem,
+} from '../../components/SimpleTable';
+import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { Text } from '../../components/Text';
 
-const exampleCode = `import { Text } from "@siakit";
+const exampleCode = `import { Text } from '@siakit';
 
 <Text />`;
 
@@ -34,69 +37,35 @@ export function TextPage(): JSX.Element {
         <Heading>API reference</Heading>
         <Heading size="md">Text</Heading>
 
-        <SimpleTable
-          header={[
-            { title: 'Prop', dataIndex: 'prop' },
-            { title: 'Type', dataIndex: 'type' },
-            { title: 'Default', dataIndex: 'default' },
-          ]}
-          data={[
-            {
-              prop: 'children*',
-              type: 'string',
-              default: '--',
-            },
-            {
-              prop: 'size',
-              type: (
-                <Flex gap={4} align="center">
-                  <Text size="sm">enum</Text>
+        <SimpleTable>
+          <SimpleTableHeader>
+            <SimpleTableItem isHeader>prop</SimpleTableItem>
+            <SimpleTableItem isHeader>type</SimpleTableItem>
+            <SimpleTableItem isHeader>default</SimpleTableItem>
+          </SimpleTableHeader>
 
-                  <Popover>
-                    <IconButton
-                      type="button"
-                      icon="HiInformationCircle"
-                      colorScheme="gray"
-                      variant="ghost"
-                    />
+          <SimpleTableBody>
+            <SimpleTableItem required>children</SimpleTableItem>
+            <SimpleTableItem>string</SimpleTableItem>
+            <SimpleTableItem />
 
-                    <Flex padding={12}>
-                      <Text size="sm">{`"xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl"`}</Text>
-                    </Flex>
-                  </Popover>
-                </Flex>
-              ),
-              default: 'md',
-            },
-            {
-              prop: 'lowContrast',
-              type: 'boolean',
-              default: 'false',
-            },
-            {
-              prop: 'align',
-              type: (
-                <Flex gap={4} align="center">
-                  <Text size="sm">enum</Text>
+            <SimpleTableItem>size</SimpleTableItem>
+            <SimpleTableItem
+              isEnum
+            >{`"xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl"`}</SimpleTableItem>
+            <SimpleTableItem>md</SimpleTableItem>
 
-                  <Popover>
-                    <IconButton
-                      type="button"
-                      icon="HiInformationCircle"
-                      colorScheme="gray"
-                      variant="ghost"
-                    />
+            <SimpleTableItem>lowContrast</SimpleTableItem>
+            <SimpleTableItem>boolean</SimpleTableItem>
+            <SimpleTableItem>false</SimpleTableItem>
 
-                    <Flex padding={12}>
-                      <Text size="sm">{`"left" | "center" | "right"`}</Text>
-                    </Flex>
-                  </Popover>
-                </Flex>
-              ),
-              default: 'left',
-            },
-          ]}
-        />
+            <SimpleTableItem>align</SimpleTableItem>
+            <SimpleTableItem
+              isEnum
+            >{`"left" | "center" | "right"`}</SimpleTableItem>
+            <SimpleTableItem>left</SimpleTableItem>
+          </SimpleTableBody>
+        </SimpleTable>
       </Flex>
     </Flex>
   );

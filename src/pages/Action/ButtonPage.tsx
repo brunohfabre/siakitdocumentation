@@ -42,9 +42,9 @@ export function ButtonPage(): JSX.Element {
 
         <SimpleTable>
           <SimpleTableHeader>
-            <SimpleTableItem isHeader>prop</SimpleTableItem>
-            <SimpleTableItem isHeader>type</SimpleTableItem>
-            <SimpleTableItem isHeader>default</SimpleTableItem>
+            <SimpleTableItem isHeader>Prop</SimpleTableItem>
+            <SimpleTableItem isHeader>Type</SimpleTableItem>
+            <SimpleTableItem isHeader>Default</SimpleTableItem>
           </SimpleTableHeader>
 
           <SimpleTableBody>
