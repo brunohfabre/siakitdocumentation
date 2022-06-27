@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Accordion, AccordionItem } from '../../components/Accordion';
 import { Flex } from '../../components/Flex';
 import { Text } from '../../components/Text';

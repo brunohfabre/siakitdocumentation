@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Alert } from '../../components/Alert';
 import { Flex } from '../../components/Flex';
 

@@ -3,12 +3,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 import { App } from './App';
-import { AppProvider } from './hooks';
+import { SiakitProvider } from './hooks';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <AppProvider>
+    <SiakitProvider>
       <App />
-    </AppProvider>
+    </SiakitProvider>
   </React.StrictMode>,
 );

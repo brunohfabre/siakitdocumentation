@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useTheme } from '../../hooks/theme';
 import { Text } from '../Text';
 import { Container, Content, Bar } from './styles';

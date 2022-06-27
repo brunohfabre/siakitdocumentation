@@ -1,4 +1,4 @@
-import { createContext, ReactNode, useState } from 'react';
+import React, { createContext, ReactNode, useState } from 'react';
 
 type SidebarContextData = {
   menuItemSelected: string;

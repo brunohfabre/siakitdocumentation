@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Avatar } from '../../components/Avatar';
 import { Flex } from '../../components/Flex';
 

@@ -1,8 +1,9 @@
-import { createContext, ReactNode, useContext } from 'react';
+import React, { createContext, ReactNode, useContext } from 'react';
 
 import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-components';
 
 import { usePersistedState } from '../usePersistedState';
+import { GlobaStyle } from './globalStyle';
 import { darkTheme } from './themes/dark';
 import { lightTheme } from './themes/light';
 
@@ -77,6 +78,8 @@ export function ThemeProvider({ children }: ThemeProviderProps): JSX.Element {
     >
       <StyledComponentsThemeProvider theme={themes[theme as 'light' | 'dark']}>
         {children}
+
+        <GlobaStyle colorScheme={colorScheme} />
       </StyledComponentsThemeProvider>
     </ThemeContext.Provider>
   );

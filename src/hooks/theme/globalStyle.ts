@@ -1,15 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 
-import InterBlack from '../assets/fonts/inter/Inter-Black.ttf';
-import InterBold from '../assets/fonts/inter/Inter-Bold.ttf';
-import InterExtraBold from '../assets/fonts/inter/Inter-ExtraBold.ttf';
-import InterExtraLight from '../assets/fonts/inter/Inter-ExtraLight.ttf';
-import InterLight from '../assets/fonts/inter/Inter-Light.ttf';
-import InterMedium from '../assets/fonts/inter/Inter-Medium.ttf';
-import InterRegular from '../assets/fonts/inter/Inter-Regular.ttf';
-import InterSemiBold from '../assets/fonts/inter/Inter-SemiBold.ttf';
-import InterThin from '../assets/fonts/inter/Inter-Thin.ttf';
-import { Colors } from '../hooks/theme';
+import { Colors } from '.';
+import InterBlack from '../../assets/fonts/inter/Inter-Black.ttf';
+import InterBold from '../../assets/fonts/inter/Inter-Bold.ttf';
+import InterExtraBold from '../../assets/fonts/inter/Inter-ExtraBold.ttf';
+import InterExtraLight from '../../assets/fonts/inter/Inter-ExtraLight.ttf';
+import InterLight from '../../assets/fonts/inter/Inter-Light.ttf';
+import InterMedium from '../../assets/fonts/inter/Inter-Medium.ttf';
+import InterRegular from '../../assets/fonts/inter/Inter-Regular.ttf';
+import InterSemiBold from '../../assets/fonts/inter/Inter-SemiBold.ttf';
+import InterThin from '../../assets/fonts/inter/Inter-Thin.ttf';
 
 type GlobalStyleProps = {
   colorScheme: Colors;

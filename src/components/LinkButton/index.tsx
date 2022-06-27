@@ -1,3 +1,5 @@
+import React from 'react';
+
 import * as ReactIcons from 'react-icons/all';
 
 import { Colors, useTheme } from '../../hooks/theme';

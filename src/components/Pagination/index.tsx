@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Flex } from '../Flex';
 import { Heading } from '../Heading';
 import { IconButton } from '../IconButton';

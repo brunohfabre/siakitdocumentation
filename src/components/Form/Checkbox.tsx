@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { useField } from '@unform/core';
 import { HiOutlineCheck } from 'react-icons/hi';

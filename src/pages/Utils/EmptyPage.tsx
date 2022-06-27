@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Empty } from '../../components/Empty';
 import { Flex } from '../../components/Flex';
 

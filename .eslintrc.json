@@ -28,7 +28,6 @@
   "rules": {
     "prettier/prettier": "error",
     "import/prefer-default-export": "off",
-    "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
     "react/jsx-no-constructed-context-values": "off",
     "react/jsx-props-no-spreading": "off",

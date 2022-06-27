@@ -1,4 +1,4 @@
-import { Children, cloneElement } from 'react';
+import React, { Children, cloneElement } from 'react';
 
 import { Container } from './styles';
 

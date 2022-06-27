@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 
 import * as RadixDialog from '@radix-ui/react-dialog';
 
@@ -18,7 +18,7 @@ type DialogTitleProps = {
 };
 
 const DialogTitle = forwardRef<HTMLSpanElement, DialogTitleProps>(
-  ({ title, ...rest }, ref) => {
+  ({ title, ...rest }) => {
     return (
       <Heading size="lg" {...rest}>
         {title}
@@ -32,7 +32,7 @@ type DialogDescriptionProps = {
 };
 
 const DialogDescription = forwardRef<HTMLSpanElement, DialogDescriptionProps>(
-  ({ description, ...rest }, ref) => {
+  ({ description, ...rest }) => {
     return (
       <Text size="md" {...rest}>
         {description}
@@ -46,7 +46,7 @@ type DialogContentProps = {
 };
 
 const DialogContent = forwardRef<HTMLSpanElement, DialogContentProps>(
-  ({ children, ...rest }, ref) => {
+  ({ children, ...rest }) => {
     return <Content {...rest}>{children}</Content>;
   },
 );

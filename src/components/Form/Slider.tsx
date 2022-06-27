@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import * as RadixSlider from '@radix-ui/react-slider';
 import { useField } from '@unform/core';

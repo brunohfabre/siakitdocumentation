@@ -1,15 +1,16 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
+
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-day-picker/dist/style.css';
 
 import { StyledToastContainer } from '../components/Toast';
 import { ThemeProvider } from './theme';
 
-type AppProviderProps = {
+type SiakitProviderProps = {
   children: ReactNode;
 };
 
-export function AppProvider({ children }: AppProviderProps): JSX.Element {
+export function SiakitProvider({ children }: SiakitProviderProps): JSX.Element {
   return (
     <ThemeProvider>
       <StyledToastContainer />

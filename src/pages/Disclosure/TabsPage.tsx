@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Badge } from '../../components/Badge';
 import { Flex } from '../../components/Flex';
 import { Tabs, TabList, Tab, TabPanel } from '../../components/Tabs';

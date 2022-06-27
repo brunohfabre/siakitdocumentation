@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Flex } from '../../components/Flex';
 import { Rectangle, Ellipse } from '../../components/Shimmer';
 

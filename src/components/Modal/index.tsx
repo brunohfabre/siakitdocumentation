@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 
 import * as Dialog from '@radix-ui/react-dialog';
 
@@ -19,7 +19,7 @@ type ModalTitleProps = {
 };
 
 const ModalTitle = forwardRef<HTMLSpanElement, ModalTitleProps>(
-  ({ title, ...rest }, ref) => {
+  ({ title, ...rest }) => {
     return (
       <Heading size="lg" {...rest}>
         {title}
@@ -28,10 +28,9 @@ const ModalTitle = forwardRef<HTMLSpanElement, ModalTitleProps>(
   },
 );
 
-const ModalCloseButton = forwardRef<HTMLSpanElement>((props, ref) => {
+const ModalCloseButton = forwardRef<HTMLSpanElement>((props) => {
   return (
     <IconButton
-      // ref={ref}
       type="button"
       variant="ghost"
       colorScheme="gray"
@@ -47,7 +46,7 @@ type ModalContentProps = {
 };
 
 const ModalContent = forwardRef<HTMLSpanElement, ModalContentProps>(
-  ({ size, children, ...rest }, ref) => {
+  ({ size, children, ...rest }) => {
     return (
       <Content size={size} {...rest}>
         {children}

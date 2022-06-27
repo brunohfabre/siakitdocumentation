@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useNavigate } from 'react-router-dom';
 
 import siakitLogoFullImage from '../../assets/icons/siakit-logo-full.png';

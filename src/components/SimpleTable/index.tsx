@@ -1,4 +1,4 @@
-import { ReactElement } from 'react';
+import React, { ReactElement } from 'react';
 
 import { Grid } from '../Grid';
 import { Text } from '../Text';

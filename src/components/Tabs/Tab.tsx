@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 import * as RadixTabs from '@radix-ui/react-tabs';
 import styled from 'styled-components';
