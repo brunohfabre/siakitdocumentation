@@ -209,6 +209,7 @@ export function AppSidebar(): JSX.Element {
         <SubMenuItem onClick={() => navigate('/layout/sidebar')}>
           Sidebar
         </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/layout/flex')}>Flex</SubMenuItem>
       </SubMenu>
 
       <SubMenu value="utils">

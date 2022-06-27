@@ -20,6 +20,7 @@ import { ToastPage } from './pages/Feedback/ToastPage';
 import { FormPage } from './pages/Form/FormPage';
 import { HomePage } from './pages/HomePage';
 import { CardPage } from './pages/Layout/CardPage';
+import { FlexPage } from './pages/Layout/FlexPage';
 import { SidebarPage } from './pages/Layout/SidebarPage';
 import { AvatarPage } from './pages/Media/AvatarPage';
 import { IconPage } from './pages/Media/IconPage';
@@ -93,6 +94,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/layout">
         <Route path="card" element={<CardPage />} />
         <Route path="sidebar" element={<SidebarPage />} />
+        <Route path="flex" element={<FlexPage />} />
       </Route>
 
       <Route path="/utils">

@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+type Overflow = 'auto' | 'hidden';
+
 export type ContainerProps = {
   flex?: boolean | number;
   direction?: 'row' | 'column';
@@ -11,9 +13,9 @@ export type ContainerProps = {
     | 'space-around';
   align?: 'stretch' | 'flex-start' | 'flex-end' | 'center' | 'baseline';
 
-  gap?: boolean | number;
-  padding?: boolean | number | string;
+  gap?: boolean | number | string;
   margin?: boolean | number | string;
+  padding?: boolean | number | string;
 
   width?: number | string;
   height?: number | string;
@@ -21,7 +23,7 @@ export type ContainerProps = {
   maxWidth?: number | string;
   maxHeight?: number | string;
 
-  overflow?: boolean | 'auto' | 'hidden';
+  overflow?: boolean | Overflow;
 };
 
 export const Container = styled.div<ContainerProps>`
@@ -57,10 +59,25 @@ export const Container = styled.div<ContainerProps>`
       flex: ${typeof flex === 'boolean' ? 1 : flex};
     `}
 
+    ${({ gap }) =>
+    gap &&
+    typeof gap === 'boolean' &&
+    css`
+      gap: 16px;
+    `}
+
   ${({ gap }) =>
     gap &&
+    typeof gap === 'number' &&
     css`
-      gap: ${typeof gap === 'boolean' ? '16px' : `${gap}px`};
+      gap: ${gap}px;
+    `}
+
+  ${({ gap }) =>
+    gap &&
+    typeof gap === 'string' &&
+    css`
+      gap: ${gap};
     `}
 
   ${({ padding }) =>

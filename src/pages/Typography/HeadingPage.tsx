@@ -4,8 +4,6 @@ import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
 import { Heading } from '../../components/Heading';
-import { IconButton } from '../../components/IconButton';
-import { Popover } from '../../components/Popover';
 import {
   SimpleTable,
   SimpleTableHeader,
@@ -13,7 +11,6 @@ import {
 } from '../../components/SimpleTable';
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
-import { Text } from '../../components/Text';
 
 const exampleCode = `import { Heading } from "@siakit";
 
@@ -46,6 +43,10 @@ export function HeadingPage(): JSX.Element {
           </SimpleTableHeader>
 
           <SimpleTableBody>
+            <SimpleTableItem required>children</SimpleTableItem>
+            <SimpleTableItem>string</SimpleTableItem>
+            <SimpleTableItem />
+
             <SimpleTableItem>size</SimpleTableItem>
             <SimpleTableItem
               isEnum

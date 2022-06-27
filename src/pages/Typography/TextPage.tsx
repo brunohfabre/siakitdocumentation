@@ -49,21 +49,21 @@ export function TextPage(): JSX.Element {
             <SimpleTableItem>string</SimpleTableItem>
             <SimpleTableItem />
 
-            <SimpleTableItem>size</SimpleTableItem>
-            <SimpleTableItem
-              isEnum
-            >{`"xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl"`}</SimpleTableItem>
-            <SimpleTableItem>md</SimpleTableItem>
-
-            <SimpleTableItem>lowContrast</SimpleTableItem>
-            <SimpleTableItem>boolean</SimpleTableItem>
-            <SimpleTableItem>false</SimpleTableItem>
-
             <SimpleTableItem>align</SimpleTableItem>
             <SimpleTableItem
               isEnum
             >{`"left" | "center" | "right"`}</SimpleTableItem>
             <SimpleTableItem>left</SimpleTableItem>
+
+            <SimpleTableItem>lowContrast</SimpleTableItem>
+            <SimpleTableItem>boolean</SimpleTableItem>
+            <SimpleTableItem>false</SimpleTableItem>
+
+            <SimpleTableItem>size</SimpleTableItem>
+            <SimpleTableItem
+              isEnum
+            >{`"xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl" | "5xl" | "6xl"`}</SimpleTableItem>
+            <SimpleTableItem>md</SimpleTableItem>
           </SimpleTableBody>
         </SimpleTable>
       </Flex>

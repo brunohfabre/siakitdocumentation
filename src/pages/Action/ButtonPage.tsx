@@ -64,20 +64,6 @@ export function ButtonPage(): JSX.Element {
             </SimpleTableItem>
             <SimpleTableItem>APP_COLOR_SCHEME</SimpleTableItem>
 
-            <SimpleTableItem>size</SimpleTableItem>
-            <SimpleTableItem isEnum>{`"sm" | "md" | "lg"`}</SimpleTableItem>
-            <SimpleTableItem>md</SimpleTableItem>
-
-            <SimpleTableItem>variant</SimpleTableItem>
-            <SimpleTableItem
-              isEnum
-            >{`"primary" | "secondary" | "ghost"`}</SimpleTableItem>
-            <SimpleTableItem>primary</SimpleTableItem>
-
-            <SimpleTableItem required>onClick</SimpleTableItem>
-            <SimpleTableItem>function</SimpleTableItem>
-            <SimpleTableItem />
-
             <SimpleTableItem>disabled</SimpleTableItem>
             <SimpleTableItem>boolean</SimpleTableItem>
             <SimpleTableItem>false</SimpleTableItem>
@@ -93,6 +79,20 @@ export function ButtonPage(): JSX.Element {
               </LinkButton>
             </SimpleTableItem>
             <SimpleTableItem />
+
+            <SimpleTableItem required>onClick</SimpleTableItem>
+            <SimpleTableItem>FUNCTION</SimpleTableItem>
+            <SimpleTableItem />
+
+            <SimpleTableItem>size</SimpleTableItem>
+            <SimpleTableItem isEnum>{`"sm" | "md" | "lg"`}</SimpleTableItem>
+            <SimpleTableItem>md</SimpleTableItem>
+
+            <SimpleTableItem>variant</SimpleTableItem>
+            <SimpleTableItem
+              isEnum
+            >{`"primary" | "secondary" | "ghost"`}</SimpleTableItem>
+            <SimpleTableItem>primary</SimpleTableItem>
           </SimpleTableBody>
         </SimpleTable>
       </Flex>
