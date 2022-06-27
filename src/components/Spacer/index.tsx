@@ -15,5 +15,5 @@ type SpacerWidth = {
 type SpacerProps = SpacerHeight | SpacerWidth;
 
 export function Spacer({ height, width }: SpacerProps): JSX.Element {
-  return <Container height={height} width={width} />;
+  return <Container h={height} width={width} />;
 }

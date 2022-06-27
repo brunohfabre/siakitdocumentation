@@ -42,6 +42,7 @@ export function HomePage(): JSX.Element {
       <Spacer height />
 
       <Text size="lg">Accent color</Text>
+
       <Grid columns={7} gap={8}>
         {Object.keys(colors).map((color) => (
           <Button

@@ -1,37 +1,37 @@
 import styled, { css } from 'styled-components';
 
 type ContainerHeight = {
-  height: boolean | number | string | undefined;
+  h: boolean | number | string | undefined;
   width?: boolean | number | string | undefined;
 };
 
 type ContainerWidth = {
-  height?: boolean | number | string | undefined;
+  h?: boolean | number | string | undefined;
   width: boolean | number | string | undefined;
 };
 
 type ContainerProps = ContainerHeight | ContainerWidth;
 
 export const Container = styled.div<ContainerProps>`
-  ${({ height }) =>
-    height &&
-    typeof height === 'boolean' &&
+  ${({ h }) =>
+    h &&
+    typeof h === 'boolean' &&
     css`
       height: 16px;
     `};
 
-  ${({ height }) =>
-    height &&
-    typeof height === 'number' &&
+  ${({ h }) =>
+    h &&
+    typeof h === 'number' &&
     css`
-      height: ${height}px;
+      height: ${h}px;
     `};
 
-  ${({ height }) =>
-    height &&
-    typeof height === 'string' &&
+  ${({ h }) =>
+    h &&
+    typeof h === 'string' &&
     css`
-      height: ${height};
+      height: ${h};
     `};
 
   ${({ width }) =>
