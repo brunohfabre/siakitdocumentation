@@ -18,6 +18,9 @@ export type ContainerProps = {
   width?: number | string;
   height?: number | string;
 
+  maxWidth?: number | string;
+  maxHeight?: number | string;
+
   overflow?: boolean | 'auto' | 'hidden';
 };
 
@@ -114,5 +117,19 @@ export const Container = styled.div<ContainerProps>`
     css`
       max-height: ${typeof height === 'string' ? height : `${height}px`};
       height: ${typeof height === 'string' ? height : `${height}px`};
+    `}
+
+    ${({ maxWidth }) =>
+    maxWidth &&
+    css`
+      max-width: ${typeof maxWidth === 'string' ? maxWidth : `${maxWidth}px`};
+    `}
+
+    ${({ maxHeight }) =>
+    maxHeight &&
+    css`
+      max-height: ${typeof maxHeight === 'string'
+        ? maxHeight
+        : `${maxHeight}px`};
     `}
 `;

@@ -5,7 +5,7 @@ export const Container = styled.div`
   padding: 32px;
   border-radius: 8px;
 
-  pre {
+  pre code {
     font-size: 14px;
     font-family: 'JetBrains Mono', monospace;
   }

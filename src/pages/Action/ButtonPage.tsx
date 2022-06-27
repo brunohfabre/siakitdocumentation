@@ -5,15 +5,17 @@ import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
 import { Heading } from '../../components/Heading';
-import { IconButton } from '../../components/IconButton';
 import { LinkButton } from '../../components/LinkButton';
-import { Popover } from '../../components/Popover';
-import { SimpleTable } from '../../components/SimpleTable';
+import {
+  SimpleTable,
+  SimpleTableHeader,
+  SimpleTableItem,
+} from '../../components/SimpleTable';
+import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
-import { Text } from '../../components/Text';
 import { colors } from '../../hooks/theme';
 
-const exampleCode = `import { Button } from "@siakit/button";
+const exampleCode = `import { Button } from '@siakit';
 
 <Button />`;
 
@@ -38,158 +40,61 @@ export function ButtonPage(): JSX.Element {
         <Heading>API reference</Heading>
         <Heading size="md">Button</Heading>
 
-        <SimpleTable
-          header={[
-            { title: 'Prop', dataIndex: 'prop' },
-            { title: 'Type', dataIndex: 'type' },
-            { title: 'Default', dataIndex: 'default' },
-          ]}
-          data={[
-            {
-              prop: 'children*',
-              type: 'string',
-              default: '--',
-            },
-            {
-              prop: 'type*',
-              type: (
-                <Flex gap={4} align="center">
-                  <Text size="sm">enum</Text>
+        <SimpleTable>
+          <SimpleTableHeader>
+            <SimpleTableItem isHeader>prop</SimpleTableItem>
+            <SimpleTableItem isHeader>type</SimpleTableItem>
+            <SimpleTableItem isHeader>default</SimpleTableItem>
+          </SimpleTableHeader>
 
-                  <Popover>
-                    <IconButton
-                      type="button"
-                      icon="HiInformationCircle"
-                      colorScheme="gray"
-                      variant="ghost"
-                    />
+          <SimpleTableBody>
+            <SimpleTableItem required>children</SimpleTableItem>
+            <SimpleTableItem>string</SimpleTableItem>
+            <SimpleTableItem />
 
-                    <Flex padding={12}>
-                      <Text size="sm">{`"button" | "submit"`}</Text>
-                    </Flex>
-                  </Popover>
-                </Flex>
-              ),
-              default: '--',
-            },
-            {
-              prop: 'colorScheme',
-              type: (
-                <Flex gap={4} align="center">
-                  <Text size="sm">enum</Text>
+            <SimpleTableItem required>type</SimpleTableItem>
+            <SimpleTableItem isEnum>{`"button" | "submit"`}</SimpleTableItem>
+            <SimpleTableItem />
 
-                  <Popover>
-                    <IconButton
-                      type="button"
-                      icon="HiInformationCircle"
-                      colorScheme="gray"
-                      variant="ghost"
-                    />
+            <SimpleTableItem>colorScheme</SimpleTableItem>
+            <SimpleTableItem isEnum>
+              {Object.keys(colors).map((color, index) =>
+                index === 0 ? `"${color}" ` : `| "${color}" `,
+              )}
+            </SimpleTableItem>
+            <SimpleTableItem>APP_COLOR_SCHEME</SimpleTableItem>
 
-                    <Flex padding={12} width={440}>
-                      <Text size="sm" align="center">
-                        {Object.keys(colors).map((color, index) =>
-                          index === 0 ? `"${color}" ` : `| "${color}" `,
-                        )}
-                      </Text>
-                    </Flex>
-                  </Popover>
-                </Flex>
-              ),
-              default: 'app color scheme',
-            },
-            {
-              prop: 'size',
-              type: (
-                <Flex gap={4} align="center">
-                  <Text size="sm">enum</Text>
+            <SimpleTableItem>size</SimpleTableItem>
+            <SimpleTableItem isEnum>{`"sm" | "md" | "lg"`}</SimpleTableItem>
+            <SimpleTableItem>md</SimpleTableItem>
 
-                  <Popover>
-                    <IconButton
-                      type="button"
-                      icon="HiInformationCircle"
-                      colorScheme="gray"
-                      variant="ghost"
-                    />
+            <SimpleTableItem>variant</SimpleTableItem>
+            <SimpleTableItem
+              isEnum
+            >{`"primary" | "secondary" | "ghost"`}</SimpleTableItem>
+            <SimpleTableItem>primary</SimpleTableItem>
 
-                    <Flex padding={12}>
-                      <Text size="sm" align="center">
-                        {`"sm" | "md" | "lg"`}
-                      </Text>
-                    </Flex>
-                  </Popover>
-                </Flex>
-              ),
-              default: 'md',
-            },
-            {
-              prop: 'variant',
-              type: (
-                <Flex gap={4} align="center">
-                  <Text size="sm">enum</Text>
+            <SimpleTableItem required>onClick</SimpleTableItem>
+            <SimpleTableItem>function</SimpleTableItem>
+            <SimpleTableItem />
 
-                  <Popover>
-                    <IconButton
-                      type="button"
-                      icon="HiInformationCircle"
-                      colorScheme="gray"
-                      variant="ghost"
-                    />
+            <SimpleTableItem>disabled</SimpleTableItem>
+            <SimpleTableItem>boolean</SimpleTableItem>
+            <SimpleTableItem>false</SimpleTableItem>
 
-                    <Flex padding={12}>
-                      <Text size="sm" align="center">
-                        {`"primary" | "secondary" | "ghost"`}
-                      </Text>
-                    </Flex>
-                  </Popover>
-                </Flex>
-              ),
-              default: 'primary',
-            },
-            {
-              prop: 'onClick*',
-              type: 'function',
-              default: '--',
-            },
-            {
-              prop: 'disabled',
-              type: 'boolean',
-              default: 'false',
-            },
-            {
-              prop: 'icon',
-              type: (
-                <Flex gap={4} align="center">
-                  <Text size="sm">enum</Text>
-
-                  <Popover>
-                    <IconButton
-                      type="button"
-                      icon="HiInformationCircle"
-                      colorScheme="gray"
-                      variant="ghost"
-                    />
-
-                    <Flex padding={12}>
-                      <Text size="sm" align="center">
-                        <LinkButton
-                          onClick={() =>
-                            window.open(
-                              'https://react-icons.github.io/react-icons/',
-                            )
-                          }
-                        >
-                          React icons page
-                        </LinkButton>
-                      </Text>
-                    </Flex>
-                  </Popover>
-                </Flex>
-              ),
-              default: '--',
-            },
-          ]}
-        />
+            <SimpleTableItem>icon</SimpleTableItem>
+            <SimpleTableItem isEnum>
+              <LinkButton
+                onClick={() =>
+                  window.open('https://react-icons.github.io/react-icons/')
+                }
+              >
+                react-icons docs
+              </LinkButton>
+            </SimpleTableItem>
+            <SimpleTableItem />
+          </SimpleTableBody>
+        </SimpleTable>
       </Flex>
     </Flex>
   );

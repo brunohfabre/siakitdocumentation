@@ -9,7 +9,9 @@ type CodeHighlightProps = {
 export function CodeHighlight({ children }: CodeHighlightProps): JSX.Element {
   return (
     <Container>
-      <pre>{children}</pre>
+      <pre>
+        <code>{children}</code>
+      </pre>
     </Container>
   );
 }
