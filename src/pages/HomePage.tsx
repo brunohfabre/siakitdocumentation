@@ -45,6 +45,7 @@ export function HomePage(): JSX.Element {
       <Grid columns={7} gap={8}>
         {Object.keys(colors).map((color) => (
           <Button
+            key={color}
             type="button"
             colorScheme={color as Colors}
             onClick={() => changeColorScheme(color as Colors)}

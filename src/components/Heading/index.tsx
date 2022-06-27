@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 
 import {
   Container1,
@@ -16,30 +16,36 @@ type HeadingProps = {
   children: ReactNode;
 };
 
-export function Heading({ children, size = 'lg' }: HeadingProps): JSX.Element {
-  if (size === '5xl') {
-    return <Container1>{children}</Container1>;
-  }
+export const Heading = forwardRef<HTMLHeadingElement, HeadingProps>(
+  ({ children, size = 'lg' }, ref) => {
+    if (size === '5xl') {
+      return <Container1 ref={ref}>{children}</Container1>;
+    }
 
-  if (size === '4xl') {
-    return <Container2>{children}</Container2>;
-  }
+    if (size === '4xl') {
+      return <Container2 ref={ref}>{children}</Container2>;
+    }
 
-  if (size === '3xl') {
-    return <Container3>{children}</Container3>;
-  }
+    if (size === '3xl') {
+      return <Container3 ref={ref}>{children}</Container3>;
+    }
 
-  if (size === '2xl') {
-    return <Container4>{children}</Container4>;
-  }
+    if (size === '2xl') {
+      return <Container4 ref={ref}>{children}</Container4>;
+    }
 
-  if (size === 'xl') {
-    return <Container5>{children}</Container5>;
-  }
+    if (size === 'xl') {
+      return <Container5 ref={ref}>{children}</Container5>;
+    }
 
-  if (size === 'lg') {
-    return <Container6>{children}</Container6>;
-  }
+    if (size === 'lg') {
+      return <Container6 ref={ref}>{children}</Container6>;
+    }
 
-  return <Container size={size}>{children}</Container>;
-}
+    return (
+      <Container ref={ref} size={size}>
+        {children}
+      </Container>
+    );
+  },
+);

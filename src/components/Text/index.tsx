@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { forwardRef, ReactNode } from 'react';
 
 import { Align, Container, Size } from './styles';
 
@@ -9,15 +9,12 @@ type TextProps = {
   align?: Align;
 };
 
-export function Text({
-  children,
-  size = 'md',
-  lowContrast = false,
-  align = 'left',
-}: TextProps): JSX.Element {
-  return (
-    <Container size={size} lowContrast={lowContrast} align={align}>
-      {children}
-    </Container>
-  );
-}
+export const Text = forwardRef<HTMLParagraphElement, TextProps>(
+  ({ children, size = 'md', lowContrast = false, align = 'left' }, ref) => {
+    return (
+      <Container ref={ref} size={size} lowContrast={lowContrast} align={align}>
+        {children}
+      </Container>
+    );
+  },
+);

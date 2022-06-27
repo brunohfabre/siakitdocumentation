@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 import * as Dialog from '@radix-ui/react-dialog';
 
@@ -14,47 +14,6 @@ type ModalProps = {
   children: ReactNode;
 };
 
-type ModalTitleProps = {
-  title: string;
-};
-
-const ModalTitle = forwardRef<HTMLSpanElement, ModalTitleProps>(
-  ({ title, ...rest }) => {
-    return (
-      <Heading size="lg" {...rest}>
-        {title}
-      </Heading>
-    );
-  },
-);
-
-const ModalCloseButton = forwardRef<HTMLSpanElement>((props) => {
-  return (
-    <IconButton
-      type="button"
-      variant="ghost"
-      colorScheme="gray"
-      icon="HiOutlineX"
-      {...props}
-    />
-  );
-});
-
-type ModalContentProps = {
-  size: Size;
-  children: ReactNode;
-};
-
-const ModalContent = forwardRef<HTMLSpanElement, ModalContentProps>(
-  ({ size, children, ...rest }) => {
-    return (
-      <Content size={size} {...rest}>
-        {children}
-      </Content>
-    );
-  },
-);
-
 export function Modal({
   isOpen,
   onRequestClose,
@@ -68,19 +27,24 @@ export function Modal({
         <Dialog.Overlay>
           <Overlay>
             <Dialog.Content asChild>
-              <ModalContent size={size}>
+              <Content size={size}>
                 <ModalHeader>
                   <Dialog.Title asChild>
-                    <ModalTitle title={title} />
+                    <Heading size="lg">{title}</Heading>
                   </Dialog.Title>
 
                   <Dialog.Close asChild>
-                    <ModalCloseButton />
+                    <IconButton
+                      type="button"
+                      variant="ghost"
+                      colorScheme="gray"
+                      icon="HiOutlineX"
+                    />
                   </Dialog.Close>
                 </ModalHeader>
 
                 {children}
-              </ModalContent>
+              </Content>
             </Dialog.Content>
           </Overlay>
         </Dialog.Overlay>

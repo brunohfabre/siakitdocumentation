@@ -1,4 +1,4 @@
-import React, { forwardRef, ReactNode } from 'react';
+import React from 'react';
 
 import * as RadixDialog from '@radix-ui/react-dialog';
 
@@ -12,44 +12,6 @@ import { Flex } from '../Flex';
 import { Heading } from '../Heading';
 import { Text } from '../Text';
 import { Overlay, Content } from './styles';
-
-type DialogTitleProps = {
-  title: string;
-};
-
-const DialogTitle = forwardRef<HTMLSpanElement, DialogTitleProps>(
-  ({ title, ...rest }) => {
-    return (
-      <Heading size="lg" {...rest}>
-        {title}
-      </Heading>
-    );
-  },
-);
-
-type DialogDescriptionProps = {
-  description: string;
-};
-
-const DialogDescription = forwardRef<HTMLSpanElement, DialogDescriptionProps>(
-  ({ description, ...rest }) => {
-    return (
-      <Text size="md" {...rest}>
-        {description}
-      </Text>
-    );
-  },
-);
-
-type DialogContentProps = {
-  children: ReactNode;
-};
-
-const DialogContent = forwardRef<HTMLSpanElement, DialogContentProps>(
-  ({ children, ...rest }) => {
-    return <Content {...rest}>{children}</Content>;
-  },
-);
 
 type Type = 'info' | 'success' | 'warning' | 'danger';
 
@@ -96,18 +58,18 @@ export function Dialog({
         <RadixDialog.Overlay>
           <Overlay>
             <RadixDialog.Content asChild>
-              <DialogContent>
+              <Content>
                 {type === 'info' && <img src={InfoIcon} alt="info" />}
                 {type === 'success' && <img src={SuccessIcon} alt="success" />}
                 {type === 'warning' && <img src={WarningIcon} alt="warning" />}
                 {type === 'danger' && <img src={DangerIcon} alt="danger" />}
 
                 <RadixDialog.Title asChild>
-                  <DialogTitle title={title} />
+                  <Heading size="lg">{title}</Heading>
                 </RadixDialog.Title>
 
                 <RadixDialog.Description asChild>
-                  <DialogDescription description={description} />
+                  <Text size="md">{description}</Text>
                 </RadixDialog.Description>
 
                 <Flex gap={8}>
@@ -128,7 +90,7 @@ export function Dialog({
                     {submitText}
                   </Button>
                 </Flex>
-              </DialogContent>
+              </Content>
             </RadixDialog.Content>
           </Overlay>
         </RadixDialog.Overlay>
