@@ -1,12 +1,9 @@
-import React, { ReactElement, ReactNode } from 'react';
+import React from 'react';
 
 import { Grid } from '../Grid';
-import { Text } from '../Text';
-
-type Item = { [key: string]: string | ReactElement };
 
 type SimpleTableProps = {
-  children: ReactNode[];
+  children: any;
 };
 
 export function SimpleTable({ children }: SimpleTableProps): JSX.Element {
