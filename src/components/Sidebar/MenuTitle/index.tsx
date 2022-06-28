@@ -9,12 +9,16 @@ type MenuTitleProps = {
 };
 
 export function MenuTitle({ children }: MenuTitleProps): JSX.Element {
-  const { colorScheme } = useTheme();
+  const { colorScheme, theme } = useTheme();
 
   const { isExpanded } = useContext(SidebarContext);
 
   return (
-    <Container colorScheme={colorScheme} isExpanded={!!isExpanded}>
+    <Container
+      colorScheme={colorScheme}
+      isExpanded={!!isExpanded}
+      appTheme={theme}
+    >
       {isExpanded ? children : `${children.slice(0, 4)}.`}
     </Container>
   );

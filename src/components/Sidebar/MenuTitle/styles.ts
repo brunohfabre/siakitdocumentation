@@ -1,8 +1,9 @@
 import styled, { css } from 'styled-components';
 
-import { Colors } from '../../../hooks/theme';
+import { Colors, Theme } from '../../../hooks/theme';
 
 type ContainerProps = {
+  appTheme: Theme;
   colorScheme: Colors;
   isExpanded: boolean;
 };
@@ -19,7 +20,14 @@ export const Container = styled.div<ContainerProps>`
   font-weight: 700;
   text-transform: uppercase;
 
-  color: ${({ colorScheme, theme }) => theme.colors[colorScheme][6]};
+  ${({ appTheme, theme, colorScheme }) =>
+    appTheme === 'light'
+      ? css`
+          color: ${theme.colors[colorScheme][6]};
+        `
+      : css`
+          color: ${theme.colors.gray[11]};
+        `}
 
   ${({ isExpanded }) =>
     isExpanded
