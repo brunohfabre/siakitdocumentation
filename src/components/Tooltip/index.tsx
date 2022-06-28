@@ -9,12 +9,14 @@ type TooltipProps = {
   children: ReactNode;
   content: string | undefined;
   side?: 'top' | 'right' | 'bottom' | 'left';
+  align?: 'start' | 'center' | 'end';
 };
 
 export function Tooltip({
   children,
   content,
   side = 'top',
+  align = 'center',
 }: TooltipProps): JSX.Element {
   const theme = useTheme();
 
@@ -24,7 +26,7 @@ export function Tooltip({
         <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
 
         {!!content && (
-          <Content side={side} sideOffset={4}>
+          <Content side={side} align={align} sideOffset={4}>
             <RadixTooltip.Arrow fill={theme.colors.gray[12]} />
 
             <p>{content}</p>
