@@ -27,20 +27,28 @@ import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { Text } from '../../components/Text';
 
-const exampleCode = `import { Teste } from '@siakit';
+const exampleCode = `import {
+  Sidebar,
+  Menu,
+  MenuHeader,
+  MenuTitle,
+  MenuItem,
+  SubMenu,
+  SubMenuTitle,
+  SubMenuSeparator,
+  SubMenuItem,
+} from '@siakit';
 
 <Sidebar>
   <Menu>
     <MenuHeader />
-
+    <MenuTitle />
     <MenuItem />
   </Menu>
 
   <SubMenu>
     <SubMenuTitle />
-
     <SubMenuSeparator />
-
     <SubMenuItem />
   </SubMenu>
 </Sidebar>`;
