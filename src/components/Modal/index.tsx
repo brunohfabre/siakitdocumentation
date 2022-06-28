@@ -8,7 +8,7 @@ import { Overlay, Content, ModalHeader, Size } from './styles';
 
 type ModalProps = {
   isOpen: boolean;
-  onRequestClose: () => void;
+  onRequestClose?: () => void;
   title: string;
   size?: Size;
   children: ReactNode;
@@ -22,7 +22,7 @@ export function Modal({
   children,
 }: ModalProps): JSX.Element {
   return (
-    <Dialog.Root open={isOpen} onOpenChange={onRequestClose}>
+    <Dialog.Root open={isOpen} onOpenChange={onRequestClose ?? undefined}>
       <Dialog.Portal>
         <Dialog.Overlay>
           <Overlay>
@@ -33,14 +33,16 @@ export function Modal({
                     <Heading size="lg">{title}</Heading>
                   </Dialog.Title>
 
-                  <Dialog.Close asChild>
-                    <IconButton
-                      type="button"
-                      variant="ghost"
-                      colorScheme="gray"
-                      icon="HiOutlineX"
-                    />
-                  </Dialog.Close>
+                  {onRequestClose && (
+                    <Dialog.Close asChild>
+                      <IconButton
+                        type="button"
+                        variant="ghost"
+                        colorScheme="gray"
+                        icon="HiOutlineX"
+                      />
+                    </Dialog.Close>
+                  )}
                 </ModalHeader>
 
                 {children}
