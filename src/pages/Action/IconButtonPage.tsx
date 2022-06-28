@@ -36,7 +36,7 @@ export function IconButtonPage(): JSX.Element {
 
         <Spacer height />
         <Heading>API reference</Heading>
-        <Heading size="md">Button</Heading>
+        <Heading size="md">IconButton</Heading>
 
         <SimpleTable>
           <SimpleTableHeader>

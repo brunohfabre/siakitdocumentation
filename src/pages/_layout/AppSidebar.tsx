@@ -210,6 +210,7 @@ export function AppSidebar(): JSX.Element {
           Sidebar
         </SubMenuItem>
         <SubMenuItem onClick={() => navigate('/layout/flex')}>Flex</SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/layout/grid')}>Grid</SubMenuItem>
       </SubMenu>
 
       <SubMenu value="utils">

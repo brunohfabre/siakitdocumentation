@@ -21,6 +21,7 @@ import { FormPage } from './pages/Form/FormPage';
 import { HomePage } from './pages/HomePage';
 import { CardPage } from './pages/Layout/CardPage';
 import { FlexPage } from './pages/Layout/FlexPage';
+import { GridPage } from './pages/Layout/GridPage';
 import { SidebarPage } from './pages/Layout/SidebarPage';
 import { AvatarPage } from './pages/Media/AvatarPage';
 import { IconPage } from './pages/Media/IconPage';
@@ -95,6 +96,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="card" element={<CardPage />} />
         <Route path="sidebar" element={<SidebarPage />} />
         <Route path="flex" element={<FlexPage />} />
+        <Route path="grid" element={<GridPage />} />
       </Route>
 
       <Route path="/utils">

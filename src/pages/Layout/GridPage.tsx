@@ -11,15 +11,15 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Flex } from '@siakit';
+const exampleCode = `import { Grid } from '@siakit';
 
-<Flex />`;
+<Grid />`;
 
-export function FlexPage(): JSX.Element {
+export function GridPage(): JSX.Element {
   return (
     <Flex flex direction="column" align="center" overflow>
       <Flex width={768} padding={32} direction="column" gap>
-        <Heading size="xl">Flex</Heading>
+        <Heading size="xl">Grid</Heading>
 
         {/* <Card>
           <Flex height={192} padding justify="center" align="center">
@@ -33,7 +33,7 @@ export function FlexPage(): JSX.Element {
 
         <Spacer height />
         <Heading>API reference</Heading>
-        <Heading size="md">Flex</Heading>
+        <Heading size="md">Grid</Heading>
 
         <SimpleTable>
           <SimpleTableHeader>
@@ -47,24 +47,8 @@ export function FlexPage(): JSX.Element {
             <SimpleTableItem>ReactNode</SimpleTableItem>
             <SimpleTableItem />
 
-            <SimpleTableItem>flex</SimpleTableItem>
-            <SimpleTableItem>boolean | number</SimpleTableItem>
-            <SimpleTableItem />
-
-            <SimpleTableItem>direction</SimpleTableItem>
-            <SimpleTableItem isEnum>{`"row" | "column"`}</SimpleTableItem>
-            <SimpleTableItem />
-
-            <SimpleTableItem>justify</SimpleTableItem>
-            <SimpleTableItem
-              isEnum
-            >{`"flex-start" | "flex-end" | "center" | "space-between" | "space-around"`}</SimpleTableItem>
-            <SimpleTableItem />
-
-            <SimpleTableItem>align</SimpleTableItem>
-            <SimpleTableItem
-              isEnum
-            >{`"stretch" | "flex-start" | "flex-end" | "center" | "baseline"`}</SimpleTableItem>
+            <SimpleTableItem required>columns</SimpleTableItem>
+            <SimpleTableItem>number</SimpleTableItem>
             <SimpleTableItem />
 
             <SimpleTableItem>gap</SimpleTableItem>

@@ -41,7 +41,7 @@ export function LinkButtonPage(): JSX.Element {
 
         <Spacer height />
         <Heading>API reference</Heading>
-        <Heading size="md">Button</Heading>
+        <Heading size="md">LinkButton</Heading>
 
         <SimpleTable>
           <SimpleTableHeader>

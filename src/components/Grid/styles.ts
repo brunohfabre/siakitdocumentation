@@ -1,18 +1,21 @@
 import styled, { css } from 'styled-components';
 
+type Overflow = 'auto' | 'hidden';
+
 export type ContainerProps = {
-  overflow?: boolean | 'auto' | 'hidden';
   columns: number | string;
 
   gap?: boolean | number | string;
-  padding?: boolean | number | string;
   margin?: boolean | number | string;
+  padding?: boolean | number | string;
 
   width?: number | string;
   height?: number | string;
 
   maxWidth?: number | string;
   maxHeight?: number | string;
+
+  overflow?: boolean | Overflow;
 };
 
 export const Container = styled.div<ContainerProps>`
