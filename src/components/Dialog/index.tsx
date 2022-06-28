@@ -34,7 +34,7 @@ export function Dialog({
   type,
   submitText,
   onSubmit,
-  cancelText = 'Cancelar',
+  cancelText = 'Cancel',
 }: DialogProps): JSX.Element {
   function buttonColorScheme(): Colors {
     if (type === 'success') {
