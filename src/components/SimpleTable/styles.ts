@@ -6,4 +6,6 @@ export const ItemContainer = styled.div`
   align-items: center;
 
   border-bottom: 1px solid ${({ theme }) => theme.colors.gray[6]};
+
+  padding-right: 12px;
 `;
