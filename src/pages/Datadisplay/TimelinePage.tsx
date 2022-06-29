@@ -1,52 +1,90 @@
 import React from 'react';
 
+import { Card } from '../../components/Card';
+import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
 import { Heading } from '../../components/Heading';
-import { Text } from '../../components/Text';
-import { TimelineItem, Timeline } from '../../components/Timeline';
+import {
+  SimpleTable,
+  SimpleTableHeader,
+  SimpleTableItem,
+} from '../../components/SimpleTable';
+import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
+import { Spacer } from '../../components/Spacer';
+import { Timeline, TimelineItem } from '../../components/Timeline';
+
+const exampleCode = `import { Timeline, TimelineItem } from '@siakit';
+
+<Timeline>
+  <TimelineItem />
+</Timeline>`;
 
 export function TimelinePage(): JSX.Element {
   return (
-    <Flex flex justify="center" align="center">
-      <Flex width={640}>
-        <Timeline>
-          <TimelineItem name="Bruno Fabre">
-            <Flex direction="column" padding gap={8}>
-              <Heading size="md">Item 1</Heading>
+    <Flex flex direction="column" align="center" overflow>
+      <Flex width={768} padding={32} direction="column" gap>
+        <Heading size="xl">Timeline</Heading>
+        <Card>
+          <Flex padding={32} justify="center" align="center">
+            <Timeline>
+              <TimelineItem name="name">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam nisi sapiente nesciunt harum, totam quo odit
+                exercitationem cupiditate perspiciatis eligendi sint
+                consequuntur velit aliquam vel molestiae.
+              </TimelineItem>
+              <TimelineItem name="name">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laboriosam nisi sapiente nesciunt harum, totam quo odit
+                exercitationem cupiditate perspiciatis eligendi sint
+                consequuntur velit aliquam vel molestiae.
+              </TimelineItem>
+            </Timeline>
+          </Flex>
+        </Card>
 
-              <Text size="sm">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                accusantium ratione exercitationem porro aliquid, magnam sequi.
-                Consequatur nesciunt voluptatum neque ea recusandae impedit
-                adipisci, accusamus porro, dicta minus eius suscipit.
-              </Text>
-            </Flex>
-          </TimelineItem>
-          <TimelineItem name="Vinicius Henrique">
-            <Flex direction="column" padding gap={8}>
-              <Heading size="md">Item 2</Heading>
+        <Spacer height />
+        <Heading>Anatomy</Heading>
+        <CodeHighlight>{exampleCode}</CodeHighlight>
 
-              <Text size="sm">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                accusantium ratione exercitationem porro aliquid, magnam sequi.
-                Consequatur nesciunt voluptatum neque ea recusandae impedit
-                adipisci, accusamus porro, dicta minus eius suscipit.
-              </Text>
-            </Flex>
-          </TimelineItem>
-          <TimelineItem name="Joubert Vasconcelos">
-            <Flex direction="column" padding gap={8}>
-              <Heading size="md">Item 3</Heading>
+        <Spacer height />
+        <Heading>API reference</Heading>
+        <Heading size="md">Timeline</Heading>
 
-              <Text size="sm">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
-                accusantium ratione exercitationem porro aliquid, magnam sequi.
-                Consequatur nesciunt voluptatum neque ea recusandae impedit
-                adipisci, accusamus porro, dicta minus eius suscipit.
-              </Text>
-            </Flex>
-          </TimelineItem>
-        </Timeline>
+        <SimpleTable>
+          <SimpleTableHeader>
+            <SimpleTableItem isHeader>Prop</SimpleTableItem>
+            <SimpleTableItem isHeader>Type</SimpleTableItem>
+            <SimpleTableItem isHeader>Default</SimpleTableItem>
+          </SimpleTableHeader>
+
+          <SimpleTableBody>
+            <SimpleTableItem required>children</SimpleTableItem>
+            <SimpleTableItem>TimelineItem</SimpleTableItem>
+            <SimpleTableItem />
+          </SimpleTableBody>
+        </SimpleTable>
+
+        <Spacer height />
+        <Heading size="md">TimelineItem</Heading>
+
+        <SimpleTable>
+          <SimpleTableHeader>
+            <SimpleTableItem isHeader>Prop</SimpleTableItem>
+            <SimpleTableItem isHeader>Type</SimpleTableItem>
+            <SimpleTableItem isHeader>Default</SimpleTableItem>
+          </SimpleTableHeader>
+
+          <SimpleTableBody>
+            <SimpleTableItem required>children</SimpleTableItem>
+            <SimpleTableItem>ReactNode</SimpleTableItem>
+            <SimpleTableItem />
+
+            <SimpleTableItem required>name</SimpleTableItem>
+            <SimpleTableItem>string</SimpleTableItem>
+            <SimpleTableItem />
+          </SimpleTableBody>
+        </SimpleTable>
       </Flex>
     </Flex>
   );

@@ -1,24 +1,81 @@
 import React from 'react';
 
+import { Card } from '../../components/Card';
+import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
+import { Heading } from '../../components/Heading';
 import { List, ListItem } from '../../components/List';
+import {
+  SimpleTable,
+  SimpleTableHeader,
+  SimpleTableItem,
+} from '../../components/SimpleTable';
+import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
+import { Spacer } from '../../components/Spacer';
+
+const exampleCode = `import { List, ListItem } from '@siakit';
+
+<List>
+  <ListItem />
+</List>`;
 
 export function ListPage(): JSX.Element {
   return (
-    <Flex flex justify="center" align="center" direction="column" gap={64}>
-      <List>
-        <ListItem>Lorem ipsum dolor sit amet</ListItem>
-        <ListItem>Consectetur adipiscing elit</ListItem>
-        <ListItem>Integer molestie lorem at massa</ListItem>
-        <ListItem>Facilisis in pretium nisl aliquet</ListItem>
-      </List>
+    <Flex flex direction="column" align="center" overflow>
+      <Flex width={768} padding={32} direction="column" gap>
+        <Heading size="xl">List</Heading>
+        <Card>
+          <Flex height={192} justify="center" align="center">
+            <List>
+              <ListItem>Item 1</ListItem>
+              <ListItem>Item 2</ListItem>
+            </List>
+          </Flex>
+        </Card>
 
-      <List type="ordered">
-        <ListItem>Lorem ipsum dolor sit amet</ListItem>
-        <ListItem>Consectetur adipiscing elit</ListItem>
-        <ListItem>Integer molestie lorem at massa</ListItem>
-        <ListItem>Facilisis in pretium nisl aliquet</ListItem>
-      </List>
+        <Spacer height />
+        <Heading>Anatomy</Heading>
+        <CodeHighlight>{exampleCode}</CodeHighlight>
+
+        <Spacer height />
+        <Heading>API reference</Heading>
+        <Heading size="md">List</Heading>
+
+        <SimpleTable>
+          <SimpleTableHeader>
+            <SimpleTableItem isHeader>Prop</SimpleTableItem>
+            <SimpleTableItem isHeader>Type</SimpleTableItem>
+            <SimpleTableItem isHeader>Default</SimpleTableItem>
+          </SimpleTableHeader>
+
+          <SimpleTableBody>
+            <SimpleTableItem required>children</SimpleTableItem>
+            <SimpleTableItem>ReactNode</SimpleTableItem>
+            <SimpleTableItem />
+
+            <SimpleTableItem>type</SimpleTableItem>
+            <SimpleTableItem>{`"unordered" | "ordered"`}</SimpleTableItem>
+            <SimpleTableItem>unordered</SimpleTableItem>
+          </SimpleTableBody>
+        </SimpleTable>
+
+        <Spacer height />
+        <Heading size="md">ListItem</Heading>
+
+        <SimpleTable>
+          <SimpleTableHeader>
+            <SimpleTableItem isHeader>Prop</SimpleTableItem>
+            <SimpleTableItem isHeader>Type</SimpleTableItem>
+            <SimpleTableItem isHeader>Default</SimpleTableItem>
+          </SimpleTableHeader>
+
+          <SimpleTableBody>
+            <SimpleTableItem required>children</SimpleTableItem>
+            <SimpleTableItem>string</SimpleTableItem>
+            <SimpleTableItem />
+          </SimpleTableBody>
+        </SimpleTable>
+      </Flex>
     </Flex>
   );
 }
