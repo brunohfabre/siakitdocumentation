@@ -28,16 +28,20 @@ export function TimelinePage(): JSX.Element {
           <Flex padding={32} justify="center" align="center">
             <Timeline>
               <TimelineItem name="name">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam nisi sapiente nesciunt harum, totam quo odit
-                exercitationem cupiditate perspiciatis eligendi sint
-                consequuntur velit aliquam vel molestiae.
+                <Flex padding>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Laboriosam nisi sapiente nesciunt harum, totam quo odit
+                  exercitationem cupiditate perspiciatis eligendi sint
+                  consequuntur velit aliquam vel molestiae.
+                </Flex>
               </TimelineItem>
               <TimelineItem name="name">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Laboriosam nisi sapiente nesciunt harum, totam quo odit
-                exercitationem cupiditate perspiciatis eligendi sint
-                consequuntur velit aliquam vel molestiae.
+                <Flex padding>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Laboriosam nisi sapiente nesciunt harum, totam quo odit
+                  exercitationem cupiditate perspiciatis eligendi sint
+                  consequuntur velit aliquam vel molestiae.
+                </Flex>
               </TimelineItem>
             </Timeline>
           </Flex>
