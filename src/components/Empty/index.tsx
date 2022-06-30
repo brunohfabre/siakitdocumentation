@@ -26,7 +26,14 @@ export function Empty({
   const { colorScheme, theme } = useTheme();
 
   return (
-    <Flex flex justify="center" align="center" direction="column" gap={24}>
+    <Flex
+      flex
+      justify="center"
+      align="center"
+      direction="column"
+      gap={24}
+      padding="0 0 32px 0"
+    >
       {theme === 'light' ? (
         <Lottie
           height={176}
