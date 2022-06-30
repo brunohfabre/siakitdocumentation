@@ -1,30 +1,84 @@
 import React from 'react';
 
 import { Button } from '../../components/Button';
+import { Card } from '../../components/Card';
+import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
 import { Footer, FooterLeft } from '../../components/Footer';
+import { Heading } from '../../components/Heading';
+import {
+  SimpleTable,
+  SimpleTableHeader,
+  SimpleTableItem,
+} from '../../components/SimpleTable';
+import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
+import { Spacer } from '../../components/Spacer';
+
+const exampleCode = `import { Footer, FooterLeft } from '@siakit';
+
+<Footer>
+  <FooterLeft>
+    /* left content */
+  </FooterLeft>
+
+  /* right content */
+</Footer>`;
 
 export function FooterPage(): JSX.Element {
   return (
-    <Flex flex justify="center" align="center">
-      <Flex width={556} gap={32} direction="column">
-        <Footer>
-          <Button type="button">button 1</Button>
-        </Footer>
+    <Flex flex direction="column" align="center" overflow>
+      <Flex width={768} padding={32} direction="column" gap>
+        <Heading size="xl">Footer</Heading>
+        <Card>
+          <Flex height={192} padding={32} justify="center" align="center" gap>
+            <Footer>
+              <FooterLeft>
+                <Button type="button">Left content</Button>
+              </FooterLeft>
 
-        <Footer>
-          <FooterLeft>
-            <Button type="button">button 1</Button>
-          </FooterLeft>
-        </Footer>
+              <Button type="button">Right content</Button>
+            </Footer>
+          </Flex>
+        </Card>
 
-        <Footer>
-          <FooterLeft>
-            <Button type="button">button 1</Button>
-          </FooterLeft>
+        <Spacer height />
+        <Heading>Anatomy</Heading>
+        <CodeHighlight>{exampleCode}</CodeHighlight>
 
-          <Button type="button">button 2</Button>
-        </Footer>
+        <Spacer height />
+        <Heading>API reference</Heading>
+        <Heading size="md">Footer</Heading>
+
+        <SimpleTable>
+          <SimpleTableHeader>
+            <SimpleTableItem isHeader>Prop</SimpleTableItem>
+            <SimpleTableItem isHeader>Type</SimpleTableItem>
+            <SimpleTableItem isHeader>Default</SimpleTableItem>
+          </SimpleTableHeader>
+
+          <SimpleTableBody>
+            <SimpleTableItem required>children</SimpleTableItem>
+            <SimpleTableItem>ReactNode</SimpleTableItem>
+            <SimpleTableItem />
+          </SimpleTableBody>
+        </SimpleTable>
+
+        <Spacer height />
+        <Heading size="md">FooterLeft</Heading>
+
+        <SimpleTable>
+          <SimpleTableHeader>
+            <SimpleTableItem isHeader>Prop</SimpleTableItem>
+            <SimpleTableItem isHeader>Type</SimpleTableItem>
+            <SimpleTableItem isHeader>Default</SimpleTableItem>
+          </SimpleTableHeader>
+
+          <SimpleTableBody>
+            <SimpleTableItem required>children</SimpleTableItem>
+            <SimpleTableItem>ReactNode</SimpleTableItem>
+            <SimpleTableItem />
+          </SimpleTableBody>
+        </SimpleTable>
       </Flex>
     </Flex>
   );
