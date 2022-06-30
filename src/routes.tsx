@@ -25,6 +25,7 @@ import { GridPage } from './pages/Layout/GridPage';
 import { SidebarPage } from './pages/Layout/SidebarPage';
 import { AvatarPage } from './pages/Media/AvatarPage';
 import { IconPage } from './pages/Media/IconPage';
+import { ImagePage } from './pages/Media/ImagePage';
 import { DialogPage } from './pages/Overlay/DialogPage';
 import { DropdownPage } from './pages/Overlay/DropdownPage';
 import { HoverCardPage } from './pages/Overlay/HoverCardPage';
@@ -90,6 +91,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/media">
         <Route path="avatar" element={<AvatarPage />} />
         <Route path="icon" element={<IconPage />} />
+        <Route path="image" element={<ImagePage />} />
       </Route>
 
       <Route path="/layout">

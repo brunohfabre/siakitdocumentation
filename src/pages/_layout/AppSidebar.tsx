@@ -202,6 +202,9 @@ export function AppSidebar(): JSX.Element {
           Avatar
         </SubMenuItem>
         <SubMenuItem onClick={() => navigate('/media/icon')}>Icon</SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/media/image')}>
+          Image
+        </SubMenuItem>
       </SubMenu>
 
       <SubMenu value="layout">
