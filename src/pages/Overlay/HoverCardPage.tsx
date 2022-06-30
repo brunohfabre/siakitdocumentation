@@ -53,8 +53,8 @@ export function HoverCardPage(): JSX.Element {
           </SimpleTableHeader>
 
           <SimpleTableBody>
-            <SimpleTableItem required>children[]</SimpleTableItem>
-            <SimpleTableItem>ReactNode</SimpleTableItem>
+            <SimpleTableItem required>children</SimpleTableItem>
+            <SimpleTableItem>ReactNode[]</SimpleTableItem>
             <SimpleTableItem />
           </SimpleTableBody>
         </SimpleTable>

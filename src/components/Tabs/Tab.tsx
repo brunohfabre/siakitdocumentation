@@ -53,9 +53,9 @@ export const Container = styled(RadixTabs.Trigger)<ContainerProps>`
 `;
 
 type TabProps = {
+  children: ReactNode;
   value: string;
   disabled?: boolean;
-  children: ReactNode;
 };
 
 export function Tab({ children, value, disabled }: TabProps): JSX.Element {
