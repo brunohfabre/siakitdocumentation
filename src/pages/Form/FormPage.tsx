@@ -19,6 +19,7 @@ import { Password } from '../../components/Form/Password';
 import { Phone } from '../../components/Form/Phone';
 import { Radio } from '../../components/Form/Radio';
 import { Select } from '../../components/Form/Select';
+import { SelectMulti } from '../../components/Form/SelectMulti';
 import { Slider } from '../../components/Form/Slider';
 import { Switch } from '../../components/Form/Switch';
 import { TextArea } from '../../components/Form/TextArea';
@@ -35,8 +36,22 @@ export function FormPage(): JSX.Element {
 
       const schema = Yup.object().shape({
         name: Yup.string().required('Campo obrigatório'),
+        age: Yup.string().required('Campo obrigatório'),
+        phone: Yup.string().required('Campo obrigatório'),
+        password: Yup.string().required('Campo obrigatório'),
+        money: Yup.string().required('Campo obrigatório'),
+        mask: Yup.string().required('Campo obrigatório'),
+        bio: Yup.string().required('Campo obrigatório'),
+        color: Yup.string().required('Campo obrigatório'),
+        switch: Yup.bool().isTrue('Tem que ser true'),
+        option: Yup.array().min(1, 'Pelo menos 1'),
+        fruit: Yup.string().required('Campo obrigatório'),
+        date: Yup.string().required('Campo obrigatório'),
+        time: Yup.string().required('Campo obrigatório'),
+        language: Yup.string().required('Campo obrigatório'),
+        slider: Yup.number().min(25, 'Minimo de 25'),
         select: Yup.string().required('Campo obrigatório'),
-        selectmulti: Yup.string().required('Campo obrigatório'),
+        selectmulti: Yup.array().min(1, 'Pelo menos 1'),
       });
 
       await schema.validate(data, {
@@ -91,11 +106,11 @@ export function FormPage(): JSX.Element {
               ]}
             />
             <Radio
-              name="option2"
+              name="fruit"
               label="Option 2"
               options={[
-                { value: 'default', label: 'Default' },
-                { value: 'checked', label: 'Checked' },
+                { value: 'apple', label: 'Apple' },
+                { value: 'banana', label: 'Banana' },
               ]}
             />
 
@@ -105,9 +120,7 @@ export function FormPage(): JSX.Element {
 
             <Language name="language" label="Language" placeholder="Language" />
 
-            <Slider name="silder" label="Slider" />
-
-            <Input name="name" label="Name" placeholder="Name" />
+            <Slider name="slider" label="Slider" />
 
             <Select
               name="select"
@@ -122,7 +135,7 @@ export function FormPage(): JSX.Element {
               ]}
             />
 
-            <Select
+            <SelectMulti
               name="selectmulti"
               label="Select multi"
               placeholder="Select multi"
@@ -133,7 +146,6 @@ export function FormPage(): JSX.Element {
                 { value: '4', label: 'Option 4' },
                 { value: '5', label: 'Option 5' },
               ]}
-              isMulti
             />
           </Flex>
         </Form>

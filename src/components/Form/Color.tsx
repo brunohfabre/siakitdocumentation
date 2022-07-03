@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 
 import * as Popover from '@radix-ui/react-popover';
 import { useField } from '@unform/core';
@@ -10,6 +10,7 @@ import { Flex } from '../Flex';
 import { IconButton } from '../IconButton';
 import { Text } from '../Text';
 import { Tooltip } from '../Tooltip';
+import { Container } from './Select/styles';
 import {
   ColorContainer,
   Label,
@@ -18,146 +19,103 @@ import {
   ColorView,
   ColorButton,
   ChevronButton,
+  InputContainer,
 } from './styles';
+
+type Option = {
+  value: string;
+  label: string;
+};
 
 interface Props {
   name: string;
   label?: string;
   placeholder?: string;
+  returnType?: 'key' | 'option';
 }
 type ColorProps = JSX.IntrinsicElements['input'] & Props;
 
-const Card = styled(Popover.Content)`
-  border-radius: 8px;
-  background-color: ${({ theme }) => theme.colors.cardBackground};
-  box-shadow: ${({ theme }) => theme.shadows.sm};
-  border: 1px solid ${({ theme }) => theme.colors.gray[3]};
-
-  padding: 12px;
-
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-
-  max-width: 186px;
-`;
+const options = Object.keys(colors).map((item) => ({
+  value: item,
+  label: item,
+}));
 
 export function Color({
   name,
   label,
   disabled,
   placeholder,
+  returnType = 'key',
 }: ColorProps): JSX.Element {
   const { colorScheme } = useTheme();
 
-  const inputRef = useRef<HTMLInputElement>(null);
-
   const { fieldName, defaultValue = '', registerField, error } = useField(name);
 
-  const [isFocused, setIsFocused] = useState(false);
-  const [isFilled, setIsFilled] = useState(defaultValue);
-
-  function handleChange(value: string): void {
-    if (inputRef.current) {
-      inputRef.current.value = value;
-    }
-
-    setIsFilled(value);
-  }
+  const [selected, setSelected] = useState<Option | null>(
+    options.find((option) => option.value === defaultValue) || null,
+  );
 
   useEffect(() => {
-    registerField({
+    registerField<Option | string>({
       name: fieldName,
-      ref: inputRef,
       getValue: () => {
-        return isFilled;
+        if (returnType === 'option') {
+          return selected || '';
+        }
+
+        return selected?.value || '';
       },
-      setValue: (_, value: string) => {
-        handleChange(value);
+      setValue: (_, value: Option | string) => {
+        if (typeof value === 'object') {
+          setSelected(value);
+
+          return;
+        }
+
+        const findOption = options.find((option) => option.value === value);
+
+        if (findOption) {
+          setSelected(findOption);
+        }
       },
       clearValue: () => {
-        setIsFilled('');
+        setSelected(null);
       },
     });
-  }, [fieldName, registerField, isFilled]);
+  }, [fieldName, registerField, selected]);
 
-  function handleClear(event: React.MouseEvent<HTMLElement>): void {
-    event.stopPropagation();
+  function formatOptionLabel(data: unknown): ReactNode {
+    const { value, label: optionLabel } = data as Option;
 
-    setIsFilled('');
-
-    if (inputRef.current) {
-      inputRef.current.value = '';
-    }
+    return (
+      <div style={{ display: 'flex', gap: 8 }}>
+        <ColorView color={value as Colors} />
+        <span>{optionLabel}</span>
+      </div>
+    );
   }
 
   return (
-    <Popover.Root open={isFocused} onOpenChange={setIsFocused}>
-      <Popover.Trigger asChild>
-        <ColorContainer disabled={!!disabled}>
-          {label && (
-            <Label htmlFor={fieldName} isErrored={!!error}>
-              {label}
-            </Label>
-          )}
+    <InputContainer disabled={!!disabled}>
+      {label && (
+        <Label htmlFor={fieldName} isErrored={!!error}>
+          {label}
+        </Label>
+      )}
 
-          <InputBody
-            isFocused={isFocused}
-            isFilled={isFilled}
-            isErrored={!!error}
-            colorScheme={colorScheme}
-            disabled={!!disabled}
-          >
-            {!isFilled && (
-              <Text size="sm" lowContrast>
-                {placeholder}
-              </Text>
-            )}
+      <Container
+        options={options}
+        classNamePrefix="react-select"
+        placeholder={placeholder}
+        colorScheme={colorScheme}
+        isErrored={!!error}
+        value={selected}
+        onChange={(option) => setSelected(option as Option)}
+        isClearable
+        formatOptionLabel={formatOptionLabel}
+      />
 
-            {isFilled && <ColorView color={isFilled} />}
-
-            <Flex flex padding="0 8px" align="center">
-              <Text size="sm">{isFilled}</Text>
-            </Flex>
-
-            {isFilled && !disabled && (
-              <IconButton
-                type="button"
-                icon="HiOutlineX"
-                size="sm"
-                variant="ghost"
-                colorScheme="gray"
-                onClick={handleClear}
-                tabIndex={-1}
-              />
-            )}
-
-            <ChevronButton active={isFocused}>
-              <HiOutlineChevronDown size={16} />
-            </ChevronButton>
-          </InputBody>
-
-          {error && <Error>{error}</Error>}
-        </ColorContainer>
-      </Popover.Trigger>
-
-      <Popover.Content asChild>
-        <Card align="end" sideOffset={4}>
-          {Object.keys(colors).map((item) => (
-            <Tooltip content={item} key={item}>
-              <ColorButton
-                color={item as Colors}
-                onClick={() => {
-                  setIsFilled(item);
-                  setIsFocused(false);
-                }}
-              >
-                {isFilled === item && <HiOutlineCheck size="12" color="#fff" />}
-              </ColorButton>
-            </Tooltip>
-          ))}
-        </Card>
-      </Popover.Content>
-    </Popover.Root>
+      {error && <Error>{error}</Error>}
+    </InputContainer>
   );
 }

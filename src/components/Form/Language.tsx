@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useRef, useState } from 'react';
 
 import * as Popover from '@radix-ui/react-popover';
 import { useField } from '@unform/core';
@@ -12,6 +12,7 @@ import { useTheme } from '../../hooks/theme';
 import { Flex } from '../Flex';
 import { IconButton } from '../IconButton';
 import { Text } from '../Text';
+import { Container } from './Select/styles';
 import {
   ColorContainer,
   Label,
@@ -19,14 +20,23 @@ import {
   Error,
   ChevronButton,
   LanguageItem,
+  InputContainer,
 } from './styles';
 
 interface Props {
   name: string;
   label?: string;
   placeholder?: string;
+  returnType?: 'key' | 'option';
 }
+
 type LanguageProps = JSX.IntrinsicElements['input'] & Props;
+
+type Option = {
+  value: string;
+  label: string;
+  flag: string;
+};
 
 const Card = styled(Popover.Content)`
   border-radius: 8px;
@@ -43,152 +53,88 @@ const Card = styled(Popover.Content)`
   outline: unset;
 `;
 
-const languages = [
-  { title: 'Português do Brasil', locale: 'pt_BR', flag: brasilFlag },
-  { title: 'English, US', locale: 'en_US', flag: estadosunidosFlag },
-  { title: 'Español', locale: 'es_ES', flag: espanhaFlag },
+const options = [
+  { label: 'Português do Brasil', value: 'pt_BR', flag: brasilFlag },
+  { label: 'English, US', value: 'en_US', flag: estadosunidosFlag },
+  { label: 'Español', value: 'es_ES', flag: espanhaFlag },
 ];
-
-// type LanguageType = {
-//   title: string;
-//   locale: string;
-//   flag: string;
-// };
 
 export function Language({
   name,
   label,
   disabled,
   placeholder,
+  returnType = 'key',
 }: LanguageProps): JSX.Element {
   const { colorScheme } = useTheme();
 
-  const inputRef = useRef<HTMLInputElement>(null);
-
   const { fieldName, defaultValue = '', registerField, error } = useField(name);
 
-  const [isFocused, setIsFocused] = useState(false);
-  const [isFilled, setIsFilled] = useState(defaultValue);
-
-  function handleChange(value: string): void {
-    if (inputRef.current) {
-      inputRef.current.value = value;
-    }
-
-    setIsFilled(value);
-  }
+  const [selected, setSelected] = useState<Option | null>(
+    options.find((option) => option.value === defaultValue) || null,
+  );
 
   useEffect(() => {
-    registerField({
+    registerField<Option | string>({
       name: fieldName,
-      ref: inputRef,
       getValue: () => {
-        return isFilled;
+        if (returnType === 'option') {
+          return selected || '';
+        }
+
+        return selected?.value || '';
       },
-      setValue: (_, value: string) => {
-        handleChange(value);
+      setValue: (_, value: Option | string) => {
+        if (typeof value === 'object') {
+          setSelected(value);
+
+          return;
+        }
+
+        const findOption = options.find((option) => option.value === value);
+
+        if (findOption) {
+          setSelected(findOption);
+        }
       },
       clearValue: () => {
-        setIsFilled('');
+        setSelected(null);
       },
     });
-  }, [fieldName, registerField, isFilled]);
+  }, [fieldName, registerField, selected]);
 
-  function handleClear(event: React.MouseEvent<HTMLElement>): void {
-    event.stopPropagation();
+  function formatOptionLabel(data: unknown): ReactNode {
+    const { label: optionLabel, flag } = data as Option;
 
-    setIsFilled('');
-
-    if (inputRef.current) {
-      inputRef.current.value = '';
-    }
+    return (
+      <LanguageItem style={{ display: 'flex', gap: 8 }}>
+        <img src={flag} alt={`${optionLabel} flag`} />
+        <p>{optionLabel}</p>
+      </LanguageItem>
+    );
   }
 
   return (
-    <Popover.Root open={isFocused} onOpenChange={setIsFocused}>
-      <Popover.Trigger asChild>
-        <ColorContainer disabled={!!disabled}>
-          {label && (
-            <Label htmlFor={fieldName} isErrored={!!error}>
-              {label}
-            </Label>
-          )}
+    <InputContainer disabled={!!disabled}>
+      {label && (
+        <Label htmlFor={fieldName} isErrored={!!error}>
+          {label}
+        </Label>
+      )}
 
-          <InputBody
-            isFocused={isFocused}
-            isFilled={isFilled}
-            isErrored={!!error}
-            colorScheme={colorScheme}
-            disabled={!!disabled}
-          >
-            {!isFilled && (
-              <Text size="sm" lowContrast>
-                {placeholder}
-              </Text>
-            )}
+      <Container
+        options={options}
+        classNamePrefix="react-select"
+        placeholder={placeholder}
+        colorScheme={colorScheme}
+        isErrored={!!error}
+        value={selected}
+        onChange={(option) => setSelected(option as Option)}
+        isClearable
+        formatOptionLabel={formatOptionLabel}
+      />
 
-            <Flex flex align="center" gap={8}>
-              {isFilled && (
-                <>
-                  <img
-                    src={
-                      languages.find((item) => item.locale === isFilled)?.flag
-                    }
-                    alt="country flag"
-                    style={{ width: 24 }}
-                  />
-
-                  <Text size="sm">
-                    {languages.find((item) => item.locale === isFilled)?.title}
-                  </Text>
-                </>
-              )}
-            </Flex>
-
-            {isFilled && !disabled && (
-              <IconButton
-                type="button"
-                icon="HiOutlineX"
-                size="sm"
-                variant="ghost"
-                colorScheme="gray"
-                onClick={handleClear}
-                tabIndex={-1}
-              />
-            )}
-
-            <ChevronButton active={isFocused}>
-              <HiOutlineChevronDown size={16} />
-            </ChevronButton>
-          </InputBody>
-
-          {error && <Error>{error}</Error>}
-        </ColorContainer>
-      </Popover.Trigger>
-
-      <Popover.Content asChild>
-        <Card align="end" sideOffset={4}>
-          {languages.map((language) => (
-            <LanguageItem
-              selected={isFilled === language.locale}
-              colorScheme={colorScheme}
-              onClick={() => {
-                setIsFilled(language.locale);
-                setIsFocused(false);
-              }}
-            >
-              <img src={language.flag} alt={`${language.title} flag`} />
-              <p>{language.title}</p>
-
-              {isFilled === language.locale && (
-                <div>
-                  <HiOutlineCheck size="12" />
-                </div>
-              )}
-            </LanguageItem>
-          ))}
-        </Card>
-      </Popover.Content>
-    </Popover.Root>
+      {error && <Error>{error}</Error>}
+    </InputContainer>
   );
 }

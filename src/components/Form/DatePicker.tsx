@@ -184,7 +184,7 @@ export function DatePicker({
           />
         )}
         <Popover.Root>
-          <TriggerButton>
+          <TriggerButton tabIndex={-1}>
             <HiCalendar size="16" />
           </TriggerButton>
 

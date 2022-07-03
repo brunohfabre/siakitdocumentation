@@ -1,57 +1,53 @@
 import React, { useEffect, useState } from 'react';
 
+import * as SwitchPrimitive from '@radix-ui/react-switch';
 import { useField } from '@unform/core';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { Colors, useTheme } from '../../hooks/theme';
 import { InputContainer, SwitchBody, Error } from './styles';
 
 type SwitchContainerProps = {
-  checked: boolean;
   colorScheme: Colors;
 };
 
-const SwitchContainer = styled.button<SwitchContainerProps>`
+const SwitchContainer = styled(SwitchPrimitive.Root)<SwitchContainerProps>`
   all: unset;
-
-  cursor: pointer;
-
   width: 44px;
   height: 24px;
   background-color: ${({ theme }) => theme.colors.gray[4]};
-  border-radius: 12px;
+  border-radius: 9999px;
+  position: relative;
 
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 
-  transition: all 0.2s;
-
-  > div {
-    width: 16px;
-    height: 16px;
-    border-radius: 8px;
-
-    margin: 0 4px;
-
-    background-color: ${({ theme }) => theme.colors.white};
-    box-shadow: ${({ theme }) => theme.shadows.sm};
+  &:focus {
+    box-shadow: 0 0 0 2px black;
   }
 
-  ${({ theme, checked, colorScheme }) =>
-    checked &&
-    css`
-      background-color: ${theme.colors[colorScheme][9]};
-
-      justify-content: flex-end;
-    `}
-
-  &:disabled {
-    cursor: not-allowed;
+  &[data-state='checked'] {
+    background-color: ${({ colorScheme, theme }) =>
+      theme.colors[colorScheme][9]};
   }
 `;
 
-const SwitchLabel = styled.p`
+const SwitchThumb = styled(SwitchPrimitive.Thumb)`
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: ${({ theme }) => theme.colors.white};
+  border-radius: 9999px;
+  box-shadow: ${({ theme }) => theme.shadows.sm};
+  transition: transform 100ms;
+  transform: translateX(4px);
+  will-change: transform;
+
+  &[data-state='checked'] {
+    transform: translateX(24px);
+  }
+`;
+
+const SwitchLabel = styled.label`
   font-size: 14px;
 
   color: ${({ theme }) => theme.colors.gray[12]};
@@ -94,16 +90,15 @@ export function Switch({ name, label, disabled }: SwitchProps): JSX.Element {
     <InputContainer disabled={!!disabled}>
       <SwitchBody>
         <SwitchContainer
-          type="button"
-          checked={checked}
           colorScheme={colorScheme}
-          disabled={disabled}
-          onClick={() => setChecked((prevState) => !prevState)}
+          checked={checked}
+          onCheckedChange={setChecked}
+          id={name}
         >
-          <div />
+          <SwitchThumb />
         </SwitchContainer>
 
-        <SwitchLabel>{label}</SwitchLabel>
+        <SwitchLabel htmlFor={name}>{label}</SwitchLabel>
       </SwitchBody>
 
       {error && <Error>{error}</Error>}

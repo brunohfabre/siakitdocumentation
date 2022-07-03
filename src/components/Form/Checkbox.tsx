@@ -1,52 +1,44 @@
 import React, { useEffect, useRef, useState } from 'react';
 
+import * as RadixCheckbox from '@radix-ui/react-checkbox';
 import { useField } from '@unform/core';
-import { HiOutlineCheck } from 'react-icons/hi';
+import { GoCheck } from 'react-icons/go';
 import styled from 'styled-components';
 
 import { Colors, useTheme } from '../../hooks/theme';
 import { InputContainer, Label, CheckboxBody, Error } from './styles';
 
 type CheckboxContainerProps = {
-  checked: boolean;
   colorScheme: Colors;
 };
 
-const CheckboxContainer = styled.button<CheckboxContainerProps>`
+const CheckboxContainer = styled(RadixCheckbox.Root)<CheckboxContainerProps>`
   all: unset;
+  background-color: ${({ theme, checked, colorScheme }) =>
+    checked ? theme.colors[colorScheme][9] : theme.colors.gray[4]};
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   cursor: pointer;
 
-  display: flex;
-  align-items: center;
-  gap: 8px;
-
-  > div {
-    width: 16px;
-    height: 16px;
-    border-radius: 4px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    background-color: ${({ theme, checked, colorScheme }) =>
-      checked ? theme.colors[colorScheme][9] : theme.colors.gray[4]};
-
-    svg {
-      display: ${({ checked }) => (checked ? 'block' : 'none')};
-    }
+  &:focus {
+    box-shadow: 0 0 0 2px black;
   }
 
-  p {
-    font-size: 14px;
-
-    color: ${({ theme }) => theme.colors.gray[12]};
+  &[data-state='checked'] {
+    background-color: ${({ colorScheme, theme }) =>
+      theme.colors[colorScheme][9]};
   }
+`;
 
-  &:disabled {
-    cursor: not-allowed;
-  }
+const CheckboxIndicator = styled(RadixCheckbox.Indicator)`
+  color: ${({ theme }) => theme.colors.white};
+
+  height: 16px;
 `;
 
 type Option = {
@@ -113,24 +105,23 @@ export function Checkbox({
 
       <CheckboxBody isErrored={!!error} direction={direction}>
         {options.map((option) => (
-          <CheckboxContainer
-            key={option.value}
-            type="button"
-            checked={selected.includes(option.value)}
-            colorScheme={colorScheme}
-            disabled={disabled}
-            onClick={() => {
-              if (!disabled) {
-                handleSelect(option);
-              }
-            }}
-          >
-            <div>
-              <HiOutlineCheck size={12} color="#fff" />
-            </div>
+          <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
+            <CheckboxContainer
+              colorScheme={colorScheme}
+              id={option.value}
+              checked={selected.includes(option.value)}
+              onCheckedChange={() => handleSelect(option)}
+              disabled={disabled}
+            >
+              <CheckboxIndicator>
+                <GoCheck />
+              </CheckboxIndicator>
+            </CheckboxContainer>
 
-            <p>{option.label}</p>
-          </CheckboxContainer>
+            <label htmlFor={option.value} style={{ fontSize: 14 }}>
+              {option.label}
+            </label>
+          </div>
         ))}
       </CheckboxBody>
 

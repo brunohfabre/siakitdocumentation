@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { Colors, useTheme } from '../../hooks/theme';
 import { Flex } from '../Flex';
 import { Text } from '../Text';
-import { InputContainer, Label } from './styles';
+import { Error, InputContainer, Label } from './styles';
 
 const Container = styled(RadixSlider.Root)`
   flex: 1;
@@ -54,6 +54,10 @@ const Thumb = styled(RadixSlider.Thumb)`
   box-shadow: ${({ theme }) => theme.shadows.sm};
   border-radius: 8px;
   border: 1px solid ${({ theme }) => theme.colors.gray[3]};
+
+  &:focus {
+    box-shadow: 0 0 0 2px black;
+  }
 `;
 
 interface Props {
@@ -112,6 +116,8 @@ export function Slider({
           <Text>{value[0]}</Text>
         </Flex>
       </Flex>
+
+      {error && <Error>{error}</Error>}
     </InputContainer>
   );
 }

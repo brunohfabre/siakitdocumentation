@@ -91,6 +91,7 @@ export function Password({
           }}
           onChange={(event) => handleChange(event.target.value)}
           {...rest}
+          autoComplete="new-password"
         />
         {isFilled && !disabled && (
           <IconButton

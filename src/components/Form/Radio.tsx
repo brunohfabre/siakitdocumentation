@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 
+import * as RadioGroup from '@radix-ui/react-radio-group';
 import { useField } from '@unform/core';
 import styled from 'styled-components';
 
 import { Colors, useTheme } from '../../hooks/theme';
+import { Flex } from '../Flex';
 import { InputContainer, Label, CheckboxBody, Error } from './styles';
 
 type RadioContainerProps = {
@@ -65,6 +67,46 @@ interface Props {
 }
 type RadioProps = JSX.IntrinsicElements['input'] & Props;
 
+type RadioGroupItemProps = {
+  colorScheme: Colors;
+};
+
+const RadioGroupItem = styled(RadioGroup.Item)<RadioGroupItemProps>`
+  all: unset;
+  background-color: ${({ theme, checked, colorScheme }) =>
+    checked ? theme.colors[colorScheme][9] : theme.colors.gray[4]};
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+
+  &:focus {
+    box-shadow: 0 0 0 2px black;
+  }
+
+  &[data-state='checked'] {
+    background-color: ${({ colorScheme, theme }) =>
+      theme.colors[colorScheme][9]};
+  }
+`;
+
+const RadioGroupIndicator = styled(RadioGroup.Indicator)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  &::after {
+    content: '';
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: ${({ theme }) => theme.colors.white};
+  }
+`;
+
 export function Radio({
   name,
   label,
@@ -102,26 +144,27 @@ export function Radio({
       )}
 
       <CheckboxBody isErrored={!!error} direction={direction}>
-        {options.map((option) => (
-          <RadioContainer
-            key={option.value}
-            type="button"
-            checked={selected === option.value}
-            colorScheme={colorScheme}
-            disabled={disabled}
-            onClick={() => {
-              if (!disabled) {
-                setSelected(option.value);
-              }
-            }}
-          >
-            <div>
-              <span />
-            </div>
+        <RadioGroup.Root
+          style={{ display: 'flex', flexDirection: 'column', gap: 8 }}
+          value={selected}
+          onValueChange={setSelected}
+        >
+          {options.map((option) => (
+            <Flex gap={8} align="center">
+              <RadioGroupItem
+                value={option.value}
+                id={option.value}
+                colorScheme={colorScheme}
+              >
+                <RadioGroupIndicator />
+              </RadioGroupItem>
 
-            <p>{option.label}</p>
-          </RadioContainer>
-        ))}
+              <label htmlFor={option.value} style={{ fontSize: 14 }}>
+                {option.label}
+              </label>
+            </Flex>
+          ))}
+        </RadioGroup.Root>
       </CheckboxBody>
 
       {error && <Error>{error}</Error>}

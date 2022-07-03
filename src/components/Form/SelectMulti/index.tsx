@@ -20,7 +20,7 @@ interface Props {
 }
 type SelectProps = JSX.IntrinsicElements['input'] & Props;
 
-export function Select({
+export function SelectMulti({
   name,
   label,
   disabled,
@@ -32,35 +32,39 @@ export function Select({
 
   const { fieldName, defaultValue, registerField, error } = useField(name);
 
-  const [selected, setSelected] = useState<Option | null>(
-    options.find((option) => option.value === defaultValue) || null,
-  );
+  const [selected, setSelected] = useState<Option[]>(defaultValue || []);
 
   useEffect(() => {
-    registerField<Option | string>({
+    registerField<Option[] | string[]>({
       name: fieldName,
       getValue: () => {
         if (returnType === 'option') {
           return selected || '';
         }
 
-        return selected?.value || '';
+        return selected?.map((item) => item.value) || [];
       },
-      setValue: (_, value: Option | string) => {
-        if (typeof value === 'object') {
-          setSelected(value);
+      setValue: (_, value: Option[] | string[]) => {
+        if (typeof value[0] === 'object') {
+          setSelected(value as Option[]);
 
           return;
         }
 
-        const findOption = options.find((option) => option.value === value);
+        const newSelected = [] as Option[];
 
-        if (findOption) {
-          setSelected(findOption);
-        }
+        value.forEach((item) => {
+          const findOption = options.find((option) => option.value === item);
+
+          if (findOption) {
+            newSelected.push(findOption);
+          }
+        });
+
+        setSelected(newSelected);
       },
       clearValue: () => {
-        setSelected(null);
+        setSelected([]);
       },
     });
   }, [fieldName, registerField, selected, returnType]);
@@ -81,9 +85,10 @@ export function Select({
         isErrored={!!error}
         value={selected}
         onChange={(option) => {
-          setSelected(option as Option);
+          setSelected(option as Option[]);
         }}
         isClearable
+        isMulti
       />
 
       {error && <Error>{error}</Error>}

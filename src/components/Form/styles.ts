@@ -282,7 +282,7 @@ export const CheckboxBody = styled.div<CheckboxBodyProps>`
 
   flex-direction: ${({ direction }) => direction};
 
-  gap: 12px;
+  gap: 8px;
 `;
 
 export const SwitchBody = styled.div`
@@ -293,21 +293,11 @@ export const SwitchBody = styled.div`
   gap: 8px;
 `;
 
-type LanguageItemProps = {
-  selected: boolean;
-  colorScheme: Colors;
-};
-
-export const LanguageItem = styled.div<LanguageItemProps>`
+export const LanguageItem = styled.div`
   display: flex;
   align-items: center;
 
-  height: 28px;
-
-  padding: 0 12px;
   gap: 8px;
-
-  cursor: pointer;
 
   img {
     width: 24px;
@@ -315,27 +305,5 @@ export const LanguageItem = styled.div<LanguageItemProps>`
 
   p {
     font-size: 14px;
-  }
-
-  > div {
-    flex: 1;
-
-    display: flex;
-    justify-content: flex-end;
-
-    svg {
-      color: ${({ theme }) => theme.colors.gray[9]};
-    }
-  }
-
-  ${({ selected, theme, colorScheme }) =>
-    selected &&
-    css`
-      background-color: ${theme.colors[colorScheme][3]};
-    `}
-
-  &:hover {
-    background-color: ${({ theme, colorScheme }) =>
-      theme.colors[colorScheme][4]};
   }
 `;
