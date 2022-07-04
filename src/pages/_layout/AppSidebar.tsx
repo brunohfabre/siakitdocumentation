@@ -129,6 +129,7 @@ export function AppSidebar(): JSX.Element {
 
       <SubMenu value="form">
         <SubMenuItem onClick={() => navigate('/form/form')}>Form</SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/form/input')}>Input</SubMenuItem>
       </SubMenu>
 
       <SubMenu value="feedback">

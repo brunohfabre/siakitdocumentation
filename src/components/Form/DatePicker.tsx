@@ -16,7 +16,6 @@ interface Props {
   name: string;
   label?: string;
   placeholder?: string;
-  explanation?: string;
 }
 type DatePickerProps = JSX.IntrinsicElements['input'] & Props;
 

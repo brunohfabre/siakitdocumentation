@@ -11,7 +11,6 @@ interface Props {
   name: string;
   label?: string;
   placeholder?: string;
-  explanation?: string;
 }
 type PhoneProps = JSX.IntrinsicElements['input'] & Props;
 

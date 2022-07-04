@@ -10,7 +10,6 @@ interface Props {
   name: string;
   label?: string;
   placeholder?: string;
-  explanation?: string;
   rows?: number;
 }
 type TextAreaProps = JSX.IntrinsicElements['textarea'] & Props;

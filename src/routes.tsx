@@ -19,6 +19,7 @@ import { SpinnerPage } from './pages/Feedback/SpinnerPage';
 import { ToastPage } from './pages/Feedback/ToastPage';
 import { FormPage } from './pages/Form/FormPage';
 import { FormTestPage } from './pages/Form/FormTestPage';
+import { InputPage } from './pages/Form/InputPage';
 import { HomePage } from './pages/HomePage';
 import { CardPage } from './pages/Layout/CardPage';
 import { FlexPage } from './pages/Layout/FlexPage';
@@ -58,6 +59,7 @@ export function AppRoutes(): JSX.Element {
       <Route path="/form">
         <Route path="form" element={<FormPage />} />
         <Route path="test" element={<FormTestPage />} />
+        <Route path="input" element={<InputPage />} />
       </Route>
 
       <Route path="/feedback">

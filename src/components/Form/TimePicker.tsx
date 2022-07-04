@@ -14,7 +14,6 @@ interface Props {
   name: string;
   label?: string;
   placeholder?: string;
-  explanation?: string;
 }
 type TimePickerProps = JSX.IntrinsicElements['input'] & Props;
 

@@ -12,7 +12,6 @@ interface Props {
   name: string;
   label?: string;
   placeholder?: string;
-  explanation?: string;
   mask: MaskType;
 }
 type MaskProps = JSX.IntrinsicElements['input'] & Props;

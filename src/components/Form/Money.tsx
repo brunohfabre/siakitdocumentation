@@ -12,7 +12,6 @@ interface Props {
   name: string;
   label?: string;
   placeholder?: string;
-  explanation?: string;
 }
 type MoneyProps = JSX.IntrinsicElements['input'] & Props;
 

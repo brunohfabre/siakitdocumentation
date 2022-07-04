@@ -10,7 +10,6 @@ interface Props {
   name: string;
   label?: string;
   placeholder?: string;
-  explanation?: string;
 }
 type InputProps = JSX.IntrinsicElements['input'] & Props;
 

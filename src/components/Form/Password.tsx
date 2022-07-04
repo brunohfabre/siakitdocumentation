@@ -10,7 +10,6 @@ interface Props {
   name: string;
   label?: string;
   placeholder?: string;
-  explanation?: string;
 }
 type PasswordProps = JSX.IntrinsicElements['input'] & Props;
 
