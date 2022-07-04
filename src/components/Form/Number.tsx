@@ -12,6 +12,7 @@ interface Props {
   placeholder?: string;
   explanation?: string;
 }
+
 type NumberProps = JSX.IntrinsicElements['input'] & Props;
 
 export function Number({
@@ -47,7 +48,7 @@ export function Number({
         return ref.current.value;
       },
       setValue: (ref, value: string) => {
-        handleChange(value);
+        handleChange(typeof value === 'string' ? value : String(value));
       },
       clearValue: (ref) => {
         ref.current.value = '';

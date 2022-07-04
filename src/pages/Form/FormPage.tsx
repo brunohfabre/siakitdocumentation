@@ -26,6 +26,26 @@ import { TextArea } from '../../components/Form/TextArea';
 import { TimePicker } from '../../components/Form/TimePicker';
 import { getValidationErrors } from '../../helpers/getValidationErrors';
 
+const newData = {
+  age: 25,
+  bio: 'My bio',
+  color: 'violet',
+  date: new Date(),
+  fruit: 'apple',
+  language: 'pt_BR',
+  mask: '468.131.658-01',
+  money: '29,90',
+  name: 'Bruno Fabre',
+  option: ['default'],
+  password: 'abcd1234',
+  phone: '(19) 98326-2172',
+  select: '1',
+  selectmulti: ['1', '3'],
+  slider: 50,
+  switch: true,
+  time: '21:40',
+};
+
 export function FormPage(): JSX.Element {
   const formRef = useRef<FormHandles>(null);
 
@@ -153,11 +173,7 @@ export function FormPage(): JSX.Element {
           <FooterLeft>
             <Button
               type="button"
-              onClick={() =>
-                formRef.current?.setData({
-                  select: '4',
-                })
-              }
+              onClick={() => formRef.current?.setData(newData)}
             >
               set data
             </Button>
