@@ -21,6 +21,7 @@ import { FormPage } from './pages/Form/FormPage';
 import { FormTestPage } from './pages/Form/FormTestPage';
 import { InputPage } from './pages/Form/InputPage';
 import { MaskPage } from './pages/Form/MaskPage';
+import { PasswordPage } from './pages/Form/PasswordPage';
 import { SelectMultiPage } from './pages/Form/SelectMultiPage';
 import { SelectPage } from './pages/Form/SelectPage';
 import { SwitchPage } from './pages/Form/SwitchPage';
@@ -68,6 +69,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="selectmulti" element={<SelectMultiPage />} />
         <Route path="switch" element={<SwitchPage />} />
         <Route path="mask" element={<MaskPage />} />
+        <Route path="password" element={<PasswordPage />} />
       </Route>
 
       <Route path="/feedback">

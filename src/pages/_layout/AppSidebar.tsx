@@ -140,6 +140,9 @@ export function AppSidebar(): JSX.Element {
           Switch
         </SubMenuItem>
         <SubMenuItem onClick={() => navigate('/form/mask')}>Mask</SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/form/password')}>
+          Password
+        </SubMenuItem>
       </SubMenu>
 
       <SubMenu value="feedback">
