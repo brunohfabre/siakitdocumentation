@@ -24,6 +24,7 @@ import { MaskPage } from './pages/Form/MaskPage';
 import { PasswordPage } from './pages/Form/PasswordPage';
 import { SelectMultiPage } from './pages/Form/SelectMultiPage';
 import { SelectPage } from './pages/Form/SelectPage';
+import { SliderPage } from './pages/Form/SliderPage';
 import { SwitchPage } from './pages/Form/SwitchPage';
 import { HomePage } from './pages/HomePage';
 import { CardPage } from './pages/Layout/CardPage';
@@ -70,6 +71,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="switch" element={<SwitchPage />} />
         <Route path="mask" element={<MaskPage />} />
         <Route path="password" element={<PasswordPage />} />
+        <Route path="slider" element={<SliderPage />} />
       </Route>
 
       <Route path="/feedback">
