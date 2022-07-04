@@ -23,7 +23,7 @@ export function SeparatorPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Separator</Heading>
         <Card>
-          <Flex height={192} padding={64} justify="center" align="center">
+          <Flex height={192} padding={64} justify="center" align="center" flex>
             <Separator />
           </Flex>
         </Card>

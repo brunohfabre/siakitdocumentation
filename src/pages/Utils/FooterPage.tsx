@@ -30,7 +30,14 @@ export function FooterPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Footer</Heading>
         <Card>
-          <Flex height={192} padding={32} justify="center" align="center" gap>
+          <Flex
+            height={192}
+            padding={32}
+            justify="center"
+            align="center"
+            gap
+            flex
+          >
             <Footer>
               <FooterLeft>
                 <Button type="button">Left content</Button>

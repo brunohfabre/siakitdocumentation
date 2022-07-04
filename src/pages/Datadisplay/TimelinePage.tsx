@@ -25,7 +25,7 @@ export function TimelinePage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Timeline</Heading>
         <Card>
-          <Flex padding={32} justify="center" align="center">
+          <Flex padding={32} justify="center" align="center" flex>
             <Timeline>
               <TimelineItem name="name">
                 <Flex padding>

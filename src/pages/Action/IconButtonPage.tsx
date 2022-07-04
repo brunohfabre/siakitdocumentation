@@ -25,7 +25,7 @@ export function IconButtonPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Icon Button</Heading>
         <Card>
-          <Flex height={192} padding justify="center" align="center">
+          <Flex height={192} padding justify="center" align="center" flex>
             <IconButton type="button" icon="HiOutlinePlus" />
           </Flex>
         </Card>

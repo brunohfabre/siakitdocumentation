@@ -24,7 +24,7 @@ export function TooltipPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Tooltip</Heading>
         <Card>
-          <Flex height={192} padding justify="center" align="center">
+          <Flex height={192} padding justify="center" align="center" flex>
             <Tooltip content="Tooltip content">
               <Button type="button">Hover to tooltip</Button>
             </Tooltip>

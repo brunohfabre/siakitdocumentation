@@ -26,7 +26,7 @@ export function AvatarGroupPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">AvatarGroup</Heading>
         <Card>
-          <Flex height={192} padding justify="center" align="center" gap>
+          <Flex height={192} padding justify="center" align="center" gap flex>
             <AvatarGroup>
               <Avatar name="John Doe" />
               <Avatar name="John Doe" />

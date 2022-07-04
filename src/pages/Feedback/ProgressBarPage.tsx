@@ -23,7 +23,7 @@ export function ProgressBarPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">ProgressBar</Heading>
         <Card>
-          <Flex height={192} padding justify="center" align="center">
+          <Flex height={192} padding justify="center" align="center" flex>
             <Flex flex width="75%">
               <ProgressBar progress={37} showPercentage />
             </Flex>

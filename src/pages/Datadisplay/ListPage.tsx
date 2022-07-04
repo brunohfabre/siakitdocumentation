@@ -25,7 +25,7 @@ export function ListPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">List</Heading>
         <Card>
-          <Flex height={192} justify="center" align="center">
+          <Flex height={192} justify="center" align="center" flex>
             <List>
               <ListItem>Item 1</ListItem>
               <ListItem>Item 2</ListItem>

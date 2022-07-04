@@ -26,7 +26,7 @@ export function AccordionPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Accordion</Heading>
         <Card>
-          <Flex height={320} justify="center" align="center">
+          <Flex height={320} justify="center" align="center" flex>
             <Flex justify="center" width={400}>
               <Accordion type="single" collapsible>
                 <AccordionItem title="title 1" value="1">

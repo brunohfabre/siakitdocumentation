@@ -25,7 +25,7 @@ export function BadgePage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Badge</Heading>
         <Card>
-          <Flex height={192} padding={64} justify="center" align="center">
+          <Flex height={192} padding={64} justify="center" align="center" flex>
             <Badge color="blue">badge</Badge>
           </Flex>
         </Card>

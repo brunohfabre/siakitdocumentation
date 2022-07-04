@@ -22,7 +22,7 @@ export function HeadingPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Heading</Heading>
         <Card>
-          <Flex height={192} padding justify="center" align="center">
+          <Flex height={192} padding justify="center" align="center" flex>
             <Heading>Heading text</Heading>
           </Flex>
         </Card>

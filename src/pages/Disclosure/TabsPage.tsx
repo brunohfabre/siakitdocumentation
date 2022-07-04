@@ -30,7 +30,7 @@ export function TabsPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Tabs</Heading>
         <Card>
-          <Flex height={320} justify="center" align="center">
+          <Flex height={320} justify="center" align="center" flex>
             <Tabs defaultValue="1">
               <TabList>
                 <Tab value="1">item 1</Tab>

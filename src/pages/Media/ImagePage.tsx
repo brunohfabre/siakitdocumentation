@@ -23,7 +23,7 @@ export function ImagePage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Image</Heading>
         <Card>
-          <Flex height={256} padding justify="center" align="center">
+          <Flex height={256} padding justify="center" align="center" flex>
             <Flex width={192}>
               <Image
                 src="https://images.unsplash.com/photo-1656513014592-277039184fdd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2071&q=80"

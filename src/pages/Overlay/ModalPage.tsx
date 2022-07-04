@@ -36,10 +36,10 @@ export function ModalPage(): JSX.Element {
       </Modal>
 
       <Flex flex direction="column" align="center" overflow>
-        <Flex width={768} padding={32} direction="column" gap>
+        <Flex width={768} padding={32} direction="column" gap flex>
           <Heading size="xl">Modal</Heading>
           <Card>
-            <Flex height={192} padding justify="center" align="center">
+            <Flex height={192} padding justify="center" align="center" flex>
               <Tooltip content="Tooltip content">
                 <Button type="button" onClick={() => setModalVisible(true)}>
                   Click to open modal

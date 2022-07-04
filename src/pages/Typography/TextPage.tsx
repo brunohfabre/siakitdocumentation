@@ -24,7 +24,7 @@ export function TextPage(): JSX.Element {
         <Heading size="xl">Text</Heading>
 
         <Card>
-          <Flex height={192} padding justify="center" align="center">
+          <Flex height={192} padding justify="center" align="center" flex>
             <Text>Text text</Text>
           </Flex>
         </Card>

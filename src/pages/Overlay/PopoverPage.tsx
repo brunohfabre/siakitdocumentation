@@ -28,7 +28,7 @@ export function PopoverPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Popover</Heading>
         <Card>
-          <Flex height={192} padding justify="center" align="center">
+          <Flex height={192} padding justify="center" align="center" flex>
             <Popover>
               <Button type="button">Click to Popover</Button>
 

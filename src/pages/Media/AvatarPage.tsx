@@ -23,7 +23,7 @@ export function AvatarPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Avatar</Heading>
         <Card>
-          <Flex height={192} padding justify="center" align="center" gap>
+          <Flex height={192} padding justify="center" align="center" gap flex>
             <Avatar
               name="John Doe"
               src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZSUyMHNob3R8ZW58MHx8MHx8&w=1000&q=80"

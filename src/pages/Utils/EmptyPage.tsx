@@ -23,7 +23,7 @@ export function EmptyPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Empty</Heading>
         <Card>
-          <Flex padding justify="center" align="center" gap>
+          <Flex padding justify="center" align="center" gap flex>
             <Empty
               title="No projects"
               description="Get started by creating a new project"

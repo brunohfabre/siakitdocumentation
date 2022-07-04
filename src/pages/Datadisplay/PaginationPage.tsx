@@ -27,7 +27,7 @@ export function PaginationPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Pagination</Heading>
         <Card>
-          <Flex height={192} padding={32} justify="center" align="center">
+          <Flex height={192} padding={32} justify="center" align="center" flex>
             <Pagination
               totalCount={1000}
               currentPage={currentPage}

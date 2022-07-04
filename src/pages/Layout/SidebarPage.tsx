@@ -59,7 +59,7 @@ export function SidebarPage(): JSX.Element {
       <Flex width={768} padding={32} direction="column" gap>
         <Heading size="xl">Sidebar</Heading>
         <Card>
-          <Flex padding justify="center" height={248} align="center">
+          <Flex padding justify="center" height={248} align="center" flex>
             <Sidebar>
               <Menu>
                 <MenuHeader onClick={() => undefined}>
