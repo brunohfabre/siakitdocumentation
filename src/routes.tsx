@@ -22,6 +22,7 @@ import { FormPage } from './pages/Form/FormPage';
 import { FormTestPage } from './pages/Form/FormTestPage';
 import { InputPage } from './pages/Form/InputPage';
 import { MaskPage } from './pages/Form/MaskPage';
+import { NumberPage } from './pages/Form/Number';
 import { PasswordPage } from './pages/Form/PasswordPage';
 import { SelectMultiPage } from './pages/Form/SelectMultiPage';
 import { SelectPage } from './pages/Form/SelectPage';
@@ -76,6 +77,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="slider" element={<SliderPage />} />
         <Route path="textarea" element={<TextAreaPage />} />
         <Route path="date" element={<DatePickerPage />} />
+        <Route path="number" element={<NumberPage />} />
       </Route>
 
       <Route path="/feedback">
