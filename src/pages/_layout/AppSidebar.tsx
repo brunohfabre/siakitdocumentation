@@ -149,6 +149,9 @@ export function AppSidebar(): JSX.Element {
         <SubMenuItem onClick={() => navigate('/form/textarea')}>
           TextArea
         </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/form/date')}>
+          Date picker
+        </SubMenuItem>
       </SubMenu>
 
       <SubMenu value="feedback">

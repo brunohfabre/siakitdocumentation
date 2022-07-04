@@ -5,7 +5,7 @@ import { FormHandles } from '@unform/core';
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
-import { Form, Input } from '../../components/Form';
+import { DatePicker, Form } from '../../components/Form';
 import { Heading } from '../../components/Heading';
 import {
   SimpleTable,
@@ -15,22 +15,26 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Input } from '@siakit';
+const exampleCode = `import { DatePicker } from '@siakit';
 
-<Input />`;
+<DatePicker />`;
 
-export function InputPage(): JSX.Element {
+export function DatePickerPage(): JSX.Element {
   const formRef = useRef<FormHandles>(null);
 
   return (
     <Flex flex direction="column" align="center" overflow>
       <Flex width={768} padding={32} direction="column" gap>
-        <Heading size="xl">Input</Heading>
+        <Heading size="xl">DatePicker</Heading>
         <Card>
           <Flex flex height={192} padding justify="center" align="center">
             <Form ref={formRef} onSubmit={() => undefined}>
               <Flex direction="column" padding={32}>
-                <Input name="name" label="Label" placeholder="Placeholder" />
+                <DatePicker
+                  name="name"
+                  label="Label"
+                  placeholder="Placeholder"
+                />
               </Flex>
             </Form>
           </Flex>
@@ -42,7 +46,7 @@ export function InputPage(): JSX.Element {
 
         <Spacer height />
         <Heading>API reference</Heading>
-        <Heading size="md">Input</Heading>
+        <Heading size="md">DatePicker</Heading>
 
         <SimpleTable>
           <SimpleTableHeader>
