@@ -165,6 +165,9 @@ export function AppSidebar(): JSX.Element {
         <SubMenuItem onClick={() => navigate('/form/language')}>
           Language
         </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/form/time')}>
+          Time picker
+        </SubMenuItem>
       </SubMenu>
 
       <SubMenu value="feedback">

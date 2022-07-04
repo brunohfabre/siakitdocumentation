@@ -35,6 +35,7 @@ import { SelectPage } from './pages/Form/SelectPage';
 import { SliderPage } from './pages/Form/SliderPage';
 import { SwitchPage } from './pages/Form/SwitchPage';
 import { TextAreaPage } from './pages/Form/TextAreaPage';
+import { TimePickerPage } from './pages/Form/TimePage';
 import { HomePage } from './pages/HomePage';
 import { CardPage } from './pages/Layout/CardPage';
 import { FlexPage } from './pages/Layout/FlexPage';
@@ -90,6 +91,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="money" element={<MoneyPage />} />
         <Route path="phone" element={<PhonePage />} />
         <Route path="language" element={<LanguagePage />} />
+        <Route path="time" element={<TimePickerPage />} />
       </Route>
 
       <Route path="/feedback">
