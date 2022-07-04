@@ -100,8 +100,8 @@ const RadioGroupIndicator = styled(RadioGroup.Indicator)`
   &::after {
     content: '';
     display: block;
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     background-color: ${({ theme }) => theme.colors.white};
   }
