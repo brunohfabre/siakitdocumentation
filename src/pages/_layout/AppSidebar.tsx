@@ -136,6 +136,9 @@ export function AppSidebar(): JSX.Element {
         <SubMenuItem onClick={() => navigate('/form/selectmulti')}>
           Select multi
         </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/form/switch')}>
+          Switch
+        </SubMenuItem>
       </SubMenu>
 
       <SubMenu value="feedback">
