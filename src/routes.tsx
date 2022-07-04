@@ -17,6 +17,7 @@ import { ProgressBarPage } from './pages/Feedback/ProgressBarPage';
 import { ShimmerPage } from './pages/Feedback/ShimmerPage';
 import { SpinnerPage } from './pages/Feedback/SpinnerPage';
 import { ToastPage } from './pages/Feedback/ToastPage';
+import { CheckboxPage } from './pages/Form/CheckboxPage';
 import { DatePickerPage } from './pages/Form/DatePickerPage';
 import { FormPage } from './pages/Form/FormPage';
 import { FormTestPage } from './pages/Form/FormTestPage';
@@ -78,6 +79,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="textarea" element={<TextAreaPage />} />
         <Route path="date" element={<DatePickerPage />} />
         <Route path="number" element={<NumberPage />} />
+        <Route path="checkbox" element={<CheckboxPage />} />
       </Route>
 
       <Route path="/feedback">
