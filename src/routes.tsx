@@ -24,6 +24,7 @@ import { FormPage } from './pages/Form/FormPage';
 import { FormTestPage } from './pages/Form/FormTestPage';
 import { InputPage } from './pages/Form/InputPage';
 import { MaskPage } from './pages/Form/MaskPage';
+import { MoneyPage } from './pages/Form/MoneyPage';
 import { NumberPage } from './pages/Form/Number';
 import { PasswordPage } from './pages/Form/PasswordPage';
 import { RadioPage } from './pages/Form/RadioPage';
@@ -84,6 +85,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="checkbox" element={<CheckboxPage />} />
         <Route path="color" element={<ColorPage />} />
         <Route path="radio" element={<RadioPage />} />
+        <Route path="money" element={<MoneyPage />} />v
       </Route>
 
       <Route path="/feedback">
