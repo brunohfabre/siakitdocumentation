@@ -158,6 +158,7 @@ export function AppSidebar(): JSX.Element {
         <SubMenuItem onClick={() => navigate('/form/checkbox')}>
           Checkbox
         </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/form/color')}>Color</SubMenuItem>
       </SubMenu>
 
       <SubMenu value="feedback">

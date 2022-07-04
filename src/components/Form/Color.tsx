@@ -1,26 +1,10 @@
-import React, { ReactNode, useEffect, useRef, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 
-import * as Popover from '@radix-ui/react-popover';
 import { useField } from '@unform/core';
-import { HiOutlineCheck, HiOutlineChevronDown } from 'react-icons/hi';
-import styled from 'styled-components';
 
 import { Colors, colors, useTheme } from '../../hooks/theme';
-import { Flex } from '../Flex';
-import { IconButton } from '../IconButton';
-import { Text } from '../Text';
-import { Tooltip } from '../Tooltip';
 import { Container } from './Select/styles';
-import {
-  ColorContainer,
-  Label,
-  InputBody,
-  Error,
-  ColorView,
-  ColorButton,
-  ChevronButton,
-  InputContainer,
-} from './styles';
+import { Label, Error, ColorView, InputContainer } from './styles';
 
 type Option = {
   value: string;

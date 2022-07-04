@@ -18,6 +18,7 @@ import { ShimmerPage } from './pages/Feedback/ShimmerPage';
 import { SpinnerPage } from './pages/Feedback/SpinnerPage';
 import { ToastPage } from './pages/Feedback/ToastPage';
 import { CheckboxPage } from './pages/Form/CheckboxPage';
+import { ColorPage } from './pages/Form/ColorPage';
 import { DatePickerPage } from './pages/Form/DatePickerPage';
 import { FormPage } from './pages/Form/FormPage';
 import { FormTestPage } from './pages/Form/FormTestPage';
@@ -80,6 +81,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="date" element={<DatePickerPage />} />
         <Route path="number" element={<NumberPage />} />
         <Route path="checkbox" element={<CheckboxPage />} />
+        <Route path="color" element={<ColorPage />} />
       </Route>
 
       <Route path="/feedback">
