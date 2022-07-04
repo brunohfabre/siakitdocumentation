@@ -23,6 +23,7 @@ import { DatePickerPage } from './pages/Form/DatePickerPage';
 import { FormPage } from './pages/Form/FormPage';
 import { FormTestPage } from './pages/Form/FormTestPage';
 import { InputPage } from './pages/Form/InputPage';
+import { LanguagePage } from './pages/Form/LanguagePage';
 import { MaskPage } from './pages/Form/MaskPage';
 import { MoneyPage } from './pages/Form/MoneyPage';
 import { NumberPage } from './pages/Form/Number';
@@ -88,6 +89,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="radio" element={<RadioPage />} />
         <Route path="money" element={<MoneyPage />} />
         <Route path="phone" element={<PhonePage />} />
+        <Route path="language" element={<LanguagePage />} />
       </Route>
 
       <Route path="/feedback">
