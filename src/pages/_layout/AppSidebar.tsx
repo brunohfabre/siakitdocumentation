@@ -159,6 +159,7 @@ export function AppSidebar(): JSX.Element {
           Checkbox
         </SubMenuItem>
         <SubMenuItem onClick={() => navigate('/form/color')}>Color</SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/form/radio')}>Radio</SubMenuItem>
       </SubMenu>
 
       <SubMenu value="feedback">

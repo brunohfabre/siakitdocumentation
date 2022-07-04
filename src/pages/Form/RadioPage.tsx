@@ -5,7 +5,7 @@ import { FormHandles } from '@unform/core';
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
-import { Form, Checkbox } from '../../components/Form';
+import { Form, Radio } from '../../components/Form';
 import { Heading } from '../../components/Heading';
 import {
   SimpleTable,
@@ -15,22 +15,22 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Checkbox } from '@siakit';
+const exampleCode = `import { Radio } from '@siakit';
 
-<Checkbox />`;
+<Radio />`;
 
-export function CheckboxPage(): JSX.Element {
+export function RadioPage(): JSX.Element {
   const formRef = useRef<FormHandles>(null);
 
   return (
     <Flex flex direction="column" align="center" overflow>
       <Flex width={768} padding={32} direction="column" gap>
-        <Heading size="xl">Checkbox</Heading>
+        <Heading size="xl">Radio</Heading>
         <Card>
           <Flex flex height={192} padding justify="center" align="center">
             <Form ref={formRef} onSubmit={() => undefined}>
               <Flex direction="column" padding={32} align="center">
-                <Checkbox
+                <Radio
                   name="name"
                   label="Label"
                   options={[
@@ -49,7 +49,7 @@ export function CheckboxPage(): JSX.Element {
 
         <Spacer height />
         <Heading>API reference</Heading>
-        <Heading size="md">Checkbox</Heading>
+        <Heading size="md">Radio</Heading>
 
         <SimpleTable>
           <SimpleTableHeader>
