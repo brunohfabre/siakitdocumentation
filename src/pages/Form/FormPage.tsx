@@ -178,6 +178,7 @@ export function FormPage(): JSX.Element {
               label="Select"
               placeholder="Select"
               options={options}
+              onChange={(value) => console.log(value)}
             />
 
             {/* <SelectMulti
