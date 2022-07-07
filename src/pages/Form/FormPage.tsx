@@ -167,7 +167,6 @@ export function FormPage(): JSX.Element {
                 { value: '4', label: 'Option 4' },
                 { value: '5', label: 'Option 5' },
               ]}
-              disabled
             />
 
             <SelectMulti
