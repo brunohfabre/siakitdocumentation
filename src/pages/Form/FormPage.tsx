@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
@@ -39,7 +39,7 @@ const newData = {
   option: ['default'],
   password: 'abcd1234',
   phone: '(19) 98326-2172',
-  select: '1',
+  select: 2,
   selectmulti: ['1', '3'],
   slider: 50,
   switch: true,
@@ -48,6 +48,23 @@ const newData = {
 
 export function FormPage(): JSX.Element {
   const formRef = useRef<FormHandles>(null);
+
+  const [options, setOptions] = useState<
+    {
+      value: number | string;
+      label: string;
+    }[]
+  >([]);
+
+  useEffect(() => {
+    setOptions([
+      { value: 1, label: 'Option 1' },
+      { value: 2, label: 'Option 2' },
+      { value: 3, label: 'Option 3' },
+      { value: 4, label: 'Option 4' },
+      { value: 5, label: 'Option 5' },
+    ]);
+  }, []);
 
   async function handleSubmit(data: any): Promise<void> {
     try {
@@ -160,28 +177,16 @@ export function FormPage(): JSX.Element {
               name="select"
               label="Select"
               placeholder="Select"
-              options={[
-                { value: '1', label: 'Option 1' },
-                { value: '2', label: 'Option 2' },
-                { value: '3', label: 'Option 3' },
-                { value: '4', label: 'Option 4' },
-                { value: '5', label: 'Option 5' },
-              ]}
+              options={options}
             />
 
-            <SelectMulti
+            {/* <SelectMulti
               name="selectmulti"
               label="Select multi"
               placeholder="Select multi"
-              options={[
-                { value: '1', label: 'Option 1' },
-                { value: '2', label: 'Option 2' },
-                { value: '3', label: 'Option 3' },
-                { value: '4', label: 'Option 4' },
-                { value: '5', label: 'Option 5' },
-              ]}
+              options={options}
               disabled
-            />
+            /> */}
           </Flex>
         </Form>
         <Footer>
