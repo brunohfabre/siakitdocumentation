@@ -89,6 +89,7 @@ export function SelectMulti({
         }}
         isClearable
         isMulti
+        isDisabled={disabled}
       />
 
       {error && <Error>{error}</Error>}

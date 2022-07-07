@@ -52,6 +52,7 @@ export function FormPage(): JSX.Element {
   async function handleSubmit(data: any): Promise<void> {
     try {
       console.log(data);
+
       formRef.current?.setErrors({});
 
       const schema = Yup.object().shape({
@@ -101,20 +102,26 @@ export function FormPage(): JSX.Element {
           }}
         >
           <Flex direction="column" flex gap>
-            <Input name="name" label="Name" placeholder="Name" />
-            <Number name="age" label="Age" placeholder="Age" />
-            <Phone name="phone" label="Phone" placeholder="Phone" />
-            <Password name="password" label="Password" placeholder="Password" />
-            <Money name="money" label="Money" placeholder="Money" />
+            <Input name="name" label="Name" placeholder="Name" disabled />
+            <Number name="age" label="Age" placeholder="Age" disabled />
+            <Phone name="phone" label="Phone" placeholder="Phone" disabled />
+            <Password
+              name="password"
+              label="Password"
+              placeholder="Password"
+              disabled
+            />
+            <Money name="money" label="Money" placeholder="Money" disabled />
             <Mask
               name="mask"
               label="Mask (CPF)"
               placeholder="Mask (CPF)"
               mask="cpf"
+              disabled
             />
-            <TextArea name="bio" label="Bio" placeholder="Bio" />
-            <Color name="color" label="Color" placeholder="Color" />
-            <Switch name="switch" label="Option 2" />
+            <TextArea name="bio" label="Bio" placeholder="Bio" disabled />
+            <Color name="color" label="Color" placeholder="Color" disabled />
+            <Switch name="switch" label="Option 2" disabled />
           </Flex>
           <Flex direction="column" flex gap>
             <Checkbox
@@ -124,6 +131,7 @@ export function FormPage(): JSX.Element {
                 { value: 'default', label: 'Default' },
                 { value: 'checked', label: 'Checked' },
               ]}
+              disabled
             />
             <Radio
               name="fruit"
@@ -132,15 +140,21 @@ export function FormPage(): JSX.Element {
                 { value: 'apple', label: 'Apple' },
                 { value: 'banana', label: 'Banana' },
               ]}
+              disabled
             />
 
-            <DatePicker name="date" label="Date" placeholder="Date" />
+            <DatePicker name="date" label="Date" placeholder="Date" disabled />
 
-            <TimePicker name="time" label="Time" placeholder="Time" />
+            <TimePicker name="time" label="Time" placeholder="Time" disabled />
 
-            <Language name="language" label="Language" placeholder="Language" />
+            <Language
+              name="language"
+              label="Language"
+              placeholder="Language"
+              disabled
+            />
 
-            <Slider name="slider" label="Slider" />
+            <Slider name="slider" label="Slider" disabled />
 
             <Select
               name="select"
@@ -153,6 +167,7 @@ export function FormPage(): JSX.Element {
                 { value: '4', label: 'Option 4' },
                 { value: '5', label: 'Option 5' },
               ]}
+              disabled
             />
 
             <SelectMulti
@@ -166,6 +181,7 @@ export function FormPage(): JSX.Element {
                 { value: '4', label: 'Option 4' },
                 { value: '5', label: 'Option 5' },
               ]}
+              disabled
             />
           </Flex>
         </Form>

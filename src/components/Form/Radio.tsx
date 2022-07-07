@@ -155,6 +155,7 @@ export function Radio({
                 value={option.value}
                 id={option.value}
                 colorScheme={colorScheme}
+                disabled={disabled}
               >
                 <RadioGroupIndicator />
               </RadioGroupItem>

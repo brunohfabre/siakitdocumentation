@@ -97,6 +97,7 @@ export function Color({
         onChange={(option) => setSelected(option as Option)}
         isClearable
         formatOptionLabel={formatOptionLabel}
+        isDisabled={disabled}
       />
 
       {error && <Error>{error}</Error>}

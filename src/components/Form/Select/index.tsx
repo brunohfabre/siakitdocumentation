@@ -7,7 +7,7 @@ import { InputContainer, Label, Error } from '../styles';
 import { Container } from './styles';
 
 type Option = {
-  value: string;
+  value: number | string;
   label: string;
 };
 
@@ -37,7 +37,7 @@ export function Select({
   );
 
   useEffect(() => {
-    registerField<Option | string>({
+    registerField<Option | string | number>({
       name: fieldName,
       getValue: () => {
         if (returnType === 'option') {
@@ -46,7 +46,7 @@ export function Select({
 
         return selected?.value || '';
       },
-      setValue: (_, value: Option | string) => {
+      setValue: (_, value: Option | string | number) => {
         if (typeof value === 'object') {
           setSelected(value);
 
@@ -84,6 +84,7 @@ export function Select({
           setSelected(option as Option);
         }}
         isClearable
+        isDisabled={disabled}
       />
 
       {error && <Error>{error}</Error>}
