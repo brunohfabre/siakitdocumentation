@@ -197,6 +197,15 @@ export function FormPage(): JSX.Element {
             >
               set data
             </Button>
+
+            <Button
+              type="button"
+              onClick={() =>
+                console.log(formRef.current?.getFieldValue('select'))
+              }
+            >
+              get data
+            </Button>
           </FooterLeft>
 
           <Button type="submit" onClick={() => formRef.current?.submitForm()}>
