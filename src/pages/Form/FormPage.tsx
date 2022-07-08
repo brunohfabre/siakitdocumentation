@@ -49,14 +49,7 @@ const newData = {
 export function FormPage(): JSX.Element {
   const formRef = useRef<FormHandles>(null);
 
-  const [options, setOptions] = useState<
-    {
-      value: number | string;
-      label: string;
-    }[]
-  >([]);
-
-  useEffect(() => {}, []);
+  const [disabled, setDisabled] = useState(false);
 
   async function handleSubmit(data: any): Promise<void> {
     try {
@@ -111,16 +104,18 @@ export function FormPage(): JSX.Element {
           }}
         >
           <Flex direction="column" flex gap>
-            <Input name="name" label="Name" placeholder="Name" disabled />
-            <Number name="age" label="Age" placeholder="Age" disabled />
-            <Phone name="phone" label="Phone" placeholder="Phone" disabled />
-            <Password
-              name="password"
-              label="Password"
-              placeholder="Password"
-              disabled
+            <Input name="name" label="Name" placeholder="Name" />
+            <Input
+              name="name2"
+              label="Name"
+              placeholder="Name"
+              disabled={disabled}
+              onBlur={() => console.log('input handle blur')}
             />
-            <Money name="money" label="Money" placeholder="Money" disabled />
+            <Number name="age" label="Age" placeholder="Age" />
+            <Phone name="phone" label="Phone" placeholder="Phone" />
+            <Password name="password" label="Password" placeholder="Password" />
+            <Money name="money" label="Money" placeholder="Money" />
             <Mask
               name="mask"
               label="Mask (CPF)"
@@ -128,9 +123,9 @@ export function FormPage(): JSX.Element {
               mask="cpf"
               disabled
             />
-            <TextArea name="bio" label="Bio" placeholder="Bio" disabled />
-            <Color name="color" label="Color" placeholder="Color" disabled />
-            <Switch name="switch" label="Option 2" disabled />
+            <TextArea name="bio" label="Bio" placeholder="Bio" />
+            <Color name="color" label="Color" placeholder="Color" />
+            <Switch name="switch" label="Option 2" />
           </Flex>
           <Flex direction="column" flex gap>
             <Checkbox
@@ -140,7 +135,6 @@ export function FormPage(): JSX.Element {
                 { value: 'default', label: 'Default' },
                 { value: 'checked', label: 'Checked' },
               ]}
-              disabled
             />
             <Radio
               name="fruit"
@@ -149,57 +143,53 @@ export function FormPage(): JSX.Element {
                 { value: 'apple', label: 'Apple' },
                 { value: 'banana', label: 'Banana' },
               ]}
-              disabled
             />
 
-            <DatePicker name="date" label="Date" placeholder="Date" disabled />
+            <DatePicker name="date" label="Date" placeholder="Date" />
 
-            <TimePicker name="time" label="Time" placeholder="Time" disabled />
+            <TimePicker name="time" label="Time" placeholder="Time" />
 
-            <Language
-              name="language"
-              label="Language"
-              placeholder="Language"
-              disabled
-            />
+            <Language name="language" label="Language" placeholder="Language" />
 
-            <Slider name="slider" label="Slider" disabled />
+            <Slider name="slider" label="Slider" />
 
             <Select
               name="select"
               label="Select"
               placeholder="Select"
-              options={options}
+              options={[
+                { value: 1, label: 'Option 1' },
+                { value: 2, label: 'Option 2' },
+                { value: 3, label: 'Option 3' },
+                { value: 4, label: 'Option 4' },
+                { value: 5, label: 'Option 5' },
+              ]}
               onChange={(value) => console.log(value)}
             />
 
-            {/* <SelectMulti
+            <SelectMulti
               name="selectmulti"
               label="Select multi"
               placeholder="Select multi"
-              options={options}
-              disabled
-            /> */}
+              options={[
+                { value: '1', label: 'Option 1' },
+                { value: '2', label: 'Option 2' },
+                { value: '3', label: 'Option 3' },
+                { value: '4', label: 'Option 4' },
+                { value: '5', label: 'Option 5' },
+              ]}
+            />
           </Flex>
         </Form>
         <Footer>
           <FooterLeft>
             <Button
-              colorScheme="crimson"
               type="button"
-              onClick={() => {
-                setOptions([
-                  { value: 1, label: 'Option 1' },
-                  { value: 2, label: 'Option 2' },
-                  { value: 3, label: 'Option 3' },
-                  { value: 4, label: 'Option 4' },
-                  { value: 5, label: 'Option 5' },
-                ]);
-              }}
+              onClick={() => setDisabled(true)}
+              colorScheme="crimson"
             >
-              set options
+              set disabled true
             </Button>
-
             <Button
               type="button"
               onClick={() => formRef.current?.setData(newData)}
