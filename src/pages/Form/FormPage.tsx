@@ -56,15 +56,7 @@ export function FormPage(): JSX.Element {
     }[]
   >([]);
 
-  useEffect(() => {
-    setOptions([
-      { value: 1, label: 'Option 1' },
-      { value: 2, label: 'Option 2' },
-      { value: 3, label: 'Option 3' },
-      { value: 4, label: 'Option 4' },
-      { value: 5, label: 'Option 5' },
-    ]);
-  }, []);
+  useEffect(() => {}, []);
 
   async function handleSubmit(data: any): Promise<void> {
     try {
@@ -192,6 +184,22 @@ export function FormPage(): JSX.Element {
         </Form>
         <Footer>
           <FooterLeft>
+            <Button
+              colorScheme="crimson"
+              type="button"
+              onClick={() => {
+                setOptions([
+                  { value: 1, label: 'Option 1' },
+                  { value: 2, label: 'Option 2' },
+                  { value: 3, label: 'Option 3' },
+                  { value: 4, label: 'Option 4' },
+                  { value: 5, label: 'Option 5' },
+                ]);
+              }}
+            >
+              set options
+            </Button>
+
             <Button
               type="button"
               onClick={() => formRef.current?.setData(newData)}
