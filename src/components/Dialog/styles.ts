@@ -12,6 +12,7 @@ export const Overlay = styled.div`
   display: grid;
   place-items: center;
   overflow-y: auto;
+  z-index: 9500;
 `;
 
 export const Content = styled(Card)`

@@ -12,6 +12,7 @@ export const Overlay = styled.div`
   display: grid;
   place-items: center;
   overflow-y: auto;
+  z-index: 9000;
 `;
 
 const sizes = {
@@ -49,6 +50,8 @@ type ContentProps = {
 export const Content = styled(Card)<ContentProps>`
   margin: 16px;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 
   ${({ size }) => sizes[size]};
 `;
