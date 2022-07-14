@@ -12,7 +12,7 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { HoverCard } from '@siakit';
+const exampleCode = `import { HoverCard } from '@atmoutsourcing/siakit';
 
 <HoverCard>
   /* trigger */

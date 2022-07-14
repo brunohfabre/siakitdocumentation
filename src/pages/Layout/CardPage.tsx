@@ -11,7 +11,7 @@ import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { Text } from '../../components/Text';
 
-const exampleCode = `import { Card } from '@siakit';
+const exampleCode = `import { Card } from '@atmoutsourcing/siakit';
 
 <Card />`;
 

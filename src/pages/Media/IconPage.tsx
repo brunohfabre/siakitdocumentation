@@ -12,7 +12,7 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Icon } from '@siakit';
+const exampleCode = `import { Icon } from '@atmoutsourcing/siakit';
 
 <Icon />`;
 

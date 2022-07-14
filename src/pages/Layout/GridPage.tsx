@@ -9,7 +9,7 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Grid } from '@siakit';
+const exampleCode = `import { Grid } from '@atmoutsourcing/siakit';
 
 <Grid />`;
 

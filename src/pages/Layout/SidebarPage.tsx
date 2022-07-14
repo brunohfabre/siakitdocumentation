@@ -35,7 +35,7 @@ const exampleCode = `import {
   SubMenuTitle,
   SubMenuSeparator,
   SubMenuItem,
-} from '@siakit';
+} from '@atmoutsourcing/siakit';
 
 <Sidebar>
   <Menu>

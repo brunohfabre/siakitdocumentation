@@ -11,7 +11,7 @@ import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { Timeline, TimelineItem } from '../../components/Timeline';
 
-const exampleCode = `import { Timeline, TimelineItem } from '@siakit';
+const exampleCode = `import { Timeline, TimelineItem } from '@atmoutsourcing/siakit';
 
 <Timeline>
   <TimelineItem />

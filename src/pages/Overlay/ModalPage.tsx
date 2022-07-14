@@ -16,7 +16,7 @@ import { Spacer } from '../../components/Spacer';
 import { Text } from '../../components/Text';
 import { Tooltip } from '../../components/Tooltip';
 
-const exampleCode = `import { Modal } from '@siakit';
+const exampleCode = `import { Modal } from '@atmoutsourcing/siakit';
 
 <Modal />`;
 

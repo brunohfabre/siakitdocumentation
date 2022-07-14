@@ -12,7 +12,7 @@ import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { colors } from '../../hooks/theme';
 
-const exampleCode = `import { LinkButton } from '@siakit';
+const exampleCode = `import { LinkButton } from '@atmoutsourcing/siakit';
 
 <LinkButton />`;
 

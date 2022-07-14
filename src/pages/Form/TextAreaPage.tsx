@@ -15,7 +15,7 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { TextArea } from '@siakit';
+const exampleCode = `import { TextArea } from '@atmoutsourcing/siakit';
 
 <TextArea />`;
 

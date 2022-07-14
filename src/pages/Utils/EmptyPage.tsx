@@ -11,7 +11,7 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Empty } from '@siakit';
+const exampleCode = `import { Empty } from '@atmoutsourcing/siakit';
 
 <Empty /`;
 

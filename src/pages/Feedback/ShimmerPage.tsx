@@ -11,7 +11,7 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Rectangle, Ellipse } from '@siakit';
+const exampleCode = `import { Rectangle, Ellipse } from '@atmoutsourcing/siakit';
 
 <Rectangle />
 <Ellipse />`;

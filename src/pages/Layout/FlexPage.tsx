@@ -9,7 +9,7 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Flex } from '@siakit';
+const exampleCode = `import { Flex } from '@atmoutsourcing/siakit';
 
 <Flex />`;
 

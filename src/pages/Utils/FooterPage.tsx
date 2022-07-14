@@ -12,7 +12,7 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Footer, FooterLeft } from '@siakit';
+const exampleCode = `import { Footer, FooterLeft } from '@atmoutsourcing/siakit';
 
 <Footer>
   <FooterLeft>

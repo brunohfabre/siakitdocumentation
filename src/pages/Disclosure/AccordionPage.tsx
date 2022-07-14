@@ -12,7 +12,7 @@ import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { Text } from '../../components/Text';
 
-const exampleCode = `import { Accordion, AccordionItem } from '@siakit';
+const exampleCode = `import { Accordion, AccordionItem } from '@atmoutsourcing/siakit';
 
 <Accordion>
   <AccordionItem />

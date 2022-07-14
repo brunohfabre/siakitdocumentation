@@ -12,7 +12,7 @@ import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { toast } from '../../components/Toast';
 
-const exampleCode = `import { toast } from '@siakit';
+const exampleCode = `import { toast } from '@atmoutsourcing/siakit';
 
 toast.info({ title: 'Title', text: 'Example text' });`;
 

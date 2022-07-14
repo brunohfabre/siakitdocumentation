@@ -26,7 +26,7 @@ const exampleCode = `import {
   DropdownItem,
   DropdownSeparator,
   DropdownTitle
-} from '@siakit';
+} from '@atmoutsourcing/siakit';
 
 <Dropdown>
   /* trigger here */

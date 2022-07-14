@@ -10,7 +10,7 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Heading } from "@siakit";
+const exampleCode = `import { Heading } from "@atmoutsourcing/siakit";
 
 <Heading />`;
 

@@ -11,7 +11,7 @@ import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { Spinner } from '../../components/Spinner';
 
-const exampleCode = `import { Spinner } from '@siakit';
+const exampleCode = `import { Spinner } from '@atmoutsourcing/siakit';
 
 <Spinner />`;
 

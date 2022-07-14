@@ -16,7 +16,7 @@ import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { masks } from '../../helpers/masks';
 
-const exampleCode = `import { Mask } from '@siakit';
+const exampleCode = `import { Mask } from '@atmoutsourcing/siakit';
 
 <Mask />`;
 

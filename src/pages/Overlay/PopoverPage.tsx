@@ -12,7 +12,7 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Popover } from '@siakit';
+const exampleCode = `import { Popover } from '@atmoutsourcing/siakit';
 
 <Popover>
   /* trigger */

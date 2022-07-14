@@ -12,7 +12,7 @@ import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { Tooltip } from '../../components/Tooltip';
 
-const exampleCode = `import { Tooltip } from '@siakit';
+const exampleCode = `import { Tooltip } from '@atmoutsourcing/siakit';
 
 <Tooltip />`;
 

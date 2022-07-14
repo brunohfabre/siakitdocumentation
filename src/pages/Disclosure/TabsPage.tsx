@@ -12,7 +12,7 @@ import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { Tab, TabList, TabPanel, Tabs } from '../../components/Tabs';
 
-const exampleCode = `import { Tabs, TabList, Tab, TabPanel } from '@siakit';
+const exampleCode = `import { Tabs, TabList, Tab, TabPanel } from '@atmoutsourcing/siakit';
 
 <Tabs>
   <TabList>
