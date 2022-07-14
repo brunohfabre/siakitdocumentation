@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { icons } from '../../helpers/icons';
 import { Colors } from '../../hooks/theme';
 import { Container } from './styles';

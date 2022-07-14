@@ -1,4 +1,4 @@
-import React, { useContext, useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 
 import { icons } from '../../../helpers/icons';
 import { useTheme } from '../../../hooks/theme';

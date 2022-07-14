@@ -1,9 +1,10 @@
-import React, { ReactNode } from 'react';
+import { ReactNode } from 'react';
 
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-day-picker/dist/style.css';
 
 import { StyledToastContainer } from '../components/Toast';
+import { LoadingProvider } from './loading';
 import { ThemeProvider } from './theme';
 
 type SiakitProviderProps = {
@@ -13,9 +14,11 @@ type SiakitProviderProps = {
 export function SiakitProvider({ children }: SiakitProviderProps): JSX.Element {
   return (
     <ThemeProvider>
-      <StyledToastContainer />
+      <LoadingProvider>
+        <StyledToastContainer />
 
-      {children}
+        {children}
+      </LoadingProvider>
     </ThemeProvider>
   );
 }

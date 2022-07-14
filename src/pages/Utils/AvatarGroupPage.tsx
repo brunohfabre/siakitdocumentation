@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Avatar } from '../../components/Avatar';
 import { AvatarGroup } from '../../components/AvatarGroup';
 import { Card } from '../../components/Card';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';

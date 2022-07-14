@@ -1,5 +1,3 @@
-import React from 'react';
-
 import SiakitLogoFull from '../../assets/icons/siakit-logo-full.png';
 import SiakitLogoShort from '../../assets/icons/siakit-logo-short.png';
 import { Card } from '../../components/Card';

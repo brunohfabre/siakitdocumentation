@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Routes, Route } from 'react-router-dom';
 
 import { ButtonPage } from './pages/Action/ButtonPage';
@@ -13,6 +11,7 @@ import { TimelinePage } from './pages/Datadisplay/TimelinePage';
 import { AccordionPage } from './pages/Disclosure/AccordionPage';
 import { TabsPage } from './pages/Disclosure/TabsPage';
 import { AlertPage } from './pages/Feedback/AlertPage';
+import { LoadingHookPage } from './pages/Feedback/LoadingHookPage';
 import { ProgressBarPage } from './pages/Feedback/ProgressBarPage';
 import { ShimmerPage } from './pages/Feedback/ShimmerPage';
 import { SpinnerPage } from './pages/Feedback/SpinnerPage';
@@ -100,6 +99,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="toast" element={<ToastPage />} />
         <Route path="shimmer" element={<ShimmerPage />} />
         <Route path="alert" element={<AlertPage />} />
+        <Route path="loadinghook" element={<LoadingHookPage />} />
       </Route>
 
       <Route path="/datadisplay">

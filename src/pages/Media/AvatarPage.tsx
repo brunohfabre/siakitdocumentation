@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Avatar } from '../../components/Avatar';
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';

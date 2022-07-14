@@ -1,10 +1,7 @@
-import React from 'react';
-
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
 import { Heading } from '../../components/Heading';
-import { ProgressBar } from '../../components/ProgressBar';
 import { Ellipse, Rectangle } from '../../components/Shimmer';
 import {
   SimpleTable,

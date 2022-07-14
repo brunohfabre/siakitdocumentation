@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Empty } from '../../components/Empty';
@@ -28,7 +26,7 @@ export function EmptyPage(): JSX.Element {
               title="No projects"
               description="Get started by creating a new project"
               actionText="New Project"
-              action={() => alert('new project action')}
+              action={() => undefined}
             />
           </Flex>
         </Card>

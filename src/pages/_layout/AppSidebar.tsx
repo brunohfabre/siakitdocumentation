@@ -1,6 +1,7 @@
-import React from 'react';
+import { useContext, useEffect } from 'react';
 
-import { useNavigate } from 'react-router-dom';
+import { BrowserHistory } from 'history';
+import { UNSAFE_NavigationContext, useNavigate } from 'react-router-dom';
 
 import siakitLogoFullImage from '../../assets/icons/siakit-logo-full.png';
 import siakitLogoShortImage from '../../assets/icons/siakit-logo-short.png';
@@ -12,9 +13,22 @@ import {
   SubMenu,
   SubMenuItem,
 } from '../../components/Sidebar';
+import { useLoading } from '../../hooks/loading';
 
 export function AppSidebar(): JSX.Element {
   const navigate = useNavigate();
+  const navigator = useContext(UNSAFE_NavigationContext)
+    .navigator as BrowserHistory;
+
+  const { clearLoading } = useLoading();
+
+  useEffect(() => {
+    navigator.listen(({ action }) => {
+      if (action === 'POP') {
+        clearLoading();
+      }
+    });
+  }, []);
 
   return (
     <Sidebar>
@@ -185,6 +199,9 @@ export function AppSidebar(): JSX.Element {
         </SubMenuItem>
         <SubMenuItem onClick={() => navigate('/feedback/alert')}>
           Alert
+        </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/feedback/loadinghook')}>
+          Loading hook
         </SubMenuItem>
       </SubMenu>
 

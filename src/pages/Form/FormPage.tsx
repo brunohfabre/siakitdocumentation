@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
@@ -53,8 +53,6 @@ export function FormPage(): JSX.Element {
 
   async function handleSubmit(data: any): Promise<void> {
     try {
-      console.log(data);
-
       formRef.current?.setErrors({});
 
       const schema = Yup.object().shape({

@@ -34,8 +34,10 @@
     "react/jsx-props-no-spreading": "off",
     "react/require-default-props": "off",
     "react/prop-types": "off",
+    "camelcase": "off",
     "react/jsx-no-useless-fragment": "off",
     "react/jsx-no-bind": "off",
+    "react/react-in-jsx-scope": "off",
     "no-param-reassign": "off",
     "@typescript-eslint/explicit-function-return-type": [
       "error",

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { icons } from '../../../helpers/icons';
 import { Container, Type } from './styles';
 

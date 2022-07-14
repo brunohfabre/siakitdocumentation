@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Accordion, AccordionItem } from '../../components/Accordion';
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';

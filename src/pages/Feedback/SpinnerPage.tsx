@@ -1,12 +1,15 @@
-import React from 'react';
-
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
 import { Heading } from '../../components/Heading';
+import {
+  SimpleTable,
+  SimpleTableHeader,
+  SimpleTableItem,
+} from '../../components/SimpleTable';
+import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 import { Spinner } from '../../components/Spinner';
-import { Text } from '../../components/Text';
 
 const exampleCode = `import { Spinner } from '@siakit';
 
@@ -31,7 +34,19 @@ export function SpinnerPage(): JSX.Element {
         <Heading>API reference</Heading>
         <Heading size="md">Spinner</Heading>
 
-        <Text>No props</Text>
+        <SimpleTable>
+          <SimpleTableHeader>
+            <SimpleTableItem isHeader>Prop</SimpleTableItem>
+            <SimpleTableItem isHeader>Type</SimpleTableItem>
+            <SimpleTableItem isHeader>Default</SimpleTableItem>
+          </SimpleTableHeader>
+
+          <SimpleTableBody>
+            <SimpleTableItem>inverted</SimpleTableItem>
+            <SimpleTableItem>boolean</SimpleTableItem>
+            <SimpleTableItem>false</SimpleTableItem>
+          </SimpleTableBody>
+        </SimpleTable>
       </Flex>
     </Flex>
   );

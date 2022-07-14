@@ -1,4 +1,4 @@
-import React, { forwardRef } from 'react';
+import { forwardRef } from 'react';
 
 import { icons } from '../../helpers/icons';
 import { Colors, useTheme } from '../../hooks/theme';

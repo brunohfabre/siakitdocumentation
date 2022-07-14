@@ -1,4 +1,4 @@
-import React, { ReactNode, Fragment } from 'react';
+import { ReactNode, Fragment } from 'react';
 
 type SimpleTableBodyProps = {
   children: ReactNode;

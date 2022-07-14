@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Alert } from '../../components/Alert';
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
