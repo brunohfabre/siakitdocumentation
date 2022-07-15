@@ -5,6 +5,7 @@ import { IconButtonPage } from './pages/Action/IconButtonPage';
 import { LinkButtonPage } from './pages/Action/LinkButtonPage';
 import { BadgePage } from './pages/Datadisplay/BadgePage';
 import { ListPage } from './pages/Datadisplay/ListPage';
+import { PageHeaderPage } from './pages/Datadisplay/PageHeaderPage';
 import { PaginationPage } from './pages/Datadisplay/PaginationPage';
 import { SeparatorPage } from './pages/Datadisplay/SeparatorPage';
 import { TimelinePage } from './pages/Datadisplay/TimelinePage';
@@ -111,6 +112,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="list" element={<ListPage />} />
         <Route path="pagination" element={<PaginationPage />} />
         <Route path="timeline" element={<TimelinePage />} />
+        <Route path="pageheader" element={<PageHeaderPage />} />
       </Route>
 
       <Route path="/overlay">
