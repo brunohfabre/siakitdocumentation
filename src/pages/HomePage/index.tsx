@@ -3,11 +3,9 @@ import styled from 'styled-components';
 
 import DarkThemeImage from '../../assets/theme/dark-theme.svg';
 import LightThemeImage from '../../assets/theme/light-theme.svg';
-import SystemThemeImage from '../../assets/theme/system-theme.svg';
 import { Button } from '../../components/Button';
 import { Flex } from '../../components/Flex';
 import { Grid } from '../../components/Grid';
-import { Heading } from '../../components/Heading';
 import { Spacer } from '../../components/Spacer';
 import { Text } from '../../components/Text';
 import { colors, Colors, useTheme } from '../../hooks/theme';
