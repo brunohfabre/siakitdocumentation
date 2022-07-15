@@ -106,6 +106,12 @@ export function TablePage(): JSX.Element {
               FUNCTION {'->'} (sort: SortType) {'=>'} void
             </SimpleTableItem>
             <SimpleTableItem />
+
+            <SimpleTableItem>exports</SimpleTableItem>
+            <SimpleTableItem>
+              FUNCTION {'->'} () {'=>'} void
+            </SimpleTableItem>
+            <SimpleTableItem />
           </SimpleTableBody>
         </SimpleTable>
       </Flex>
