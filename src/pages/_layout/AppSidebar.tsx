@@ -225,6 +225,9 @@ export function AppSidebar(): JSX.Element {
         <SubMenuItem onClick={() => navigate('/datadisplay/pageheader')}>
           PageHeader
         </SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/datadisplay/table')}>
+          Table
+        </SubMenuItem>
       </SubMenu>
 
       <SubMenu value="overlay">

@@ -8,6 +8,7 @@ import { ListPage } from './pages/Datadisplay/ListPage';
 import { PageHeaderPage } from './pages/Datadisplay/PageHeaderPage';
 import { PaginationPage } from './pages/Datadisplay/PaginationPage';
 import { SeparatorPage } from './pages/Datadisplay/SeparatorPage';
+import { TablePage } from './pages/Datadisplay/TablePage';
 import { TimelinePage } from './pages/Datadisplay/TimelinePage';
 import { AccordionPage } from './pages/Disclosure/AccordionPage';
 import { TabsPage } from './pages/Disclosure/TabsPage';
@@ -113,6 +114,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="pagination" element={<PaginationPage />} />
         <Route path="timeline" element={<TimelinePage />} />
         <Route path="pageheader" element={<PageHeaderPage />} />
+        <Route path="table" element={<TablePage />} />
       </Route>
 
       <Route path="/overlay">

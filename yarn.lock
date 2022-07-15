@@ -942,6 +942,11 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
+"@types/dot-object@^2.1.2":
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/@types/dot-object/-/dot-object-2.1.2.tgz#6ff632ce79236f5c2a21598a717cc77b4b4e0bc8"
+  integrity sha512-mARrpJofLNe6yhlukeBcznBe8ssZo5ZJ/CJWc3JKmG9L9151s0OHK+mealnkqSgO6cSn1219vND2wgL67Cuqiw==
+
 "@types/hoist-non-react-statics@*":
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/@types/hoist-non-react-statics/-/hoist-non-react-statics-3.3.1.tgz#1124aafe5118cb591977aeb1ceaaed1070eb039f"

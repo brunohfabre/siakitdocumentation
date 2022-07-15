@@ -24,6 +24,7 @@
     "@unform/core": "^2.1.6",
     "@unform/web": "^2.1.6",
     "date-fns": "^2.28.0",
+    "dot-object": "^2.1.4",
     "history": "^5.3.0",
     "polished": "^4.2.2",
     "react": "^18.0.0",
@@ -39,6 +40,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@types/dot-object": "^2.1.2",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/react-lottie": "^1.2.6",
