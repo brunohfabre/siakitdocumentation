@@ -28,6 +28,7 @@ import { MoneyPage } from './pages/Form/MoneyPage';
 import { NumberPage } from './pages/Form/Number';
 import { PasswordPage } from './pages/Form/PasswordPage';
 import { PhonePage } from './pages/Form/PhonePage';
+import { PinPage } from './pages/Form/PinPage';
 import { RadioPage } from './pages/Form/RadioPage';
 import { SelectMultiPage } from './pages/Form/SelectMultiPage';
 import { SelectPage } from './pages/Form/SelectPage';
@@ -49,6 +50,7 @@ import { HoverCardPage } from './pages/Overlay/HoverCardPage';
 import { ModalPage } from './pages/Overlay/ModalPage';
 import { PopoverPage } from './pages/Overlay/PopoverPage';
 import { TooltipPage } from './pages/Overlay/TooltipPage';
+import { TestPage } from './pages/TestPage';
 import { HeadingPage } from './pages/Typography/HeadingPage';
 import { TextPage } from './pages/Typography/TextPage';
 import { AvatarGroupPage } from './pages/Utils/AvatarGroupPage';
@@ -91,6 +93,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="phone" element={<PhonePage />} />
         <Route path="language" element={<LanguagePage />} />
         <Route path="time" element={<TimePickerPage />} />
+        <Route path="pin" element={<PinPage />} />
       </Route>
 
       <Route path="/feedback">
@@ -142,6 +145,8 @@ export function AppRoutes(): JSX.Element {
         <Route path="footer" element={<FooterPage />} />
         <Route path="avatargroup" element={<AvatarGroupPage />} />
       </Route>
+
+      <Route path="/test" element={<TestPage />} />
     </Routes>
   );
 }
