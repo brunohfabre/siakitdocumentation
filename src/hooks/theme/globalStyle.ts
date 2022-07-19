@@ -1,8 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { Colors } from '.';
+import { Colors, Theme } from '.';
 
 type GlobalStyleProps = {
+  appTheme: Theme;
   colorScheme: Colors;
 };
 
@@ -42,8 +43,9 @@ export const GlobaStyle = createGlobalStyle<GlobalStyleProps>`
 
   body {
     -webkit-font-smoothing: antialiased;
-    background-color: ${(props) => props.theme.colors.gray[1]};
-    color: ${(props) => props.theme.colors.gray[12]};
+    background-color: ${({ appTheme, theme }) =>
+      theme.colors.gray[appTheme === 'light' ? 2 : 1]};
+    color: ${({ theme }) => theme.colors.gray[12]};
   }
 
   body, input, textarea, button {
