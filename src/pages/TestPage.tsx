@@ -3,7 +3,7 @@ import { Editor } from '../components/Form/Editor';
 
 export function TestPage(): JSX.Element {
   return (
-    <Flex>
+    <Flex overflow>
       <Editor />
     </Flex>
   );
