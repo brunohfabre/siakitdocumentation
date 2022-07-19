@@ -11,10 +11,10 @@ import { Checkbox } from '../../components/Form/Checkbox';
 import { Color } from '../../components/Form/Color';
 import { DatePicker } from '../../components/Form/DatePicker';
 import { Input } from '../../components/Form/Input';
+import { InputNumber } from '../../components/Form/InputNumber';
 import { Language } from '../../components/Form/Language';
 import { Mask } from '../../components/Form/Mask';
 import { Money } from '../../components/Form/Money';
-import { Number } from '../../components/Form/Number';
 import { Password } from '../../components/Form/Password';
 import { Phone } from '../../components/Form/Phone';
 import { Radio } from '../../components/Form/Radio';
@@ -110,7 +110,7 @@ export function FormPage(): JSX.Element {
               disabled={disabled}
               onBlur={() => console.log('input handle blur')}
             />
-            <Number name="age" label="Age" placeholder="Age" />
+            <InputNumber name="age" label="Age" placeholder="Age" />
             <Phone name="phone" label="Phone" placeholder="Phone" />
             <Password name="password" label="Password" placeholder="Password" />
             <Money name="money" label="Money" placeholder="Money" />

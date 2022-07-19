@@ -5,7 +5,7 @@ import { FormHandles } from '@unform/core';
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
-import { Form, Number } from '../../components/Form';
+import { Form, InputNumber } from '../../components/Form';
 import { Heading } from '../../components/Heading';
 import {
   SimpleTable,
@@ -30,7 +30,11 @@ export function NumberPage(): JSX.Element {
           <Flex flex height={192} padding justify="center" align="center">
             <Form ref={formRef} onSubmit={() => undefined}>
               <Flex direction="column" padding={32}>
-                <Number name="name" label="Label" placeholder="Placeholder" />
+                <InputNumber
+                  name="name"
+                  label="Label"
+                  placeholder="Placeholder"
+                />
               </Flex>
             </Form>
           </Flex>
