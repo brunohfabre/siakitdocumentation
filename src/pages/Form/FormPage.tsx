@@ -16,6 +16,7 @@ import { Language } from '../../components/Form/Language';
 import { Mask } from '../../components/Form/Mask';
 import { Money } from '../../components/Form/Money';
 import { Password } from '../../components/Form/Password';
+import { PercentageInput } from '../../components/Form/PercentageInput';
 import { Phone } from '../../components/Form/Phone';
 import { Radio } from '../../components/Form/Radio';
 import { Select } from '../../components/Form/Select';
@@ -176,6 +177,12 @@ export function FormPage(): JSX.Element {
                 { value: '4', label: 'Option 4' },
                 { value: '5', label: 'Option 5' },
               ]}
+            />
+
+            <PercentageInput
+              name="percentage"
+              label="Percentage"
+              placeholder="Percentage"
             />
           </Flex>
         </Form>
