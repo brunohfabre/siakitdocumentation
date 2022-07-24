@@ -8,16 +8,16 @@ import { Flex } from '../../components/Flex';
 import { Footer, FooterLeft } from '../../components/Footer';
 import { Form } from '../../components/Form';
 import { Checkbox } from '../../components/Form/Checkbox';
-import { Color } from '../../components/Form/Color';
+import { ColorPicker } from '../../components/Form/ColorPicker';
 import { DatePicker } from '../../components/Form/DatePicker';
 import { Input } from '../../components/Form/Input';
-import { InputNumber } from '../../components/Form/InputNumber';
-import { Language } from '../../components/Form/Language';
-import { Mask } from '../../components/Form/Mask';
-import { Money } from '../../components/Form/Money';
-import { Password } from '../../components/Form/Password';
+import { LanguagePicker } from '../../components/Form/LanguagePicker';
+import { MaskInput } from '../../components/Form/MaskInput';
+import { MoneyInput } from '../../components/Form/MoneyInput';
+import { NumberInput } from '../../components/Form/NumberInput';
+import { PasswordInput } from '../../components/Form/PasswordInput';
 import { PercentageInput } from '../../components/Form/PercentageInput';
-import { Phone } from '../../components/Form/Phone';
+import { PhoneInput } from '../../components/Form/PhoneInput';
 import { Radio } from '../../components/Form/Radio';
 import { Select } from '../../components/Form/Select';
 import { SelectMulti } from '../../components/Form/SelectMulti';
@@ -111,11 +111,15 @@ export function FormPage(): JSX.Element {
               disabled={disabled}
               onBlur={() => console.log('input handle blur')}
             />
-            <InputNumber name="age" label="Age" placeholder="Age" />
-            <Phone name="phone" label="Phone" placeholder="Phone" />
-            <Password name="password" label="Password" placeholder="Password" />
-            <Money name="money" label="Money" placeholder="Money" />
-            <Mask
+            <NumberInput name="age" label="Age" placeholder="Age" />
+            <PhoneInput name="phone" label="Phone" placeholder="Phone" />
+            <PasswordInput
+              name="password"
+              label="Password"
+              placeholder="Password"
+            />
+            <MoneyInput name="money" label="Money" placeholder="Money" />
+            <MaskInput
               name="mask"
               label="Mask (CPF)"
               placeholder="Mask (CPF)"
@@ -123,7 +127,7 @@ export function FormPage(): JSX.Element {
               disabled
             />
             <TextArea name="bio" label="Bio" placeholder="Bio" />
-            <Color name="color" label="Color" placeholder="Color" />
+            <ColorPicker name="color" label="Color" placeholder="Color" />
             <Switch name="switch" label="Option 2" />
           </Flex>
           <Flex direction="column" flex gap>
@@ -148,7 +152,11 @@ export function FormPage(): JSX.Element {
 
             <TimePicker name="time" label="Time" placeholder="Time" />
 
-            <Language name="language" label="Language" placeholder="Language" />
+            <LanguagePicker
+              name="language"
+              label="Language"
+              placeholder="Language"
+            />
 
             <Slider name="slider" label="Slider" />
 

@@ -19,17 +19,17 @@ import { ShimmerPage } from './pages/Feedback/ShimmerPage';
 import { SpinnerPage } from './pages/Feedback/SpinnerPage';
 import { ToastPage } from './pages/Feedback/ToastPage';
 import { CheckboxPage } from './pages/Form/CheckboxPage';
-import { ColorPage } from './pages/Form/ColorPage';
+import { ColorPickerPage } from './pages/Form/ColorPickerPage';
 import { DatePickerPage } from './pages/Form/DatePickerPage';
 import { FormPage } from './pages/Form/FormPage';
 import { FormTestPage } from './pages/Form/FormTestPage';
 import { InputPage } from './pages/Form/InputPage';
-import { LanguagePage } from './pages/Form/LanguagePage';
-import { MaskPage } from './pages/Form/MaskPage';
-import { MoneyPage } from './pages/Form/MoneyPage';
-import { NumberPage } from './pages/Form/Number';
-import { PasswordPage } from './pages/Form/PasswordPage';
-import { PhonePage } from './pages/Form/PhonePage';
+import { LanguagePickerPage } from './pages/Form/LanguagePickerPage';
+import { MaskInputPage } from './pages/Form/MaskInputPage';
+import { MoneyInputPage } from './pages/Form/MoneyInputPage';
+import { NumberInputPage } from './pages/Form/NumberInput';
+import { PasswordInputPage } from './pages/Form/PasswordInputPage';
+import { PhoneInputPage } from './pages/Form/PhoneInputPage';
 import { PinPage } from './pages/Form/PinPage';
 import { RadioPage } from './pages/Form/RadioPage';
 import { SelectMultiPage } from './pages/Form/SelectMultiPage';
@@ -82,18 +82,18 @@ export function AppRoutes(): JSX.Element {
         <Route path="select" element={<SelectPage />} />
         <Route path="selectmulti" element={<SelectMultiPage />} />
         <Route path="switch" element={<SwitchPage />} />
-        <Route path="mask" element={<MaskPage />} />
-        <Route path="password" element={<PasswordPage />} />
+        <Route path="mask" element={<MaskInputPage />} />
+        <Route path="password" element={<PasswordInputPage />} />
         <Route path="slider" element={<SliderPage />} />
         <Route path="textarea" element={<TextAreaPage />} />
         <Route path="date" element={<DatePickerPage />} />
-        <Route path="number" element={<NumberPage />} />
+        <Route path="number" element={<NumberInputPage />} />
         <Route path="checkbox" element={<CheckboxPage />} />
-        <Route path="color" element={<ColorPage />} />
+        <Route path="color" element={<ColorPickerPage />} />
         <Route path="radio" element={<RadioPage />} />
-        <Route path="money" element={<MoneyPage />} />
-        <Route path="phone" element={<PhonePage />} />
-        <Route path="language" element={<LanguagePage />} />
+        <Route path="money" element={<MoneyInputPage />} />
+        <Route path="phone" element={<PhoneInputPage />} />
+        <Route path="language" element={<LanguagePickerPage />} />
         <Route path="time" element={<TimePickerPage />} />
         <Route path="pin" element={<PinPage />} />
       </Route>

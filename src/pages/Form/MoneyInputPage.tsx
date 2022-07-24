@@ -5,7 +5,7 @@ import { FormHandles } from '@unform/core';
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
-import { Form, InputNumber } from '../../components/Form';
+import { Form, MoneyInput } from '../../components/Form';
 import { Heading } from '../../components/Heading';
 import {
   SimpleTable,
@@ -15,22 +15,22 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Number } from '@atmoutsourcing/siakit';
+const exampleCode = `import { MoneyInput } from '@atmoutsourcing/siakit';
 
-<Number />`;
+<MoneyInput />`;
 
-export function NumberPage(): JSX.Element {
+export function MoneyInputPage(): JSX.Element {
   const formRef = useRef<FormHandles>(null);
 
   return (
     <Flex flex direction="column" align="center" overflow>
       <Flex width={768} padding={32} direction="column" gap>
-        <Heading size="xl">Number</Heading>
+        <Heading size="xl">MoneyInput</Heading>
         <Card>
           <Flex flex height={192} padding justify="center" align="center">
             <Form ref={formRef} onSubmit={() => undefined}>
               <Flex direction="column" padding={32}>
-                <InputNumber
+                <MoneyInput
                   name="name"
                   label="Label"
                   placeholder="Placeholder"
@@ -46,7 +46,7 @@ export function NumberPage(): JSX.Element {
 
         <Spacer height />
         <Heading>API reference</Heading>
-        <Heading size="md">Number</Heading>
+        <Heading size="md">MoneyInput</Heading>
 
         <SimpleTable>
           <SimpleTableHeader>

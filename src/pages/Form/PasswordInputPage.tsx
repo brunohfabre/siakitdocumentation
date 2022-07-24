@@ -5,7 +5,7 @@ import { FormHandles } from '@unform/core';
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
-import { Form, Language } from '../../components/Form';
+import { Form, PasswordInput } from '../../components/Form';
 import { Heading } from '../../components/Heading';
 import {
   SimpleTable,
@@ -15,22 +15,26 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Language } from '@atmoutsourcing/siakit';
+const exampleCode = `import { PasswordInput } from '@atmoutsourcing/siakit';
 
-<Language />`;
+<PasswordInput />`;
 
-export function LanguagePage(): JSX.Element {
+export function PasswordInputPage(): JSX.Element {
   const formRef = useRef<FormHandles>(null);
 
   return (
     <Flex flex direction="column" align="center" overflow>
       <Flex width={768} padding={32} direction="column" gap>
-        <Heading size="xl">Language</Heading>
+        <Heading size="xl">PasswordInput</Heading>
         <Card>
           <Flex flex height={192} padding justify="center" align="center">
             <Form ref={formRef} onSubmit={() => undefined}>
               <Flex direction="column" padding={32}>
-                <Language name="name" label="Label" placeholder="Placeholder" />
+                <PasswordInput
+                  name="name"
+                  label="Label"
+                  placeholder="Placeholder"
+                />
               </Flex>
             </Form>
           </Flex>
@@ -42,7 +46,7 @@ export function LanguagePage(): JSX.Element {
 
         <Spacer height />
         <Heading>API reference</Heading>
-        <Heading size="md">Language</Heading>
+        <Heading size="md">Input</Heading>
 
         <SimpleTable>
           <SimpleTableHeader>
@@ -63,14 +67,6 @@ export function LanguagePage(): JSX.Element {
             <SimpleTableItem>placeholder</SimpleTableItem>
             <SimpleTableItem>string</SimpleTableItem>
             <SimpleTableItem />
-
-            <SimpleTableItem>returnType</SimpleTableItem>
-            <SimpleTableItem isEnum>{`"key" | "option"`}</SimpleTableItem>
-            <SimpleTableItem>key</SimpleTableItem>
-
-            <SimpleTableItem>disabled</SimpleTableItem>
-            <SimpleTableItem>boolean</SimpleTableItem>
-            <SimpleTableItem>false</SimpleTableItem>
           </SimpleTableBody>
         </SimpleTable>
       </Flex>

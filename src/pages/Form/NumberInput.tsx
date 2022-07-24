@@ -5,7 +5,7 @@ import { FormHandles } from '@unform/core';
 import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
-import { Form, Phone } from '../../components/Form';
+import { Form, NumberInput } from '../../components/Form';
 import { Heading } from '../../components/Heading';
 import {
   SimpleTable,
@@ -15,22 +15,26 @@ import {
 import { SimpleTableBody } from '../../components/SimpleTable/SimpleTableBody';
 import { Spacer } from '../../components/Spacer';
 
-const exampleCode = `import { Phone } from '@atmoutsourcing/siakit';
+const exampleCode = `import { NumberInput } from '@atmoutsourcing/siakit';
 
-<Phone />`;
+<NumberInput />`;
 
-export function PhonePage(): JSX.Element {
+export function NumberInputPage(): JSX.Element {
   const formRef = useRef<FormHandles>(null);
 
   return (
     <Flex flex direction="column" align="center" overflow>
       <Flex width={768} padding={32} direction="column" gap>
-        <Heading size="xl">Phone</Heading>
+        <Heading size="xl">NumberInput</Heading>
         <Card>
           <Flex flex height={192} padding justify="center" align="center">
             <Form ref={formRef} onSubmit={() => undefined}>
               <Flex direction="column" padding={32}>
-                <Phone name="name" label="Label" placeholder="Placeholder" />
+                <NumberInput
+                  name="name"
+                  label="Label"
+                  placeholder="Placeholder"
+                />
               </Flex>
             </Form>
           </Flex>
@@ -42,7 +46,7 @@ export function PhonePage(): JSX.Element {
 
         <Spacer height />
         <Heading>API reference</Heading>
-        <Heading size="md">Phone</Heading>
+        <Heading size="md">NumberInput</Heading>
 
         <SimpleTable>
           <SimpleTableHeader>
