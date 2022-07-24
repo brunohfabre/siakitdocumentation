@@ -28,3 +28,4 @@ export { Switch } from './Switch';
 export { TextArea } from './TextArea';
 export { TimePicker } from './TimePicker';
 export { PercentageInput } from './PercentageInput';
+export { PinInput } from './PinInput';
