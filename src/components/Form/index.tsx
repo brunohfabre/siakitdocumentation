@@ -1,11 +1,14 @@
+import { FormHandles as UnformFormHandle } from '@unform/core';
 import { Form as UnformForm } from '@unform/web';
 import styled from 'styled-components';
 
+import { flexStyle } from '../Flex/styles';
+
 export const Form = styled(UnformForm)`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+  ${flexStyle};
 `;
+
+export type FormHandles = UnformFormHandle;
 
 export { Select } from './Select';
 export { SelectMulti } from './SelectMulti';

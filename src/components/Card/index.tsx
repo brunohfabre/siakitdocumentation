@@ -1,10 +1,11 @@
 import { forwardRef, ReactNode } from 'react';
 
+import { FlexProps } from '../Flex/styles';
 import { Container } from './styles';
 
-type CardProps = {
+interface CardProps extends FlexProps {
   children: ReactNode;
-};
+}
 
 export const Card = forwardRef<HTMLDivElement, CardProps>(
   ({ children, ...rest }, ref) => {

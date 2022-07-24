@@ -1,12 +1,12 @@
 import { useRef, useState } from 'react';
 
 import { FormHandles } from '@unform/core';
-import { Form } from '@unform/web';
 import * as Yup from 'yup';
 
 import { Button } from '../../components/Button';
 import { Flex } from '../../components/Flex';
 import { Footer, FooterLeft } from '../../components/Footer';
+import { Form } from '../../components/Form';
 import { Checkbox } from '../../components/Form/Checkbox';
 import { Color } from '../../components/Form/Color';
 import { DatePicker } from '../../components/Form/DatePicker';
