@@ -128,7 +128,11 @@ export function FormPage(): JSX.Element {
             />
             <TextArea name="bio" label="Bio" placeholder="Bio" />
             <ColorPicker name="color" label="Color" placeholder="Color" />
-            <Switch name="switch" label="Option 2" />
+            <Switch
+              name="switch"
+              label="Option 2"
+              onChange={(value) => console.log('change', value)}
+            />
           </Flex>
           <Flex direction="column" flex gap>
             <Checkbox
