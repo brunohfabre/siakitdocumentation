@@ -6,7 +6,7 @@ import { Card } from '../../components/Card';
 import { CodeHighlight } from '../../components/CodeHighlight';
 import { Flex } from '../../components/Flex';
 import { Form } from '../../components/Form';
-import { Pin } from '../../components/Form/Pin';
+import { PinInput } from '../../components/Form/PinInput';
 import { Heading } from '../../components/Heading';
 import {
   SimpleTable,
@@ -31,7 +31,7 @@ export function PinPage(): JSX.Element {
           <Flex flex height={192} padding justify="center" align="center">
             <Form ref={formRef} onSubmit={() => undefined}>
               <Flex direction="column" padding={32} align="center">
-                <Pin name="name" label="Label" />
+                <PinInput name="name" label="Label" />
               </Flex>
             </Form>
           </Flex>
