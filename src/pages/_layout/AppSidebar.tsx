@@ -183,6 +183,9 @@ export function AppSidebar(): JSX.Element {
           Time picker
         </SubMenuItem>
         <SubMenuItem onClick={() => navigate('/form/pin')}>Pin</SubMenuItem>
+        <SubMenuItem onClick={() => navigate('/form/richtext')}>
+          Rich Text
+        </SubMenuItem>
       </SubMenu>
 
       <SubMenu value="feedback">

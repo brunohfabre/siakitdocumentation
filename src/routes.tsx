@@ -32,6 +32,7 @@ import { PasswordInputPage } from './pages/Form/PasswordInputPage';
 import { PhoneInputPage } from './pages/Form/PhoneInputPage';
 import { PinPage } from './pages/Form/PinPage';
 import { RadioPage } from './pages/Form/RadioPage';
+import { RichTextInputPage } from './pages/Form/RichTextInputPage';
 import { SelectMultiPage } from './pages/Form/SelectMultiPage';
 import { SelectPage } from './pages/Form/SelectPage';
 import { SliderPage } from './pages/Form/SliderPage';
@@ -96,6 +97,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="language" element={<LanguagePickerPage />} />
         <Route path="time" element={<TimePickerPage />} />
         <Route path="pin" element={<PinPage />} />
+        <Route path="richtext" element={<RichTextInputPage />} />
       </Route>
 
       <Route path="/feedback">
