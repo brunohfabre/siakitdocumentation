@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
 
 import { Colors } from '../../../hooks/theme';
-import { Flex } from '../../Flex';
+import { FlexProps, flexStyle } from '../../Flex/styles';
 
-interface ContentProps {
+interface ContentProps extends FlexProps {
   colorScheme: Colors;
   isFocused: boolean;
   isFilled: string;
@@ -11,7 +11,9 @@ interface ContentProps {
   disabled: boolean;
 }
 
-export const Content = styled(Flex)<ContentProps>`
+export const Content = styled.div<ContentProps>`
+  ${flexStyle};
+
   background-color: ${({ theme }) => theme.colors.gray[1]};
   border: 2px solid ${({ theme }) => theme.colors.gray[4]};
   border-radius: 8px;
