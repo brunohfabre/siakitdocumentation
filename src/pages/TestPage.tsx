@@ -1,86 +1,102 @@
-import { useRef } from 'react';
+import { PageBuilder } from '../components/PageBuilder';
+import { api } from '../services/api';
 
-import * as Yup from 'yup';
-
-import { Button } from '../components/Button';
-import { Card } from '../components/Card';
-import { Flex } from '../components/Flex';
-import { Footer, FooterLeft } from '../components/Footer';
-import { Form, FormHandles } from '../components/Form';
-import { RichTextInput } from '../components/Form/RichTextInput';
-import { getValidationErrors } from '../helpers/getValidationErrors';
+const pageBuilderConfig = {
+  id: 'dad5d3ea-ba02-431e-b9bc-b47dea7d77a1',
+  label: 'Teste de config para page builder',
+  slug: 'teste-de-config-para-page-builder',
+  actions: [
+    {
+      label: 'Novo item',
+      href: 'create',
+    },
+  ],
+  filter: {
+    hasSearch: true,
+    fields: [
+      { dataIndex: 'name', label: 'Nome', type: 'text' },
+      {
+        dataIndex: 'nationality',
+        label: 'Nascionalidade',
+        type: 'select',
+        options: [
+          { value: 1, label: 'Option 1' },
+          { value: 2, label: 'Option 2' },
+        ],
+      },
+      {
+        dataIndex: 'test',
+        label: 'Teste',
+        type: 'select',
+        href: 'http://localhost:5555/test',
+      },
+      { dataIndex: 'age', label: 'Idade', type: 'number' },
+      {
+        dataIndex: 'cpf',
+        label: 'CPF',
+        type: 'mask',
+        mask: 'cpf',
+        parent: 'nationality',
+      },
+      { dataIndex: 'salary', label: 'Salario', type: 'money' },
+      { dataIndex: 'phone', label: 'Celular', type: 'phone' },
+      {
+        dataIndex: 'waterInBody',
+        label: '% agua no corpo',
+        type: 'percentage',
+      },
+      { dataIndex: 'rich', label: 'Já ficou rico?', type: 'switch' },
+      { dataIndex: 'dateBirth', label: 'Data de nascimento', type: 'date' },
+    ],
+  },
+  list: {
+    href: 'https://jsonplaceholder.typicode.com/posts',
+    usePagination: true,
+    defaultSort: { dataIndex: 'body', direction: 'ASC' },
+    fields: [
+      {
+        label: 'User ID',
+        dataIndex: 'userId',
+        type: 'text',
+      },
+      {
+        label: 'Titulo',
+        dataIndex: 'title',
+        type: 'text',
+      },
+      {
+        label: 'Corpo',
+        dataIndex: 'body',
+        type: 'text',
+        sort: 'SO.body',
+      },
+    ],
+    footer: {
+      userId: 20,
+      body: 'body total',
+    },
+    actions: [
+      {
+        label: 'Editar',
+        action: {
+          type: 'redirect',
+          href: '[id]/update',
+        },
+      },
+    ],
+  },
+  exports: [
+    { label: 'CSV', href: 'https://google.com' },
+    { label: 'PDF', href: 'https://zustand-demo.pmnd.rs/' },
+  ],
+};
 
 export function TestPage(): JSX.Element {
-  const formRef = useRef<FormHandles>(null);
-
-  async function handleSubmit(data: any): Promise<void> {
-    try {
-      console.log(data);
-
-      formRef.current?.setErrors({});
-
-      const schema = Yup.object().shape({
-        editor: Yup.string().required('Campo obrigatório'),
-      });
-
-      await schema.validate(data, {
-        abortEarly: false,
-      });
-
-      console.log(data);
-    } catch (err) {
-      if (err instanceof Yup.ValidationError) {
-        const errors = getValidationErrors(err);
-
-        formRef.current?.setErrors(errors);
-      }
-    }
-  }
-
   return (
-    <Card margin direction="column" overflow>
-      <Form
-        ref={formRef}
-        onSubmit={handleSubmit}
-        flex
-        direction="column"
-        overflow
-      >
-        <Flex flex direction="column" padding overflow>
-          <RichTextInput
-            name="editor"
-            label="Rich text label"
-            placeholder="Rich text placeholder"
-          />
-        </Flex>
-        <Footer>
-          <FooterLeft>
-            <Button
-              type="button"
-              variant="secondary"
-              colorScheme="red"
-              onClick={() => formRef.current?.reset()}
-            >
-              Clear
-            </Button>
-
-            <Button
-              type="button"
-              variant="secondary"
-              onClick={() =>
-                formRef.current?.setFieldValue(
-                  'editor',
-                  `<h1>Teste set field value</h1><h2>title 2</h2><ul class="editor-task-list" data-type="taskList"><li data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>item 1</p></div></li><li data-checked="true" data-type="taskItem"><label><input type="checkbox" checked="checked"><span></span></label><div><p>item 2</p></div></li><li data-checked="false" data-type="taskItem"><label><input type="checkbox"><span></span></label><div><p>item 3</p></div></li></ul>`,
-                )
-              }
-            >
-              Set data
-            </Button>
-          </FooterLeft>
-
-          <Button type="submit">Send</Button>
-        </Footer>
-      </Form>
-    </Card>
+    <PageBuilder
+      config={pageBuilderConfig}
+      agent={api}
+      onNavigate={(route) => console.log(route)}
+    />
   );
 }

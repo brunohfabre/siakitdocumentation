@@ -20,6 +20,7 @@
     "@radix-ui/react-switch": "^0.1.5",
     "@radix-ui/react-tabs": "^0.1.5",
     "@radix-ui/react-tooltip": "^0.1.7",
+    "@tanstack/react-query": "^4.0.10",
     "@tiptap/extension-image": "^2.0.0-beta.30",
     "@tiptap/extension-link": "^2.0.0-beta.43",
     "@tiptap/extension-placeholder": "^2.0.0-beta.53",
@@ -30,6 +31,7 @@
     "@types/styled-components": "^5.1.25",
     "@unform/core": "^2.1.6",
     "@unform/web": "^2.1.6",
+    "axios": "^0.27.2",
     "date-fns": "^2.28.0",
     "dot-object": "^2.1.4",
     "history": "^5.3.0",
@@ -44,7 +46,8 @@
     "react-toastify": "^9.0.4",
     "styled-components": "^5.3.5",
     "vanilla-masker": "^1.2.0",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "zustand": "^4.0.0"
   },
   "devDependencies": {
     "@types/dot-object": "^2.1.2",
