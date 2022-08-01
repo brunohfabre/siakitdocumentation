@@ -30,7 +30,7 @@ export function PercentageInput({
 
   function handleChange(value: string): void {
     if (value !== undefined) {
-      const valueWithoutDigit = value.replaceAll(/[^\d,]/g, '');
+      const valueWithoutDigit = String(value).replaceAll(/[^\d,]/g, '');
 
       let newValue = '0';
 

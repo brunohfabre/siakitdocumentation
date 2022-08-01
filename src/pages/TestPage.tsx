@@ -1,4 +1,7 @@
-import { PageBuilder } from '../components/PageBuilder';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+
+import { PageBuilderPage } from '../components/PageBuilder';
+import { PageBuilderForm } from '../components/PageBuilder/PageBuilderForm';
 import { api } from '../services/api';
 
 const pageBuilderConfig = {
@@ -28,7 +31,8 @@ const pageBuilderConfig = {
         dataIndex: 'test',
         label: 'Teste',
         type: 'select',
-        href: 'http://localhost:5555/test',
+        href: 'http://localhost:5555/test/[nationality]',
+        parent: 'nationality',
       },
       { dataIndex: 'age', label: 'Idade', type: 'number' },
       {
@@ -36,7 +40,6 @@ const pageBuilderConfig = {
         label: 'CPF',
         type: 'mask',
         mask: 'cpf',
-        parent: 'nationality',
       },
       { dataIndex: 'salary', label: 'Salario', type: 'money' },
       { dataIndex: 'phone', label: 'Celular', type: 'phone' },
@@ -89,14 +92,113 @@ const pageBuilderConfig = {
     { label: 'CSV', href: 'https://google.com' },
     { label: 'PDF', href: 'https://zustand-demo.pmnd.rs/' },
   ],
+  form: {
+    actions: [
+      {
+        label: 'Cadastrar',
+        type: 'submit',
+        route: {
+          method: 'post',
+          url: 'http://localhost:5555/test',
+        },
+      },
+    ],
+    fields: [
+      {
+        name: 'name',
+        label: 'Nome',
+        type: 'text',
+        readOnly: 'never',
+        required: true,
+      },
+      {
+        name: 'nationality',
+        label: 'Nascionalidade',
+        type: 'select',
+        options: [
+          { value: 1, label: 'Option 1' },
+          { value: 2, label: 'Option 2' },
+        ],
+        readOnly: 'never',
+      },
+      {
+        name: 'test',
+        label: 'Teste',
+        type: 'select',
+        href: 'http://localhost:5555/test/[nationality]',
+        parent: 'nationality',
+        readOnly: 'never',
+      },
+      { name: 'age', label: 'Idade', type: 'number', readOnly: 'never' },
+      {
+        name: 'cpf',
+        label: 'CPF',
+        type: 'mask',
+        mask: 'cpf',
+        readOnly: 'never',
+        verification: {
+          method: 'get',
+          url: 'http://localhost:5555/verification/[cpf]',
+        },
+      },
+      {
+        name: 'salary',
+        label: 'Salario',
+        type: 'money',
+        readOnly: 'ifnotnull',
+      },
+      { name: 'phone', label: 'Celular', type: 'phone', readOnly: 'ifnotnull' },
+      {
+        name: 'waterInBody',
+        label: '% agua no corpo',
+        type: 'percentage',
+        readOnly: 'ifnotnull',
+      },
+      {
+        name: 'rich',
+        label: 'Já ficou rico?',
+        type: 'switch',
+        readOnly: 'never',
+      },
+      {
+        name: 'dateBirth',
+        label: 'Data de nascimento',
+        type: 'date',
+        readOnly: 'always',
+      },
+    ],
+  },
 };
 
 export function TestPage(): JSX.Element {
+  const navigate = useNavigate();
+
+  function handleNavigate(route: string | number): void {
+    navigate(String(route));
+  }
+
   return (
-    <PageBuilder
-      config={pageBuilderConfig}
-      agent={api}
-      onNavigate={(route) => console.log(route)}
-    />
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <PageBuilderPage
+            config={pageBuilderConfig}
+            agent={api}
+            onNavigate={handleNavigate}
+          />
+        }
+      />
+      <Route
+        path="/create"
+        element={
+          <PageBuilderForm
+            config={pageBuilderConfig}
+            agent={api}
+            onSubmit={(route) => navigate(route || '/test', { replace: true })}
+          />
+        }
+      />
+    </Routes>
   );
 }

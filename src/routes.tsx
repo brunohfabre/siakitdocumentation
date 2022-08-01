@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
 
-import { PageBuilderForm } from './components/PageBuilder/PageBuilderForm';
 import { ButtonPage } from './pages/Action/ButtonPage';
 import { IconButtonPage } from './pages/Action/IconButtonPage';
 import { LinkButtonPage } from './pages/Action/LinkButtonPage';
@@ -153,10 +152,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="avatargroup" element={<AvatarGroupPage />} />
       </Route>
 
-      <Route path="/test">
-        <Route path="" element={<TestPage />} />
-        <Route path="create" element={<PageBuilderForm />} />
-      </Route>
+      <Route path="/test/*" element={<TestPage />} />
     </Routes>
   );
 }
