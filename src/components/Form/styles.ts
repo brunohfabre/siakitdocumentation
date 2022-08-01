@@ -303,7 +303,7 @@ export const CheckboxBody = styled.div<CheckboxBodyProps>`
 `;
 
 interface SwitchBodyProps {
-  isVertical: 'vertical' | 'horizontal';
+  isVertical: boolean;
 }
 
 export const SwitchBody = styled.div<SwitchBodyProps>`
