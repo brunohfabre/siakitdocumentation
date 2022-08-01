@@ -21,6 +21,7 @@ import { ToastPage } from './pages/Feedback/ToastPage';
 import { CheckboxPage } from './pages/Form/CheckboxPage';
 import { ColorPickerPage } from './pages/Form/ColorPickerPage';
 import { DatePickerPage } from './pages/Form/DatePickerPage';
+import { FileInputPage } from './pages/Form/FileInputPage';
 import { FormPage } from './pages/Form/FormPage';
 import { FormTestPage } from './pages/Form/FormTestPage';
 import { InputPage } from './pages/Form/InputPage';
@@ -98,6 +99,7 @@ export function AppRoutes(): JSX.Element {
         <Route path="time" element={<TimePickerPage />} />
         <Route path="pin" element={<PinPage />} />
         <Route path="richtext" element={<RichTextInputPage />} />
+        <Route path="file" element={<FileInputPage />} />
       </Route>
 
       <Route path="/feedback">

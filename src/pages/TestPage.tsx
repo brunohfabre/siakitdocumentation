@@ -168,7 +168,7 @@ const pageBuilderConfig = {
       },
     ],
   },
-};
+} as any;
 
 export function TestPage(): JSX.Element {
   const navigate = useNavigate();
