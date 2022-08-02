@@ -11,7 +11,7 @@ const pageBuilderConfig = {
   actions: [
     {
       label: 'Novo item',
-      href: 'create',
+      url: 'create',
     },
   ],
   filter: {
@@ -31,7 +31,7 @@ const pageBuilderConfig = {
         dataIndex: 'test',
         label: 'Teste',
         type: 'select',
-        href: 'http://localhost:5555/test/[nationality]',
+        url: 'http://localhost:5555/test/[nationality]',
         parent: 'nationality',
       },
       { dataIndex: 'age', label: 'Idade', type: 'number' },
@@ -53,7 +53,7 @@ const pageBuilderConfig = {
     ],
   },
   list: {
-    href: 'https://jsonplaceholder.typicode.com/posts',
+    url: 'https://jsonplaceholder.typicode.com/posts',
     usePagination: true,
     defaultSort: { dataIndex: 'body', direction: 'ASC' },
     fields: [
@@ -83,14 +83,14 @@ const pageBuilderConfig = {
         label: 'Editar',
         action: {
           type: 'redirect',
-          href: '[id]/update',
+          url: '[id]/update',
         },
       },
     ],
   },
   exports: [
-    { label: 'CSV', href: 'https://google.com' },
-    { label: 'PDF', href: 'https://zustand-demo.pmnd.rs/' },
+    { label: 'CSV', url: 'https://google.com' },
+    { label: 'PDF', url: 'https://zustand-demo.pmnd.rs/' },
   ],
   form: {
     actions: [
@@ -125,7 +125,7 @@ const pageBuilderConfig = {
         name: 'test',
         label: 'Teste',
         type: 'select',
-        href: 'http://localhost:5555/test/[nationality]',
+        url: 'http://localhost:5555/test/[nationality]',
         parent: 'nationality',
         readOnly: 'never',
       },
