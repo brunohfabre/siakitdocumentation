@@ -2,6 +2,7 @@ import { Route, Routes, useNavigate } from 'react-router-dom';
 
 import { PageBuilderPage } from '../components/PageBuilder';
 import { PageBuilderForm } from '../components/PageBuilder/PageBuilderForm';
+import { Table } from '../components/Table';
 import { api } from '../services/api';
 
 const pageBuilderConfig = {
@@ -170,35 +171,39 @@ const pageBuilderConfig = {
   },
 } as any;
 
+// export function TestPage(): JSX.Element {
+//   const navigate = useNavigate();
+
+//   function handleNavigate(route: string | number): void {
+//     navigate(String(route));
+//   }
+
+//   return (
+//     <Routes>
+//       <Route
+//         path="/"
+//         element={
+//           <PageBuilderPage
+//             config={pageBuilderConfig}
+//             agent={api}
+//             onNavigate={handleNavigate}
+//           />
+//         }
+//       />
+//       <Route
+//         path="/create"
+//         element={
+//           <PageBuilderForm
+//             config={pageBuilderConfig}
+//             agent={api}
+//             onSubmit={(route) => navigate(route || '/test', { replace: true })}
+//           />
+//         }
+//       />
+//     </Routes>
+//   );
+// }
+
 export function TestPage(): JSX.Element {
-  const navigate = useNavigate();
-
-  function handleNavigate(route: string | number): void {
-    navigate(String(route));
-  }
-
-  return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <PageBuilderPage
-            config={pageBuilderConfig}
-            agent={api}
-            onNavigate={handleNavigate}
-          />
-        }
-      />
-      <Route
-        path="/create"
-        element={
-          <PageBuilderForm
-            config={pageBuilderConfig}
-            agent={api}
-            onSubmit={(route) => navigate(route || '/test', { replace: true })}
-          />
-        }
-      />
-    </Routes>
-  );
+  return <Table headers={[{ dataIndex: 'title', label: 'Title' }]} data={[]} />;
 }
